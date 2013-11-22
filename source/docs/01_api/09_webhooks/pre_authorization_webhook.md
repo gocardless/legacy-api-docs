@@ -19,7 +19,7 @@ Example pre-authorization webhook object:
       }
     }
 
-#### Possible actions
+### Possible actions
 
 `cancelled`
 :    This is fired when a pre-authorization is cancelled by a customer. No further bills can be created under this pre-authorization.

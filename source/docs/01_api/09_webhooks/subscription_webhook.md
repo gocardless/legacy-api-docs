@@ -20,7 +20,7 @@ Example subscription webhook object:
     }
 
 
-#### Possible actions
+### Possible actions
 
 `cancelled`
 :    This is fired when a subscription is cancelled by a customer. No further bills can be created under this subscription.

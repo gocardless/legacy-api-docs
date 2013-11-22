@@ -2,7 +2,9 @@
 
 // Description Lists
 dl {
-  margin-bottom: 20px;
+  border-top: 1px solid #EDEDED;
+  margin-bottom: 5px;
+  padding-top: 5px;
 }
 
 dt,
@@ -11,7 +13,7 @@ dd {
 }
 
 dt {
-  font-weight: bold;
+  font-weight: normal;
 }
 
 dd {
