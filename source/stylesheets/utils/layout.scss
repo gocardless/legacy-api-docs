@@ -1,0 +1,90 @@
+// Clearfix: contain floats
+//
+// For modern browsers
+// 1. The space content is one way to avoid an Opera bug when the
+//    `contenteditable` attribute is included anywhere else in the document.
+//    Otherwise it causes space to appear at the top and bottom of elements
+//    that receive the `clearfix` class.
+// 2. The use of `table` rather than `block` is only necessary if using
+//    `:before` to contain the top-margins of child elements.
+//
+// Compatible in IE9+
+
+.u-cf {
+  &:before,
+  &:after {
+    display: table;
+    content: " ";
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Float left
+
+.u-pull-start {
+  float: left;
+}
+
+// Float right
+
+.u-pull-end {
+  float: right;
+}
+
+.u-relative {
+  position: relative;
+}
+
+// Center
+
+.u-center {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  float: none;
+}
+
+// Object position helpers.
+//
+// Float an object left or right, and include some space between the object and
+// proceeding objects.
+
+.u-obj-start {
+  float: left;
+  margin-right: 10px;
+}
+
+.u-obj-end {
+  float: right;
+  margin-left: 10px;
+}
+
+
+// Vertical alignment utilities
+// Depends on an appropriate `display` value.
+
+.u-align-top {
+  vertical-align: top;
+}
+
+.u-align-middle {
+  vertical-align: middle;
+}
+
+.u-align-baseline {
+  vertical-align: baseline;
+}
+
+.u-align-bottom {
+  vertical-align: bottom;
+}
+
+
+// Overflow helpers
+//
+
+.u-overflow-hidden {
+  overflow: hidden;
+}

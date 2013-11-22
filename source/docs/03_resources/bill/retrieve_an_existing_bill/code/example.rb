@@ -1,0 +1,1 @@
+GoCardless::Bill.find("#BILL ID#")

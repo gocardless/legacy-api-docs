@@ -1,0 +1,34 @@
+@import "variables";
+@import "mixins/placeholder-mixin";
+
+$placeholder-color: #999;
+
+/*
+ * Allow only vertical resizing of textareas.
+ * Reset height since textareas have rows
+ */
+textarea {
+  height: auto;
+  resize: vertical;
+}
+
+// Make multiple select elements height not fixed
+select[multiple],
+select[size] {
+  height: auto;
+}
+
+// Fix for Firefox
+select {
+  padding: 3px 0 1px;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input, textarea {
+  @include placeholder($placeholder-color);
+}

@@ -1,0 +1,96 @@
+.lang-select {
+  position: relative;
+  z-index: 1000;
+  background: #FFF;
+  border: 1px solid #E1E1E1;
+  display: block;
+  padding: 0 10px;
+  line-height: 30px;
+  height: 30px;
+  margin: 5px;
+  margin-left: 10px;
+  border-radius: 3px;
+  width: 214px;
+  font-size: 13px;
+  top: 3px;
+  cursor: pointer;
+  font-family: "Gotham SSm A","Gotham SSm B", Arial, sans-serif;
+
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;
+}
+
+.lang-select__label {
+  font-weight: 500;
+  color: #305C8C;
+}
+
+.lang-select__checkbox__arrow {
+  position: absolute;
+  right: 10px;
+  top: 11px;
+
+  &:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: "";
+    border-style: solid;
+    border-width: 6px;
+    border-color: #2F5B8C transparent transparent transparent;
+  }
+}
+
+.lang-select__checkbox:checked ~ .lang-select__checkbox__arrow {
+  &:before {
+    top: -6px;
+    border-color: transparent transparent #2F5B8C transparent;
+  }
+}
+
+.lang-select__checkbox__dropdown {
+  display: none;
+}
+
+.lang-select__checkbox:checked ~ .lang-select__checkbox__dropdown {
+  display: block;
+}
+
+.lang-select__checkbox__dropdown {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #AAA;
+  border-radius: 3px;
+  top: 33px;
+}
+
+.lang-select__item {
+  display: block;
+  padding: 0 10px;
+  line-height: 30px;
+  height: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  border-bottom: 1px solid #eee;
+  color: #305C8C;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:active, &:focus {
+    outline: none;
+    background-color: #2F5B8C;
+    color: #FFF;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}

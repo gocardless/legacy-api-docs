@@ -1,0 +1,16 @@
+@mixin at2x($image_name, $width, $height, $extention: '.png') {
+  $base: '/client-assets/images/';
+  $img: $base + $image_name + $extention;
+  $x2img: $base + $image_name + '@2x' + $extention;
+
+  background-image: url(#{$img});
+
+  @media (-webkit-min-device-pixel-ratio: 1.5),
+         (min--moz-device-pixel-ratio: 1.5),
+         (-o-min-device-pixel-ratio: 3/2),
+         (min-device-pixel-ratio: 1.5),
+         (min-resolution: 1.5dppx) {
+    background-image: url(#{$x2img});
+    background-size: $width $height;
+  }
+}

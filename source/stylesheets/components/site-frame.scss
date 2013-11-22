@@ -1,0 +1,38 @@
+$header-z-index: 100;
+$nav-z-index: 99;
+$content-z-index: 98;
+
+$header-height: 46px;
+$sidebar-width: 240px;
+
+.site-frame {
+  height: 100%;
+}
+
+.site-frame__header {
+  position: fixed;
+  display: block;
+  height: $header-height;
+  width: 100%;
+  z-index: $header-z-index;
+}
+
+.site-frame__nav {
+  position: fixed;
+  display: block;
+  top: $header-height;
+  bottom: 0;
+  z-index: $nav-z-index;
+  width: $sidebar-width;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.site-frame__main {
+  position: relative;
+  display: block;
+  top: $header-height;
+  margin-left: $sidebar-width;
+  z-index: $content-z-index;
+  height: 100%;
+}

@@ -1,0 +1,22 @@
+@mixin placeholder($color) {
+  // Have to be styled seperately
+
+  // FF < 19
+  &:-moz-placeholder {
+    color: $color;
+  }
+
+  // FF >= 19
+  &::-moz-placeholder {
+    color: $color;
+  }
+
+  // IE 10
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+}

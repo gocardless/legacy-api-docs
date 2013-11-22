@@ -1,0 +1,4 @@
+@mixin calc($property, $expression) {
+  #{$property}: -webkit-calc(#{$expression}); /* Chrome, Safari */
+  #{$property}: calc(#{$expression});         /* IE8+, Rest */
+}

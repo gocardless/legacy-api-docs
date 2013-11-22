@@ -1,0 +1,21 @@
+{
+  "name": "mute-console",
+  "main": "mute-console.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "Gruntfile.js",
+    "readme.md",
+    "package.json"
+  ],
+  "homepage": "https://github.com/gocardless-client/mute-console",
+  "_release": "master",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "09f553d7b53116462b8c6d62e7efe9d1e953da56"
+  },
+  "_source": "git://github.com/gocardless-client/mute-console.git",
+  "_target": "*",
+  "_originalSource": "git://github.com/gocardless-client/mute-console.git"
+}

@@ -1,0 +1,22 @@
+.top-nav {
+  margin-right: 30px;
+}
+
+.top-nav__item {
+  margin-right: 20px;
+  font-family: "Gotham SSm A","Gotham SSm B", Arial, sans-serif;
+  color: #2F5B8C;
+  font-size: 12px;
+  line-height: 43px;
+
+  &:hover {
+    text-decoration: none;
+    color: #2F5B8C;
+  }
+}
+
+.top-nav--divider {
+  border-right: 1px solid #E1E1E1;
+  height: 46px;
+  padding-right: 10px;
+}

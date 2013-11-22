@@ -1,0 +1,111 @@
+//////////////////////////
+// Link-specific utilities
+//////////////////////////
+@import "variables";
+
+// Link clean
+//
+// A link without any text-decoration at all.
+
+.u-link-clean,
+.u-link-clean:hover,
+.u-link-clean:focus,
+.u-link-clean:active {
+  text-decoration: none;
+}
+
+// Link complex
+//
+// A common pattern is to have a link with several pieces of text and/or an
+// icon, where only one piece of text should display the underline when the
+// link is the subject of user interaction.
+//
+// Example HTML:
+//
+// <a class="u-link-complex" href="#">
+//   Link complex
+//   <span class="u-link-complex-target">target</span>
+// </a>
+
+.u-link-complex:hover,
+.u-link-complex:focus,
+.u-link-complex:active {
+  text-decoration: none;
+}
+
+.u-link-complex:hover .u-link-complex-target,
+.u-link-complex:focus .u-link-complex-target,
+.u-link-complex:active .u-link-complex-target {
+  text-decoration: underline;
+}
+
+// Block-level link
+//
+// Combination of traits commonly used in vertical navigation lists.
+
+.u-link-block,
+.u-link-block:hover,
+.u-link-block:focus,
+.u-link-block:active {
+  display: block;
+  text-decoration: none;
+}
+
+// Pseudo-link
+//
+// Another interactive element, e.g., `button`, styled to look like an
+// anchor. Relies on the use of a placeholder anchor.
+//
+// Example HTML:
+//
+// <button class="u-linkPseudo">
+//     <a>Button content</a>
+// </button>
+
+.u-link-pseudo {
+  display: inline;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.u-link-pseudo:hover,
+.u-link-pseudo:focus,
+.u-link-pseudo:active {
+  background: inherit;
+  color: inherit;
+  text-decoration: inherit;
+}
+
+// Link
+//
+// Style an inline element to look like a link
+
+.u-link {
+  color: $link-color;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.u-link:hover,
+.u-link:focus,
+.u-link:active {
+  color: $link-hover-color;
+  text-decoration: underline;
+}
+
+.u-link:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.u-link:hover:disabled,
+.u-link:focus:disabled,
+.u-link:active:disabled {
+  color: $link-color;
+  text-decoration: none;
+}
+

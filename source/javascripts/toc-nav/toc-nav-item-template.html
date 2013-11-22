@@ -1,0 +1,12 @@
+<a ng-href="#{{ page.data.id }}"
+  target="_self" scroll-spy-item="{{page.data.id}}"
+  class="toc-nav__item__anchor"
+  ng-class="{ 'toc-nav__item__anchor--nested': isNested }">
+  {{ page.data.title }}
+</a>
+<ul ng-if="page.children" class="toc-nav toc-nav--nested" nav-toggle>
+  <li ng-repeat="page in page.children"
+    ng-include="'toc-nav/toc-nav-item-template.html'"
+    ng-init="isNested = true"
+    class="toc-nav__item toc-nav__item--nested"></li>
+</ul>

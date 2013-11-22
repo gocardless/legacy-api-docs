@@ -1,0 +1,95 @@
+$font-family-base:      Arial, sans-serif;
+$font-family-heading:   "Gotham SSm A","Gotham SSm B", $font-family-base;
+$font-family-label:     $font-family-base;
+$font-family-monospace: Monaco, Menlo, Consolas, "Courier New", monospace;
+
+$font-size-base: 13px;
+$line-height-base: 1.55;
+$line-height-large: 2;
+
+$font-size-h1: 23px;
+$font-size-h2: 20px;
+$font-size-h3: 18px;
+$font-size-h4: $font-size-base;
+$font-size-h5: 14px;
+$font-size-h6: 13px;
+$font-size-h7: 11px;
+
+$text-spacer-large: 2rem;
+$text-spacer-medium: 1rem;
+
+$border-radius-base: 3px;
+$box-shadow-base: 0 1px 4px rgba(0, 0, 0, 0.3);
+
+$gutter-space-base: 15px;
+
+$header-nav-height: 40px;
+
+////////////////////////////////////////////////////////////////////////////////
+
+$black-blue: #061D2A;
+$black-blue-lighten: darken($black-blue, 7%);
+$black-blue-darken: darken($black-blue, 7%);
+
+$dark-blue: #203844;
+$dark-blue-lighten: darken($dark-blue, 7%); // #4D616C
+$dark-blue-darken: darken($dark-blue, 7%);
+
+$primary-blue: #2891cd;
+$primary-blue-lighten: lighten($primary-blue, 7%);
+$primary-blue-darken: darken($primary-blue, 7%); // #2F95D6
+
+$primary-red: #E14E3D;
+$primary-red-lighten: lighten($primary-red, 7%);
+$primary-red-darken: darken($primary-red, 7%);
+
+$primary-orange: #F7C55A;
+$primary-orange-lighten: lighten($primary-orange, 7%);
+$primary-orange-darken: darken($primary-orange, 7%); // #DD9F1F
+
+$primary-green: #94C43E;
+$primary-green-lighten: lighten($primary-green, 7%);
+$primary-green-darken: darken($primary-green, 10%); // #8EB335
+
+$secondary-blue: #144A66;
+$secondary-blue-lighten: lighten($secondary-blue, 7%);
+$secondary-blue-darken: darken($secondary-blue, 7%);
+
+$light-blue: #EAF7FD;
+$light-blue-lighten: lighten($light-blue, 2%);
+$light-blue-darken: darken($light-blue, 7%);
+
+$light-gray: #EAEDEF;
+$light-gray-lighten: lighten($light-gray, 7%);
+$light-gray-darken: darken($light-gray, 5%);
+
+$gray: #A7ADB3;
+$gray-lighten: #D2D9DD;
+$gray-darken: darken($gray, 7%);
+
+$blue-gray: #5E656D;
+
+////////////////////////////////////////////////////////////////////////////////
+
+$form-box-shadow-color--error: $primary-red;
+
+////////////////////////////////////////////////////////////////////////////////
+
+$text-color: #666;
+
+$link-color: $primary-blue;
+$link-hover-color: $primary-blue-darken;
+
+$btn-color: #fff;
+
+$hr-border-color: $light-gray;
+
+////////////////////////////////////////////////////////////////////////////////
+
+$layout-min-width--wide: 1440px;
+$layout-min-width--normal: 960px;
+
+$content-width: 55%;
+$content-max-width: 700px;
+
+////////////////////////////////////////////////////////////////////////////////

@@ -1,0 +1,14 @@
+<div>
+  <span class="toc-nav__header"
+    ng-repeat-start="page in page.children"
+    ng-if-start="page.children">{{ page.data.title }}</span>
+  <ul class="toc-nav"
+    nav-toggle
+    ng-repeat-end
+    ng-if-end>
+    <li class="toc-nav__item"
+      ng-include="'toc-nav/toc-nav-item-template.html'"
+      ng-repeat="page in page.children"
+      nav-toggle></li>
+  </ul>
+</div>

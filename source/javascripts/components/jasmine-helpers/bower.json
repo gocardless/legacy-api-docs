@@ -1,0 +1,8 @@
+{
+  "name": "jasmine-helpers",
+  "version": "0.0.1",
+  "ignore": [
+    "**/.*",
+    "readme.md"
+  ]
+}

@@ -1,0 +1,78 @@
+@import "variables";
+@import "mixins/clearfix-mixin";
+@import "mixins/box-sizing-mixin";
+
+*, :before, :after {
+  @include box-sizing(border-box);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+  font-family: $font-family-base;
+  color: $text-color;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  @include clearfix();
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+}
+
+/**
+ * Links
+ */
+a {
+  color: $link-color;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $link-hover-color;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/*
+* A better looking default horizontal rule
+*/
+hr {
+  // Override normalize
+  @include box-sizing(border-box);
+
+  display: block;
+  height: 1px;
+  margin: $line-height-base 0;
+  padding: 0;
+  border: 0;
+  border-top: 1px solid $hr-border-color;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+img {
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+// Override normalize
+input[type="search"] {
+  @include box-sizing(border-box);
+}
+
+/**
+ * Hide when Angular is not yet loaded and initialized
+ */
+[ng-cloak] {
+  display: none;
+}

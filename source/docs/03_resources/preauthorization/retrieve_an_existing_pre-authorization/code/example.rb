@@ -1,0 +1,1 @@
+GoCardless::PreAuthorization.find("#PREAUTH ID#")

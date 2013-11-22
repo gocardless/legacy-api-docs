@@ -1,0 +1,29 @@
+@import "variables";
+
+@media (min-width: $layout-min-width--normal) {
+  .content-container {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .content-container__description,
+  .content-container__code {
+    display: table-cell;
+    vertical-align: top;
+  }
+
+  .content-container__description {
+    width: 55%;
+  }
+
+  .content-container__code {
+    background-color: #FBFBFB;
+  }
+}
+
+@media (min-width: $layout-min-width--wide) {
+  .content-container__description {
+    width: 700px;
+  }
+}

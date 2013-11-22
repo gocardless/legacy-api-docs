@@ -1,0 +1,1 @@
+GoCardless.new_bill_url(:amount => "30.00", :name => "Example payment")

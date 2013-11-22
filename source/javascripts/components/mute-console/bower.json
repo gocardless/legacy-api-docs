@@ -1,0 +1,12 @@
+{
+  "name": "mute-console",
+  "version": "0.0.1",
+  "main": "mute-console.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "Gruntfile.js",
+    "readme.md",
+    "package.json"
+  ]
+}

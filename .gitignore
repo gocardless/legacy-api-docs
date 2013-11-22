@@ -1,0 +1,12 @@
+.bundle
+build
+log
+tmp
+.sass-cache
+.DS_Store
+.rvmrc
+.autotest
+tags
+node_modules
+vendor/bundle
+.ruby-version

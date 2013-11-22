@@ -1,0 +1,50 @@
+@import "variables";
+
+$popover-background: #FFF;
+$popover-border: #BEC0C2;
+
+@mixin popover($arrowAlign: 10px, $align: 0, $arrowSize: 8px, $top: 100%) {
+  $arrowSizeBG: $arrowSize + 1px;
+
+  box-shadow: 0 1px 5px 0px rgba(67, 81, 102, 0.3);
+  position: absolute;
+  z-index: 100;
+  top: $top;
+  right: $align;
+  background-color: $popover-background;
+  border-radius: $border-radius-base;
+  border: 1px solid $popover-border;
+  white-space: normal;
+
+  &:after,
+  &:before {
+    content: "";
+    position: absolute;
+    top: -$arrowSize;
+    right: $arrowAlign;
+    border-style: solid;
+    border-width: 0 ($arrowSize + 1px) ($arrowSize + 0);
+    border-color: transparent transparent white transparent;
+  }
+
+  &:before {
+    top: -$arrowSizeBG;
+    right: $arrowAlign - 1px;
+    border-width: 0 ($arrowSizeBG + 1px) ($arrowSizeBG + 0);
+    border-bottom-color: $popover-border;
+  }
+}
+
+@mixin popover-left($arrowAlign: 10px, $align: 0, $arrowSize: 8px, $top: 100%) {
+  @include popover($arrowAlign, $align, $arrowSize, $top);
+
+  &:after,
+  &:before {
+    right: auto;
+    left: $arrowAlign;
+  }
+
+  &:before {
+    left: $arrowAlign - 1px;
+  }
+}

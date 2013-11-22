@@ -1,0 +1,26 @@
+@import "variables";
+
+$vertical-spacing: 25px;
+$horizontal-spacing: 50px;
+
+.content {
+  border-bottom: 1px solid #EDEDED;
+}
+
+.content__description {
+  max-width: $content-max-width;
+  padding: $vertical-spacing $horizontal-spacing;
+  padding-bottom: 40px;
+}
+
+.content__code {
+  padding: 0 $horizontal-spacing $vertical-spacing;
+  margin-top: -$vertical-spacing;
+}
+
+@media (min-width: $layout-min-width--normal) {
+  .content__code {
+    padding: 25px 10px;
+    margin-top: 0;
+  }
+}

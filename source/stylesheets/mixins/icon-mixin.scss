@@ -1,0 +1,9 @@
+@import "mixins/at2x-mixin";
+
+@mixin icon($image_name, $width, $height, $extention: '.png') {
+  @include at2x($image_name, $width, $height, $extention);
+  display: inline-block;
+  height: $height;
+  width: $width;
+  background-repeat: no-repeat;
+}
