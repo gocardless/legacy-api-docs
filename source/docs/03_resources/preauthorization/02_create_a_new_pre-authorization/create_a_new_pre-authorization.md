@@ -35,7 +35,7 @@ Note that a pre-authorization allows the Merchant to bill the User in future wit
 `calendar_intervals`
 :    Boolean describing whether the `interval` attribute should be aligned with calendar weeks or months, default: `false`.
 
-**Examples:**
+**Calendar interval examples:**
 
 	calendar_intervals: true
 	interval_length: 1
