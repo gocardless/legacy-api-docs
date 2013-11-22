@@ -1,6 +1,6 @@
 ## Retrieve an existing pre-authorization
 
-#### Arguments
+#### Request params
 
 `id`
 :    _required_ id of pre-authorization to retrieve

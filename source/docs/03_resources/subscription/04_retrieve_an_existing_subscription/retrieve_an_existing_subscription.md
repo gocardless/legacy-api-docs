@@ -1,6 +1,6 @@
 ## Retrieve an existing subscription
 
-#### Arguments
+#### Request params
 
 `id`
 :    _required_ id of subscription to retrieve

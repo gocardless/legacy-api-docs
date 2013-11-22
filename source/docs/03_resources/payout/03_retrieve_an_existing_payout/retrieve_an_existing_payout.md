@@ -1,6 +1,6 @@
 ## Retrieve an existing payout
 
-#### Arguments
+#### Request params
 
 `id`
 :    _required_ id of payout to retrieve
