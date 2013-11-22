@@ -1,5 +1,3 @@
 ---
 section: 'API'
 ---
-
-Test
