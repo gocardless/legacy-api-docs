@@ -2,7 +2,7 @@
 
 A user pays a one-off amount to the merchant. The user should be redirected to the url and will be asked for authorisation.
 
-If the user has an existing active preauthorization, you may wish to [create a bill under a pre-authorization]()
+If the user has an existing active preauthorization, you may wish to [create a bill under a pre-authorization](#create-a-bill-under-a-pre-auth)
 
 #### Request params
 
@@ -22,7 +22,7 @@ If the user has an existing active preauthorization, you may wish to [create a b
 :    Allows prepopulation of user information - see [prepopulating information]()
 
 `signature`
-:    _required_ Generated from the request prams according to the [signature guide]()
+:    _required_ Generated from the request prams according to the [signature guide](#signing-requests)
 
 `nonce`
 :    _required_ A random string to ensure the uniqueness of each request. This prevents multiple customers using the same link to access the payments process. The nonce is stored for a period of 3 hours, after which it may be re-used. We recommend a random base64-encoded string, but any non-nil value may be used.
@@ -47,4 +47,4 @@ If the user has an existing active preauthorization, you may wish to [create a b
 
 Once the user has given authorization for one of these resources to be created, it will exist in an 'inactive' state. The user will be redirected (a GET request) back to the URI specified.
 
-You must [verify the resource]() otherwise it will be removed within a short period of time.
+You must [confirm the resource](#confirm-a-new-one-off-bill) otherwise it will be removed within a short period of time.
