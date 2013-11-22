@@ -5,19 +5,19 @@ The API server will send a POST request to the `web_hook_uri` associated with th
 The POST request will contain JSON data in the body, providing details of the action completed. The data will contain an HMAC digest signature generated using the merchant's `app secret` - this prevents attackers imitating valid web hooks.
 
 `payload`
-:	A hash/dictionary, the top level namespace.
+:    A hash/dictionary, the top level namespace.
 
 `resource_type`
-:	A string: "bill", "pre_authorization", or "subscription".
+:    A string: "bill", "pre_authorization", or "subscription".
 
 `action`
-:	A string, description of the event that triggered the webhook. Details below.
+:    A string, description of the event that triggered the webhook. Details below.
 
 `objects`
-:	An array of hashes/dictionaries of the relevant object, named as the pluralize name of the resource type.
+:    An array of hashes/dictionaries of the relevant object, named as the pluralize name of the resource type.
 
 `signature`
-:	HMAC digest of the contents of payload, signed with the app secret.
+:    HMAC digest of the contents of payload, signed with the app secret.
 
 #### Example request
 

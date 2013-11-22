@@ -9,31 +9,31 @@ Note that a pre-authorization allows the Merchant to bill the User in future wit
 #### Arguments
 
 `max_amount`
-:	_required_ the maximum amount that can be collected within one of the specified intervals.
+:    _required_ the maximum amount that can be collected within one of the specified intervals.
 
 `interval_length`
-:	_required_ The number of `interval_unit`s that make up the interval.
+:    _required_ The number of `interval_unit`s that make up the interval.
 
 `interval_unit`
-: _required_ The unit of measurement for the interval. Can be `day`, `week` or `month`.
+:    _required_ The unit of measurement for the interval. Can be `day`, `week` or `month`.
 
 `expires_at`
-:	Date the pre-authorization expires. Note that pre-authorization will be expired just after midnight of the `expires_at` date. Should be [ISO8601 format](http://www.w3.org/TR/NOTE-datetime).
+:    Date the pre-authorization expires. Note that pre-authorization will be expired just after midnight of the `expires_at` date. Should be [ISO8601 format](http://www.w3.org/TR/NOTE-datetime).
 
 `name`
-:	brief description used to identify the pre-authorization, displayed to the user alongside the amount. Often useful for an "invoice reference".
+:    brief description used to identify the pre-authorization, displayed to the user alongside the amount. Often useful for an "invoice reference".
 
 `description`
-:	A more detailed description, which will be displayed to the user.
+:    A more detailed description, which will be displayed to the user.
 
 `interval_count`
 :	Calculates the `expires_at` date based on the number of payment intervals that you would like the resource to have. Must be a positive integer greater than 0. Also if you specify an `interval_count` and a `expires_at` date, the later takes precedence. For example if the pre-authorization is created on the 15th of February and has a 1 day interval and an  `interval_count` of 2 then the `expires_at` will be set for the 17th of February. The two intervals will be from the 15th to the 16th and from the 16th to the 17th.
 
 `setup_fee`
-:	A one-off amount to add to the beginning of the subscription. For example, adding a £25.00 setup fee to a £5 per month subscription would mean that the customer is charged £30 at sign up, and then £5 per month.
+:    A one-off amount to add to the beginning of the subscription. For example, adding a £25.00 setup fee to a £5 per month subscription would mean that the customer is charged £30 at sign up, and then £5 per month.
 
 `calendar_intervals`
-:	Boolean describing whether the `interval` attribute should be aligned with calendar weeks or months, default: `false`.
+:    Boolean describing whether the `interval` attribute should be aligned with calendar weeks or months, default: `false`.
 
 **Examples:**
 

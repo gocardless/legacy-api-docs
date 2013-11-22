@@ -20,8 +20,16 @@ end
 
 set :layout, :docs
 
-set :markdown, tables: true, autolink: true, fenced_code_blocks: true
 set :markdown_engine, :redcarpet
+set :markdown,
+  renderer: DocsRecarpetRenderHTML,
+  no_intra_emphasis: true,
+  tables: true,
+  autolink: true,
+  fenced_code_blocks: true,
+  lax_spacing: true,
+  highlight: true,
+  quote: true
 
 # Build-specific configuration
 configure :build do
