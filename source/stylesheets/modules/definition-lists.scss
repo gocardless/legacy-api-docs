@@ -21,7 +21,7 @@ dd {
 
 dt {
   float: left;
-  width: 140px;
+  width: 146px;
   clear: left;
   text-align: right;
   word-break: hyphenate;
@@ -30,6 +30,6 @@ dt {
 
 dd {
   @include clearfix();
-  margin-left: 160px;
+  margin-left: 165px;
 }
 
