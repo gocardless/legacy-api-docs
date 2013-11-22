@@ -1,4 +1,4 @@
-# Errors
+# HTTP Response Codes
 
 You may encounter the following response codes. Any unsuccessful response codes will contain more information to help you identify the cause of the problem.
 
