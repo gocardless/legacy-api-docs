@@ -1,4 +1,4 @@
-<img src="http://gc-misc.s3.amazonaws.com/images/api-docs-illo@2x.png" width="181" height="202">
+<img src="http://gc-misc.s3.amazonaws.com/images/api-docs-illo@2x.png" width="159" height="177">
 
 # Introduction to the GoCardless API
 
