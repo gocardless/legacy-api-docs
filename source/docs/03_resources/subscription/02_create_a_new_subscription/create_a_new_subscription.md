@@ -1,4 +1,4 @@
-## Create a new subscription
+## Create a subscription
 
 A user pays a **fixed amount** to a merchant each fixed interval of time, until an expiry date e.g. £50 every month.
 

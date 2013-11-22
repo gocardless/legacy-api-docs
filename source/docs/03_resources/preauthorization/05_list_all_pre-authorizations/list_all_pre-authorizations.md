@@ -1,4 +1,4 @@
-## List all pre-authorizations
+## List all pre-auths
 
 #### Request params
 

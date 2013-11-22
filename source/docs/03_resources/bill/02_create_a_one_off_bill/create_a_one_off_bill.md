@@ -1,4 +1,4 @@
-## Create a new one-off bill
+## Create a one-off bill
 
 A user pays a one-off amount to the merchant. The user should be redirected to the url and will be asked for authorisation.
 

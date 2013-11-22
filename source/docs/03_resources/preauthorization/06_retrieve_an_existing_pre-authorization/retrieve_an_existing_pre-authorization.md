@@ -1,4 +1,4 @@
-## Retrieve an existing pre-authorization
+## Retrieve an existing pre-auth
 
 #### Request params
 

@@ -1,6 +1,6 @@
 <img src="http://gc-misc.s3.amazonaws.com/images/api-docs-illo@2x.png" width="159" height="177">
 
-# Introduction to the GoCardless API
+# Introduction
 
 <p class="intro">Using our API, developers can build new integrations with, and products upon, our core services.</p>
 

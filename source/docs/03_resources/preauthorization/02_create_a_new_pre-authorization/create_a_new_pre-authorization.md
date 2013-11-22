@@ -1,4 +1,4 @@
-## Create a new pre-authorization
+## Create a pre-auth
 
 A user agrees to allow the merchant to create bills up to a pre-defined amount every pre-defined interval of time, until an expiry date e.g., up to £10 per week until 1 January 2015.
 

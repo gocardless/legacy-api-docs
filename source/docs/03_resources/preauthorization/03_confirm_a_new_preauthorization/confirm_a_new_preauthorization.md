@@ -1,4 +1,4 @@
-## Confirm a new pre-authorization
+## Confirm a new pre-auth
 
 When a user has completed the authorization process, the pre-authorization will exist in an 'inactive' state. The resource must be confirmed within a short period of time otherwise it will be removed from the database.
 
