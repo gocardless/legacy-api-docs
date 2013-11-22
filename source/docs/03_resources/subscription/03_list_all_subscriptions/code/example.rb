@@ -1,0 +1,2 @@
+GoCardless.client.merchant.subscriptions
+
