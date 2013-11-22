@@ -1,5 +1,4 @@
-POST https://gocardless.com/api/v1/bills
-
+POST https://gocardless.com/api/v1/bills HTTP/1.1
 {
   "bill": {
     "amount":"10.00",
@@ -7,26 +6,25 @@ POST https://gocardless.com/api/v1/bills
   }
 }
 
-RESPONSE:
-
+HTTP/1.1 Created
 {
-   "amount": "10.00",
-   "gocardless_fees": "0.10",
-   "partner_fees": "0",
-   "currency": "GBP",
-   "created_at": "2011-11-22T11: 59: 12Z",
-   "description": null,
-   "id": "PWSDXRYSCOKA7Z",
-   "name": null,
-   "status": "pending",
-   "merchant_id": "6UFY9IJWGYBTAP",
-   "user_id": "BWJ2GP659OXPAU",
-   "paid_at": null,
-   "source_type": "pre_authorization",
-   "source_id": "FAZ6FGSMTCOZUG",
-   "uri": "https://gocardless.com/api/v1/bills/PWSDXRYSCOKA7Z",
-   "can_be_retried": false,
-   "payout_id": null,
-   "is_setup_fee": false,
-   "charge_customer_at": null
+  "amount": "10.00",
+  "gocardless_fees": "0.10",
+  "partner_fees": "0",
+  "currency": "GBP",
+  "created_at": "2011-11-22T11: 59: 12Z",
+  "description": null,
+  "id": "PWSDXRYSCOKA7Z",
+  "name": null,
+  "status": "pending",
+  "merchant_id": "6UFY9IJWGYBTAP",
+  "user_id": "BWJ2GP659OXPAU",
+  "paid_at": null,
+  "source_type": "pre_authorization",
+  "source_id": "FAZ6FGSMTCOZUG",
+  "uri": "https://gocardless.com/api/v1/bills/PWSDXRYSCOKA7Z",
+  "can_be_retried": false,
+  "payout_id": null,
+  "is_setup_fee": false,
+  "charge_customer_at": null
 }
