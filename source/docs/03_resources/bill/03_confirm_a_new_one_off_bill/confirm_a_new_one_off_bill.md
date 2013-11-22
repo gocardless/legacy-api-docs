@@ -30,8 +30,8 @@ A `POST` should be sent back to GoCardless with the following parameters:
 #### Request params
 
 `resource_id`
-: _required_ the id provided in the initial `GET` request
+:     _required_ the id provided in the initial `GET` request
 
 `resource_type`
-: _required_ the resource type provided in the initial `GET` request
+:     _required_ the resource type provided in the initial `GET` request
 
