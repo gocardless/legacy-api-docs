@@ -1,8 +1,8 @@
 <img src="http://gc-misc.s3.amazonaws.com/images/api-docs-illo@2x.png" width="181" height="202">
 
-# Integrate with GoCardless
+# Introduction to the GoCardless API
 
-<p class="intro">Using the GoCardless API, developers can build new<br>integrations with, and products upon, our core service.</p>
+<p class="intro">Using our API, developers can build new integrations with, and products upon, our core services.</p>
 
 1. To start using our API, you'll need to [sign up for a merchant account](https://gocardless.com/merchants/new)
 2. Enable **developer mode** within your dashboard under the 'More...' tab
