@@ -1,0 +1,11 @@
+GET https://gocardless.com/api/v1/payouts/{PAYOUT_ID} HTTP/1.1
+
+HTTP/1.1 200 OK
+{
+  "amount": "12.37",
+  "bank_reference": "JOHNSMITH-Z5DRM",
+  "created_at": "2013-05-10T16:34:34Z",
+  "id": "0BKR1AZNJF",
+  "paid_at": "2013-05-10T17:00:26Z",
+  "transaction_fees": "0.13"
+}

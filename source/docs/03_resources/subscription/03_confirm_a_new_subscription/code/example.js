@@ -6,7 +6,7 @@ app.get('/gocardless_callback', function(req, res) {
     resource_type: req.params.resource_type
   }, function(err, request, body) {
     // Handle error or retry
-    console.log(body);
+    JSON.parse(body);
   });
 
   res.end(200);

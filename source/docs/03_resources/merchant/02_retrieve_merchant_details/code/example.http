@@ -1,0 +1,25 @@
+GET https://gocardless.com/api/v1/merchants/{MERCHANT_ID} HTTP/1.1
+
+HTTP/1.1 200 OK
+{
+  "created_at": "2011-11-18T17:07:09Z",
+  "description": null,
+  "id": "WOQRUJU9OH2HH1",
+  "name": "Tom's Delicious Chicken Shop",
+  "first_name": "Tom",
+  "last_name": "Blomfield",
+  "email": "tom@gocardless.com",
+  "uri": "https://gocardless.com/api/v1/merchants/WOQRUJU9OH2HH1",
+  "balance": "12.00",
+  "pending_balance": "0.00",
+  "next_payout_date": "2011-11-25T17: 07: 09Z",
+  "next_payout_amount": "12.00",
+  "hide_variable_amount": true,
+  "sub_resource_uris": {
+    "users": "https://gocardless.com/api/v1/merchants/WOQRUJU9OH2HH1/users",
+    "bills": "https://gocardless.com/api/v1/merchants/WOQRUJU9OH2HH1/bills",
+    "pre_authorizations": "https://gocardless.com/api/v1/merchants/WOQRUJU9OH2HH1/pre_authorizations",
+    "subscriptions": "https://gocardless.com/api/v1/merchants/WOQRUJU9OH2HH1/subscriptions",
+    "payouts": "https://gocardless.com/api/v1/merchants/WOQRUJU9OH2HH1/payouts"
+  }
+}

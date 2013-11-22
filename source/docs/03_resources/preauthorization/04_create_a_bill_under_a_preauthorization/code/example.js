@@ -4,5 +4,5 @@ gocardless.bill.create({
   name: '150 credits',
   charge_customer_at: '2013-08-27'
 }, function(err, response, body) {
-  console.log(body); // => Object
+  JSON.parse(body); // => Object
 });

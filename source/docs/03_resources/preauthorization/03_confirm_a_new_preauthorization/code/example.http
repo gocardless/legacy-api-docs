@@ -1,0 +1,7 @@
+POST https://gocardless.com/api/v1/confirm HTTP/1.1
+{
+  "resource_id": "1234ABCD",
+  "resource_type": "pre_authorization"
+}
+
+HTTP/1.1 200 OK
