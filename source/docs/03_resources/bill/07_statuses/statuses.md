@@ -4,7 +4,7 @@
 :    Waiting for the money to clear from the customer's account.
 
 `paid`
-:    Bill has been succesfully been debited from the customer's account. It is being held by GoCardless pending a withdrawal to the merchant.
+:    Bill has been successfully been debited from the customer's account. It is being held by GoCardless pending a withdrawal to the merchant.
 
 `failed`
 :    Bill could not be debited from a customer's account. This usually means that there were insufficient funds in the customer's account.
