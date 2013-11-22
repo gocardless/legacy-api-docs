@@ -1,0 +1,1 @@
+gocardless.client.new_subscription_url(150.00, 3, "month", name="Photos")

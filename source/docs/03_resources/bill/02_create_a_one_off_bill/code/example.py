@@ -1,0 +1,1 @@
+gocardless.client.new_bill_url(30.00, name="Example payment")

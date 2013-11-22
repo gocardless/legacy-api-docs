@@ -1,0 +1,1 @@
+gocardless.client.merchant()
