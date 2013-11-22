@@ -5,19 +5,19 @@ When a user has completed the authorization process, the pre-authorization will 
 The user will be redirected (a GET request) back to the URI specified with the following parameters:
 
 `resource_uri`
-: The URI at which the new resource may be accessed via the API
+:    The URI at which the new resource may be accessed via the API
 
 `resource_id`
-: The unique id of the create resource
+:    The unique id of the create resource
 
 `resource_type`
-: The type of create resource. Accepts: bill, subscription or pre_authorizationsignatureA signature of the parametersstateThe state parameter passed in with the initial request if present
+:    The type of create resource. Accepts: bill, subscription or pre_authorization
 
 `signature`
-: A signature of the parameters
+:    A signature of the parameters
 
 `state`
-: The state parameter passed in with the initial request if present
+:    The state parameter passed in with the initial request if present
 
 TODO:
 - Add info about checking the signature

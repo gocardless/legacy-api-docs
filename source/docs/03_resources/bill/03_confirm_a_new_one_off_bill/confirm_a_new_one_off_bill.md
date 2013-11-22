@@ -11,7 +11,7 @@ The user will be redirected (a GET request) back to the URI specified with the f
 :    The unique id of the create resource
 
 `resource_type`
-:    The type of create resource. Accepts: bill, subscription or pre_authorizationsignatureA signature of the parametersstateThe state parameter passed in with the initial request if present
+:    The type of create resource. Accepts: bill, subscription or pre_authorization
 
 `signature`
 :    A signature of the parameters
