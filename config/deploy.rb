@@ -32,23 +32,22 @@ namespace :deploy do
     system 'rm -rf public'
   end
 
-  task :default do
-    transaction do
-      compile
-      move
-      update
-      clean
-    end
-  end
-
   task :purge_cdn_cache do
     system "curl -X POST \
             -H 'Fastly-Key: #{ENV['GC_FASTLY_API_KEY']}' \
             -H 'Accept: application/json' \
             https://api.fastly.com/service/#{fastly_service_id}/purge_all"
   end
-end
 
-after "deploy:default", "deploy:purge_cdn_cache"
+  task :default do
+    transaction do
+      compile
+      move
+      update
+      clean
+      purge_cdn_cache
+    end
+  end
+end
 
 
