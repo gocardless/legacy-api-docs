@@ -9,8 +9,6 @@ set :js_dir, "javascripts"
 set :images_dir, "images"
 
 activate :livereload
-activate :directory_indexes
-
 activate :syntax
 
 activate :doc_generator do |doc_generator|

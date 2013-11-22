@@ -1,5 +1,5 @@
-//= require components/angular/angular.js
-//= require components/lodash/dist/lodash.js
+//= require libs/angular.js
+//= require libs/lodash.js
 
 //= require_directory ./config
 //= require_directory ./nav-toggle
