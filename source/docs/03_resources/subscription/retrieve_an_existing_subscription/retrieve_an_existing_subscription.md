@@ -3,7 +3,7 @@
 #### Arguments
 
 `id`
-:	_required_ id of subscription to retrieve
+:    _required_ id of subscription to retrieve
 
 #### Returns
 
