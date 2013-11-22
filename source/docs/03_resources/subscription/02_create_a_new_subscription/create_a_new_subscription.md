@@ -22,7 +22,7 @@ A user pays a **fixed amount** to a merchant each fixed interval of time, until 
 `start_at`
 :	The date the first bill will be created on. If you don't provide a `start_at`, it will result in a bill being created immediately after the subscription is confirmed. Note that it needs to be in the future and be before the  `expires_at` if provided. Should be [ISO8601 format](http://www.w3.org/TR/NOTE-datetime).
 
-`expres_at`
+`expires_at`
 :	Date the subscription expires. Note that subscriptions will expire at 00:00 of the expiry date (ie the very start of the day). GoCardless won't create any new bills on the expiration day. Should be [ISO8601 format](http://www.w3.org/TR/NOTE-datetime).
 
 `interval_count`
