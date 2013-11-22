@@ -1,6 +1,6 @@
 ## Retrieve an existing bill
 
-#### Arguments
+#### Request params
 
 `id`
 :    _required_ id of bill to retrieve

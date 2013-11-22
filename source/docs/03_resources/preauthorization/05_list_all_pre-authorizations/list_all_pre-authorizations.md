@@ -1,6 +1,6 @@
 ## List all pre-authorizations
 
-#### Arguments
+#### Request params
 
 `id`
 :    _required_ id of merchant

@@ -6,7 +6,7 @@ The pre-authorization must have not yet expired, and the new bill must be within
 
 Pre-authorizations that you've created with the API can only be charged this way, and not via the Dashboard or another partner app.
 
-#### Arguments
+#### Request params
 
 `amount`
 :    _required_ amount to charge customer (e.g. "10.00")

@@ -18,7 +18,7 @@ Check out our [PHP docs](/php) or view [source on Github](https://github.com/goc
 
 ### Ruby
 
-Added to your Gemfile
+Added to your Gemfile:
 
 	gem 'gocardless'
 
@@ -38,7 +38,7 @@ Check out our [Python docs](/python) or view [source on Github](https://github.c
 
 ### Node.js
 
-Install with npm
+Install with npm:
 
     npm install --save gocardless
 
@@ -48,7 +48,7 @@ Check out our [Node.js docs](/node) or view [source on Github](https://github.co
 
 ### .NET
 
-Install with NuGet
+Install with NuGet:
 
 	NuGet.exe install GoCardless
 

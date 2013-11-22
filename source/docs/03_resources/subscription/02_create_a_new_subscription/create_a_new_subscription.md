@@ -2,7 +2,7 @@
 
 A user pays a **fixed amount** to a merchant each fixed interval of time, until an expiry date e.g. £50 every month.
 
-#### Arguments
+#### Request params
 
 `amount`
 :    _required_ amount to collect at each `interval_unit`.

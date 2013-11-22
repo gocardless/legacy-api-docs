@@ -6,7 +6,7 @@ If a bill fails, its `status` will change to `failed`. At this point it can be r
 
 If a bill is retried, GoCardless will attempt to collect it again. You will receive a web hook confirming this. Eventually, the `status` will become `paid` or `failed` and you will receive appropriate web hooks.
 
-#### Arguments
+#### Request params
 
 `id`
 :    _required_ id of bill to retry
