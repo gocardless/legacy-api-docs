@@ -19,7 +19,7 @@ If the user has an existing active preauthorization, you may wish to [create a b
 :    A more verbose description, which will be displayed to the user.
 
 `bill[user]`
-:    Allows prepopulation of user information - see [prepopulating information]()
+:    Allows prepopulation of user information - see [prepopulating information](#prepopulating-information)
 
 `signature`
 :    _required_ Generated from the request prams according to the [signature guide](#signing-requests)
