@@ -1,4 +1,4 @@
-<img src="http://gc-misc.s3.amazonaws.com/images/api-docs-illo@2x.png" width="159" height="177">
+<img src="https://gc-misc.s3.amazonaws.com/images/api-docs-illo@2x.png" width="159" height="177">
 
 # Introduction
 
