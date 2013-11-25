@@ -32,15 +32,15 @@
     <header class="site-frame__header site-header u-cf">
       <div class="u-pull-start site-frame__aside site-header-nav site-nav"
         ng-init="isLangSelectVisiable = false">
-        <button ng-click="isLangSelectVisiable = !isLangSelectVisiable"
-          class="lang-select"
-          ng-class="{ 'is-open': isLangSelectVisiable }"
-          close-when-outside="isLangSelectVisiable">
-          <span class="lang-select__label">
+        <div class="lang-select">
+          <button ng-click="isLangSelectVisiable = !isLangSelectVisiable"
+            class="lang-select__label"
+            ng-class="{ 'is-open': isLangSelectVisiable }"
+            close-when-outside="isLangSelectVisiable">
             <%= current_language[:name] %>
-          </span>
-          <span class="lang-select__arrow"
-            ng-class="{ 'is-open': isLangSelectVisiable }"></span>
+            <span class="lang-select__label__arrow"
+              ng-class="{ 'is-open': isLangSelectVisiable }"></span>
+          </button>
           <div class="lang-select__dropdown"
             ng-class="{ 'is-open': isLangSelectVisiable }">
             <% data.languages.each do |lang| %>
@@ -51,7 +51,7 @@
               </a>
             <% end %>
           </div>
-        </button>
+        </div>
       </div>
 
       <div class="site-main u-overflow-hidden u-cf">

@@ -2,6 +2,9 @@
 
 .lang-select {
   position: relative;
+}
+
+.lang-select__label {
   display: block;
   z-index: 1000;
   width: 100%;
@@ -28,14 +31,11 @@
   &:focus,
   &:active {
   }
-}
-
-.lang-select__label {
   font-weight: 500;
   color: #305C8C;
 }
 
-.lang-select__arrow {
+.lang-select__label__arrow {
   position: absolute;
   right: 10px;
   top: 11px;
@@ -51,7 +51,7 @@
   }
 }
 
-.lang-select__arrow.is-open {
+.lang-select__label__arrow.is-open {
   &:before {
     top: -6px;
     border-color: transparent transparent #2F5B8C transparent;
