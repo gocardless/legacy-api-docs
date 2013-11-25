@@ -15,6 +15,7 @@ $sidebar-width--wide: 243px;
 
 .site-frame__header {
   position: absolute;
+  min-width: $layout-min-width--narrow;
   display: block;
   height: $header-height;
   width: 100%;
