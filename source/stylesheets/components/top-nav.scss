@@ -1,23 +1,28 @@
+@import "variables";
+
 .top-nav {
-  margin-right: 30px;
 }
 
 .top-nav__item {
-  margin-right: 20px;
-  font-family: "Gotham SSm A","Gotham SSm B", Arial, sans-serif;
+  margin-left: 10px;
+  font-family: $font-family-heading;
   color: #2F5B8C;
   font-size: 12px;
-  line-height: 43px;
+  line-height: 46px;
+  height: 46px;
 
   &:hover {
     text-decoration: none;
     color: #2F5B8C;
   }
+
+  &:first-child {
+    margin-left: 0;
+  }
 }
 
-.top-nav--divider {
-  border-right: 1px solid #E1E1E1;
-  height: 46px;
-  padding-right: 10px;
-  background-color: #F3F3F3;
+@media (min-width: $layout-min-width--normal) {
+  .top-nav__item {
+    margin-left: 20px;
+  }
 }

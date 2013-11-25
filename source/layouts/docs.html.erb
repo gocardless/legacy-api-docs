@@ -3,7 +3,7 @@
     <article class="content content-container"
       style="<% if page.data.section %>display:none<% end %>">
       <div class="content-container__description">
-        <div class="content__description ">
+        <div class="content__description site-main">
           <% if page.data.section %>
             <h0><%= page.data.section %></h0>
           <% end %>
@@ -12,7 +12,7 @@
       </div>
       <% codes = codes_for_page(page) %>
       <div class="content-container__code">
-        <div class="content__code">
+        <div class="content__code site-main">
           <% codes.each do |code| %>
             <% if code.language %>
               <% code(code.language[:highlight]) do %><%= code.body %><% end %>
