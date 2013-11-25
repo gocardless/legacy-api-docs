@@ -84,19 +84,21 @@ angular.module('gcScrollSpyDirective', [
             processScroll(scrollSpy.getAll());
           }, 17);
 
-          // trailing to call reload after resizing has finished
-          var lazyResize = _.throttle(function() {
+          // trailing to call reload after change has finished
+          var lazyDisplayChange = _.throttle(function() {
             _.invoke(scrollSpy.getAll(), 'reload');
           }, 200, {
             trailing: true
           });
 
           window.addEventListener('scroll', lazyScroll);
-          window.addEventListener('resize', lazyResize);
+          window.addEventListener('resize', lazyDisplayChange);
+          window.addEventListener('orientationchange', lazyDisplayChange);
 
           scope.$on('$destroy', function() {
             window.removeEventListner('scroll', lazyScroll);
-            window.removeEventListner('resize', lazyResize);
+            window.removeEventListner('resize', lazyDisplayChange);
+            window.removeEventListner('orientationchange', lazyDisplayChange);
           });
         }
 

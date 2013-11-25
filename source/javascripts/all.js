@@ -1,4 +1,5 @@
 //= require libs/angular.js
+//= require libs/angular-touch.js
 //= require libs/lodash.js
 
 //= require_directory ./config
