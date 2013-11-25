@@ -46,24 +46,25 @@ urlpatterns = patterns('',
   url(r'^gocardless/$', TemplateView.as_view(
                         template_name='gc_app/index.html'), name='gc_home'),
   )
-<!-- In gc_app/templates/gc_app/index.html
-     (you'll need to create this file) -->
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Signup via GoCardless</title>
-</head>
-<body>
-  <h2>Signup up via GoCardless!</h2>
-  <form action ="{% url gc_submit %}" method='POST'>
-    {% csrf_token %}
-    <h3>Enter your email to subscribe</h3>
-    <input type="text" name="email">
-    <input type="submit">
-  </form>
-</body>
-</html>
 ```
+
+    <!-- In gc_app/templates/gc_app/index.html
+         (you'll need to create this file) -->
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Signup via GoCardless</title>
+    </head>
+    <body>
+      <h2>Signup up via GoCardless!</h2>
+      <form action ="{% url gc_submit %}" method='POST'>
+        {% csrf_token %}
+        <h3>Enter your email to subscribe</h3>
+        <input type="text" name="email">
+        <input type="submit">
+      </form>
+    </body>
+    </html>
 
 Next, we need to handle the post request sent from the form submission. This is where we send the user to the GoCardless checkout pages, and we'll use the Python library to do the heavy lifting of creating the payment URL. Since the customer has already given us their email address we'll also pre-populate the email field of the checkout form.
 
@@ -105,7 +106,7 @@ Now when the customer submits the form they'll be redirected to the GoCardless p
 
 You'll want your customer to be returned to your website once they've completed the payment. We'll walk through it below. Note, however, that this step isn't necessary when creating payments: by default we'll confirm the payment and show your customers a payment complete page.
 
-Set the 'Redirect URI' in your developer dashboard to http://[your domain]/gocardless/confirm/ .
+Set the 'Redirect URI' in your developer dashboard to <code>http://[your domain]/gocardless/confirm/</code>.
 
 Next, we need to add our confirm URL to urls.py, and add a view for it:
 
