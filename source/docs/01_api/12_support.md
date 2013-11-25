@@ -8,4 +8,4 @@ Need help with your integration? We offer two forms of support for developers:
 ### Email
 Alternatively, please email us at [help@gocardless.com](mailto:help@gocardless.com).
 
-**Please note: we do not offer telephone support for developers.**
+We can provide the **most effective** support via these two channels. Please do not call us with questions relating to your code.
