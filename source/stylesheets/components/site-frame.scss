@@ -1,38 +1,88 @@
+@import "variables";
+
 $header-z-index: 100;
 $nav-z-index: 99;
 $content-z-index: 98;
 
 $header-height: 46px;
-$sidebar-width: 243px;
+$sidebar-width--narrow: 180px;
+$sidebar-width--normal: 200px;
+$sidebar-width--wide: 243px;
 
 .site-frame {
   height: 100%;
 }
 
 .site-frame__header {
-  position: fixed;
+  position: absolute;
+  min-width: $layout-min-width--narrow;
   display: block;
   height: $header-height;
   width: 100%;
   z-index: $header-z-index;
 }
 
-.site-frame__nav {
-  position: fixed;
+@media (min-width: $layout-min-width--narrow) {
+  .site-frame__header {
+    position: fixed;
+  }
+}
+
+.site-frame__aside {
   display: block;
+  width: $sidebar-width--narrow;
+}
+
+.site-frame__nav {
+  position: absolute;
   top: $header-height;
   bottom: 0;
   z-index: $nav-z-index;
-  width: $sidebar-width;
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+@media (min-width: $layout-min-width--narrow) {
+  .site-frame__nav {
+    position: fixed;
+  }
+}
+
+@media (min-width: $layout-min-width--normal) {
+  .site-frame__aside {
+    width: $sidebar-width--normal;
+  }
+}
+
+@media (min-width: $layout-min-width--wide) {
+  .site-frame__aside {
+    width: $sidebar-width--wide;
+  }
 }
 
 .site-frame__main {
   position: relative;
   display: block;
   top: $header-height;
-  margin-left: $sidebar-width;
+  margin-left: $sidebar-width--narrow;
   z-index: $content-z-index;
   height: 100%;
+}
+
+@media (min-width: $layout-min-width--narrow) {
+  .site-frame__nav {
+    position: fixed;
+  }
+}
+
+@media (min-width: $layout-min-width--normal) {
+  .site-frame__main {
+    margin-left: $sidebar-width--normal;
+  }
+}
+
+@media (min-width: $layout-min-width--wide) {
+  .site-frame__main {
+    margin-left: $sidebar-width--wide;
+  }
 }

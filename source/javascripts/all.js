@@ -5,6 +5,8 @@
 //= require_directory ./nav-toggle
 //= require_directory ./scroll-spy
 //= require_directory ./toc-nav
+//= require_directory ./close-when-outside
+//= require_directory ./on-click-anchor
 //= require_directory ./utils
 
 //= require docs

@@ -1,33 +1,37 @@
+@import "variables";
+
 .lang-select {
   position: relative;
-  z-index: 1000;
-  background: #FFF;
-  border: 1px solid #E1E1E1;
+}
+
+.lang-select__label {
   display: block;
-  padding: 0 10px;
+  z-index: 1000;
+  width: 100%;
   line-height: 30px;
   height: 30px;
-  margin: 5px;
-  margin-left: 10px;
+  border: 1px solid #E1E1E1;
+  padding: 0 10px;
+  background: #FFF;
   border-radius: 3px;
-  width: 217px;
+  font-family: $font-family-heading;
   font-size: 13px;
-  top: 3px;
+  font-weight: 500;
+  text-align: left;
+  color: #305C8C;
   cursor: pointer;
-  font-family: "Gotham SSm A","Gotham SSm B", Arial, sans-serif;
 
   -webkit-user-select: none;  /* Chrome all / Safari all */
   -moz-user-select: none;     /* Firefox all */
   -ms-user-select: none;      /* IE 10+ */
   user-select: none;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
-.lang-select__label {
-  font-weight: 500;
-  color: #305C8C;
-}
-
-.lang-select__checkbox__arrow {
+.lang-select__label__arrow {
   position: absolute;
   right: 10px;
   top: 11px;
@@ -43,22 +47,22 @@
   }
 }
 
-.lang-select__checkbox:checked ~ .lang-select__checkbox__arrow {
+.lang-select__label__arrow.is-open {
   &:before {
     top: -6px;
     border-color: transparent transparent #2F5B8C transparent;
   }
 }
 
-.lang-select__checkbox__dropdown {
+.lang-select__dropdown {
   display: none;
 }
 
-.lang-select__checkbox:checked ~ .lang-select__checkbox__dropdown {
+.lang-select__dropdown.is-open {
   display: block;
 }
 
-.lang-select__checkbox__dropdown {
+.lang-select__dropdown {
   position: absolute;
   width: 100%;
   left: 0;

@@ -1,7 +1,9 @@
+@import "variables";
+
 .toc-nav {
   padding: 0;
   margin: 0 0 20px 0;
-  font-family: "Gotham SSm A","Gotham SSm B", Arial, sans-serif;
+  font-family: $font-family-heading;
 }
 
 .toc-nav--nested {

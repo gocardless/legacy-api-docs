@@ -30,34 +30,42 @@ angular.module('gcScrollSpyDirective', [
         return target.activate();
       }
 
-      function processScroll(targets) {
-        if (!targets.length) { return; }
+      function findActive(targets, scrollTop) {
+        _.some(targets, function(target, i) {
+          var next = targets[i + 1];
 
+          // We are inside the current target or at the end (!next)
+          if(scrollTop >= target.data().top &&
+            (!next || scrollTop < next.data().top)) {
+            return activate(targets, target);
+          }
+        });
+      }
+
+      function processScroll(targets) {
         var scroll = getScroll();
-        var scrollTop = scroll.top;
-        var maxScroll = scroll.max;
 
         // At the bottom (can have negative scroll)
-        if (scrollTop >= maxScroll) {
+        if (scroll.top >= scroll.max) {
           return activate(targets, _.last(targets));
         }
-
         // At the top (can have negative scroll)
-        if (win.pageYOffset <= 0) {
+        else if (scroll.top <= 0) {
           return activate(targets, _.first(targets));
         }
 
-        _.some(targets, function(target, i) {
-          var targetTop = target.data().top;
-          var next = targets[i + 1];
-          var nextTop = next && next.data().top;
+        findActive(targets, scroll.top);
+      }
 
-          // We are inside the current target or at the end (!next)
-          var isInsideTarget = scrollTop >= targetTop &&
-            (!next || scrollTop < nextTop);
-
-          if (isInsideTarget) { return activate(targets, target); }
-        });
+      function scrollLocationHash() {
+        var hasScrolledIntoView;
+        try {
+          // this will fail if location.hash is not a valid selector
+          var target = document.querySelector(location.hash);
+          target.scrollIntoView();
+          hasScrolledIntoView = true;
+        } catch (e) { }
+        return hasScrolledIntoView;
       }
 
       return {
@@ -65,15 +73,18 @@ angular.module('gcScrollSpyDirective', [
         controller: 'ScrollSpyController',
         require: 'scrollSpy',
         link: function(scope, elem, attrs, scrollSpy) {
-
-          setTimeout(function() {
-            processScroll(scrollSpy.getAll());
-          }, 0);
+          angular.element(document).ready(function() {
+            var hasScrolledIntoView = scrollLocationHash();
+            if (!hasScrolledIntoView) {
+              processScroll(scrollSpy.getAll());
+            }
+          });
 
           var lazyScroll = _.debounce(function() {
             processScroll(scrollSpy.getAll());
           }, 17);
 
+          // trailing to call reload after resizing has finished
           var lazyResize = _.throttle(function() {
             _.invoke(scrollSpy.getAll(), 'reload');
           }, 200, {

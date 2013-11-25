@@ -13,45 +13,50 @@
 
   <body class="site-frame site <%= page_classes %>" ng-app="gc.docs" scroll-spy>
     <!--[if lt IE 9]>
-    <div class="u-padding-Am deprecation-warning">
-      <h1>You are using an outdated browser.</h1>
-      Please <a href="http://whatbrowser.org/">upgrade your browser</a> or
-      <a href="http://www.google.com/chromeframe/?redirect=true">
-      activate Google Chrome Frame
-      </a> to improve your experience.
-    </div>
+      <div class="u-padding-Am deprecation-warning">
+        <h1 class="u-margin-Tn">You are using an outdated browser.</h1>
+        Please <a href="http://whatbrowser.org/">upgrade your browser</a> or
+        <a href="http://www.google.com/chromeframe/?redirect=true">
+        activate Google Chrome Frame
+        </a> to improve your experience.
+      </div>
     <![endif]-->
     <noscript>
       <div class="u-padding-Am deprecation-warning">
-        <h1>Please enable Javascript</h1>
+        <h1 class="u-margin-Tn">Please enable Javascript</h1>
         <p>GoCardless requires your browser to have Javascript enabled.
         <a href="http://enable-javascript.com" target="_blank">Learn more</a></p>
       </div>
     </noscript>
 
-    <header class="site-frame__header site-header">
-      <div class="u-cf">
-        <div class="u-pull-start top-nav--divider">
-          <label class="lang-select">
-            <span class="lang-select__label">
-              <%= current_language[:name] %>
-            </span>
-            <input type="checkbox" class="u-is-hidden-visually lang-select__checkbox">
-            <span class="lang-select__checkbox__arrow"></span>
-            <div class="lang-select__checkbox__dropdown">
-              <% data.languages.each do |lang| %>
-                <a href="/<%= lang[:slug] %>"
-                  class="lang-select__item">
-                    <%= lang[:name] %>
-                </a>
-              <% end %>
-            </div>
-          </label>
+    <header class="site-frame__header site-header u-cf">
+      <div class="u-pull-start site-frame__aside site-header-nav site-nav"
+        ng-init="isLangSelectVisiable = false">
+        <div class="lang-select">
+          <button ng-click="isLangSelectVisiable = !isLangSelectVisiable"
+            class="lang-select__label"
+            ng-class="{ 'is-open': isLangSelectVisiable }"
+            close-when-outside="isLangSelectVisiable">
+            <%= current_language[:name] %>
+            <span class="lang-select__label__arrow"
+              ng-class="{ 'is-open': isLangSelectVisiable }"></span>
+          </button>
+          <div class="lang-select__dropdown"
+            ng-class="{ 'is-open': isLangSelectVisiable }">
+            <% data.languages.each do |lang| %>
+              <a href="/<%= lang[:slug] %>"
+                class="lang-select__item"
+                on-click-anchor>
+                  <%= lang[:name] %>
+              </a>
+            <% end %>
+          </div>
         </div>
+      </div>
 
-
-        <div class="u-pull-start site-header-promo">
-          <a href="/">
+      <div class="site-main u-overflow-hidden u-cf">
+        <div class="u-pull-start">
+          <a href="/" class="site-header-logo">
             <i class="icon-gc-logo-header"></i>
           </a>
         </div>
@@ -71,7 +76,7 @@
         </div>
       </div>
     </header>
-    <nav class="site-frame__nav site-nav">
+    <nav class="site-frame__nav site-frame__aside site-nav u-padding-Ts">
       <toc-nav></toc-nav>
     </nav>
     <main class="site-frame__main">

@@ -3,5 +3,7 @@ angular.module('gc.docs', [
   'gcLocationConfig',
   'gcScrollSpyDirective',
   'gcTocNavDirective',
-  'gcNavToggleDirective'
+  'gcNavToggleDirective',
+  'gcCloseWhenOutside',
+  'gcOnClickAnchor'
 ]);
