@@ -1,5 +1,3 @@
-# Webhooks
-
 ## Bill webhook
 
 Example bill webhook object:
