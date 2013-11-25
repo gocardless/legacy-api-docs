@@ -84,6 +84,7 @@ angular.module('gcScrollSpyDirective', [
             processScroll(scrollSpy.getAll());
           }, 17);
 
+          // trailing to call reload after resizing has finished
           var lazyResize = _.throttle(function() {
             _.invoke(scrollSpy.getAll(), 'reload');
           }, 200, {
