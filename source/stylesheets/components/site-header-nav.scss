@@ -1,3 +1,6 @@
+@import "variables";
+
 .site-header-nav {
+  height: $header-nav-height;
   padding: 8px;
 }

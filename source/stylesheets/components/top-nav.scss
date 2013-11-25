@@ -8,8 +8,8 @@
   font-family: $font-family-heading;
   color: #2F5B8C;
   font-size: 12px;
-  line-height: 46px;
-  height: 46px;
+  line-height: $header-nav-height;
+  height: $header-nav-height;
 
   &:hover {
     text-decoration: none;

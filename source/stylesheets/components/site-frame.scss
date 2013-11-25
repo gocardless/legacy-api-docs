@@ -4,7 +4,6 @@ $header-z-index: 100;
 $nav-z-index: 99;
 $content-z-index: 98;
 
-$header-height: 46px;
 $sidebar-width--narrow: 180px;
 $sidebar-width--normal: 200px;
 $sidebar-width--wide: 243px;
@@ -17,7 +16,7 @@ $sidebar-width--wide: 243px;
   position: fixed;
   min-width: $layout-min-width--narrow;
   display: block;
-  height: $header-height;
+  height: $header-nav-height;
   width: 100%;
   z-index: $header-z-index;
 }
@@ -29,7 +28,7 @@ $sidebar-width--wide: 243px;
 
 .site-frame__nav {
   position: fixed;
-  top: $header-height;
+  top: $header-nav-height;
   bottom: 0;
   z-index: $nav-z-index;
   overflow-x: hidden;
@@ -51,7 +50,7 @@ $sidebar-width--wide: 243px;
 .site-frame__main {
   position: relative;
   display: block;
-  top: $header-height;
+  top: $header-nav-height;
   margin-left: $sidebar-width--narrow;
   z-index: $content-z-index;
   height: 100%;
