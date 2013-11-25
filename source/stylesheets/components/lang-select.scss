@@ -14,10 +14,12 @@
   padding: 0 10px;
   background: #FFF;
   border-radius: 3px;
-  font-size: 13px;
-  cursor: pointer;
   font-family: $font-family-heading;
+  font-size: 13px;
+  font-weight: 500;
   text-align: left;
+  color: #305C8C;
+  cursor: pointer;
 
   -webkit-user-select: none;  /* Chrome all / Safari all */
   -moz-user-select: none;     /* Firefox all */
@@ -27,12 +29,6 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-
-  &:focus,
-  &:active {
-  }
-  font-weight: 500;
-  color: #305C8C;
 }
 
 .lang-select__label__arrow {
