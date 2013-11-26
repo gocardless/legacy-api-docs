@@ -16,6 +16,7 @@ class DocsRecarpetRenderHTML < Middleman::Renderers::MiddlemanRedcarpetHTML
     definition_lists(text)
   end
 
+  # This is really pretty nasty..
   def definition_lists(text)
     dl_test = /(\A|\n\n+)(?<dt>\S.+)(\n\:(\s{4,}|\t))(?<dd>\S.+)/
 
