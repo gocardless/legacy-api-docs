@@ -15,14 +15,6 @@ module Middleman
         @doc_controller = controller
       end
 
-      def doc_data
-        if @doc_controller
-          @doc_controller.data
-        else
-          @app.doc
-        end
-      end
-
       def doc_options
         if @doc_controller
           @doc_controller.options

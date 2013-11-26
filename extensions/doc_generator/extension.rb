@@ -35,10 +35,6 @@ module Middleman
         false
       )
 
-      register_language_pages
-    end
-
-    def register_language_pages
       @app.sitemap.register_resource_list_manipulator(
         :"doc_#{uid}_language",
         ::Middleman::DocGenerator::DocLanguageIndex.new(@app, self),

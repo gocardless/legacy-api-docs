@@ -24,17 +24,6 @@ module Middleman
         @_pages.sort_by(&:order)
       end
 
-      # The DocPage for the given path, or nil if one doesn't exist.
-      # @return [Middleman::Sitemap::Resource]
-      def page(path)
-        page = @app.sitemap.find_resource_by_path(path.to_s)
-        if page && page.is_a?(DocPage)
-          page
-        else
-          nil
-        end
-      end
-
       # @return [void]
       def manipulate_resource_list(resources)
         @_pages = []
@@ -48,7 +37,8 @@ module Middleman
 
           slug = File.basename(resource.path, File.extname(resource.path))
           ext = File.extname(resource.path).sub(/^\./, "")
-          categories = File.dirname(resource.path.sub(@options.docs_dir, "")).split("/")
+          categories = File.dirname(resource.path.sub(@options.docs_dir, ""))
+            .split(File::SEPARATOR)
 
           # Set language for page if file extension matches a language 'extname'
           language = @options.languages.find do |lang|
