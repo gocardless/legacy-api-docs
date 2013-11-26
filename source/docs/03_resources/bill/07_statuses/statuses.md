@@ -13,4 +13,4 @@
 :    Bill was cancelled by the merchant or customer before it was submitted to the banks.
 
 `withdrawn`
-:    The bill has been paid out to the merchant. Takes up to one business day to reach the merchant's bank account. You can find more details by using the bill's `payout_id` with the [payouts resource](http://).
+:    The bill has been paid out to the merchant. Takes up to one business day to reach the merchant's bank account. You can find more details by using the bill's `payout_id` with the [payouts resource](#payout).
