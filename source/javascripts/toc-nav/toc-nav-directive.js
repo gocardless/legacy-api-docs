@@ -50,26 +50,26 @@ angular.module('gcTocNavDirective', [
         restrict: 'E',
         replace: true,
         templateUrl: 'toc-nav/toc-nav-template.html',
-        link: function(scope, elem, attrs) {
+        link: function(scope) {
           var headings = _.toArray(query(document, 'h0, h1, h2'));
 
           var pages = new Nav();
           var prevLevel = 0;
           var currentPage = pages;
 
+          function buildNav(parent, id, title) {
+            var page = new Nav(parent, {
+              id: id,
+              title: title,
+            });
+            parent.children.push(page);
+            return page;
+          }
+
           headings.forEach(function(heading, index) {
             var title = heading.textContent.trim();
             var id = makeId(title);
             var currentLevel = parseInt(heading.tagName.substr(1), 10);
-
-            function build(parent) {
-              var page = new Nav(parent, {
-                id: id,
-                title: title,
-              });
-              parent.children.push(page);
-              return page;
-            }
 
             // Create anchor element that can be offset above the header
             // - fixing the header being hidden behind the top nav
@@ -77,9 +77,9 @@ angular.module('gcTocNavDirective', [
 
             var page;
             if (currentLevel === prevLevel) {
-              page = build(currentPage.parent);
+              page = buildNav(currentPage.parent, id, title);
             } else if (currentLevel > prevLevel) {
-              page = build(currentPage);
+              page = buildNav(currentPage, id, title);
             } else if (currentLevel < prevLevel) {
               var parent = currentPage.parent;
               // Handle when the currentLevel is more than one step above
@@ -87,7 +87,7 @@ angular.module('gcTocNavDirective', [
               _.times(prevLevel - currentLevel, function() {
                 parent = parent.parent;
               });
-              page = build(parent);
+              page = buildNav(parent, id, title);
             }
 
             currentPage = page;
