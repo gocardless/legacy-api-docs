@@ -2,7 +2,7 @@
 
 <p class="intro">Our Partner API lets you to create and manage multiple merchants. There's more information about <a href="https://help.gocardless.com/what-is-the-partner-programme/">how it works in our help section</a></p>
 
-## Getting started
+## Partner account setup
 
 If you'd like to create a partner app, [please email us](mailto:help@gocardless.com).
 

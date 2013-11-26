@@ -2,11 +2,11 @@
 
 <p class="intro">Our Partner API lets you to create and manage multiple merchants. There's more information about <a href="https://help.gocardless.com/what-is-the-partner-programme/">how it works in our help section</a></p>
 
-## Getting started
+## Partner account setup
 
-Our Partner API lets you to create and manage multiple merchants. There's more information about how it works here. If you'd like to create a partner app, just email us and we'll get you set up in the Sandbox.
+If you'd like to create a partner app, [please email us](mailto:help@gocardless.com).
 
-To start using GoCardless as a partner, you'll need a partner account. If you'd like to create a partner app, [please email us](mailto:help@gocardless.com).
+Once you have used the Partner API to create merchant(s), see the [resources section](https://developer.gocardless.com/#bill) for more information about how to create new bills and subscriptions for these merchants.
 
 First, download and install the Ruby client library:
 
