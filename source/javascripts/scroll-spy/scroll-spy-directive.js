@@ -33,6 +33,9 @@ angular.module('gcScrollSpyDirective', [
       function findActive(targets, scrollTop) {
         _.some(targets, function(target, i) {
           var next = targets[i + 1];
+          // adjust for Firefox which does not align anchor targets
+          // to the top of the viewport
+          scrollTop = scrollTop + 1;
 
           // We are inside the current target or at the end (!next)
           if(scrollTop >= target.data().top &&
