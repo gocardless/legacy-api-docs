@@ -90,7 +90,7 @@ Next, add the confirm URL handler:
 // In app.js
 app.get('/gocardless/confirm', function(req, res) {
   gocardless.confirmResource(req.query, function(err) {
-    if (err) res.end(402);
+    if (err) return res.send(402);
     res.render('thankyou-page');
   });
 });
