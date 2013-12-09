@@ -89,16 +89,9 @@ Next, add the confirm URL handler:
 ```js
 // In app.js
 app.get('/gocardless/confirm', function(req, res) {
-  // First verity that the request was not tampered with
-  if (!gocardless.verifySignature(req.params, gcConfig.appSecret)) {
-    return res.end(403);
-  }
-
-  gocardless.confirmResource({
-    resource_id: req.query.resource_id,
-    resource_type: req.query.resource_type
-  }, function(err, request, body) {
-    res.render('Subscription successful');
+  gocardless.confirmResource(req.query, function(err) {
+    if (err) res.end(402);
+    res.render('thankyou-page');
   });
 });
 ```
