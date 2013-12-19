@@ -6,8 +6,8 @@ HTTP/1.1 200 OK
     "amount": "12.37",
     "bank_reference": "JOHNSMITH-Z5DRM",
     "app_ids": [
-            "ABC"
-        ],
+      "ABC"
+    ],
     "created_at": "2013-05-10T16:34:34Z",
     "id": "0BKR1AZNJF",
     "paid_at": "2013-05-10T17:00:26Z",
@@ -17,8 +17,8 @@ HTTP/1.1 200 OK
     "amount": "148.50",
     "bank_reference": "JOHNSMITH-A6GCK",
     "app_ids": [
-            "BCD"
-        ],
+      "BCD"
+    ],
     "created_at": "2013-05-27T18:28:12Z",
     "id": "0BER2BDFRT",
     "paid_at": "2013-05-27T19:00:23Z",
