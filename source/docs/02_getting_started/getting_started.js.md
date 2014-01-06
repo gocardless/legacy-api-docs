@@ -88,10 +88,11 @@ Next, add the confirm URL handler:
 
 ```js
 // In app.js
-app.get('/gocardless/confirm', function(req, res) {
-  gocardless.confirmResource(req.query, function(err) {
-    if (err) return res.send(402);
-    res.render('thankyou-page');
+app.get('/gocardless_callback', function(req, res) {
+  // Check the signature and POST back to GoCardless
+  gocardless.confirmResource(req.query, function(err, request, body) {
+    if (err) return res.end(401, err);
+    res.render('success');
   });
 });
 ```
