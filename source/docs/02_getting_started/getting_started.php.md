@@ -88,7 +88,7 @@ include_once 'lib/GoCardless.php';
 $account_details = array(
   'app_id'        => 'DUMMY_APP',
   'app_secret'    => 'INSERT_APP_SECRET_HERE',
-  'merchant_id'   => 'WOQRUJU9OH2HH1',
+  'merchant_id'   => 'INSERT_MERCHANT_ID',
   'access_token'  => 'INSERT_MERCHANT_ACCESS_TOKEN'
 );
 

@@ -6,7 +6,7 @@ There are two parameters that control pagination: `page`, which specifies the pa
 
 **e.g. show page 2 of all a merchant's bills:**
 
-	https://gocardless.com/api/v1/merchants/WOQRUJU9OH2HH1/bills?page=2&per_page=20
+	https://gocardless.com/api/v1/merchants/INSERT_MERCHANT_ID/bills?page=2&per_page=20
 
 If pagination is enabled, but `page` is not provided, it will default to 1 (the first page). `per_page` defaults to 100.
 

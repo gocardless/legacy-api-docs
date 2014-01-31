@@ -6,7 +6,7 @@ When redirecting users to payment pages, you have the option to provide a `user`
       "subscription": {
         "amount":"50.00",
         "name": "Gold membership",
-        "merchant_id": "WOQRUJU9OH2HH1",
+        "merchant_id": "MERCHANT_ID",
         "interval_length": 1,
         "interval_unit": "month",
         "user": {

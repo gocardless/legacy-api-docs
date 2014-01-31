@@ -4,7 +4,7 @@ Many of the index resources available via the API can be filtered to cut down th
 
 **e.g. show paid bills from user with `id=29`:**
 
-	https://gocardless.com/api/v1/merchants/WOQRUJU9OH2HH1/bills?user_id=29&paid=true
+	https://gocardless.com/api/v1/merchants/INSERT_MERCHANT_ID/bills?user_id=29&paid=true
 
 
 <table>
