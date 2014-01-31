@@ -40,7 +40,7 @@ To use the GoCardless client library, you'll need to provide it with your partne
 GoCardless.AccountDetails = new AccountDetails {
   AppId =      "DUMMY_APP",
   AppSecret =  "INSERT_APP_SECRET_HERE",
-  Token =      "INSERT_MERCHANT_ACCESS_TOKEN manage_merchant:WOQRUJU9OH2HH1"
+  Token =      "INSERT_MERCHANT_ACCESS_TOKEN manage_merchant:INSERT_MERCHANT_ID"
 };
 ```
 

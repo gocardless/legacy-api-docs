@@ -35,7 +35,7 @@ include_once 'lib/GoCardless.php';
 $account_details = array(
   'app_id'        => 'DUMMY_APP',
   'app_secret'    => 'INSERT_APP_SECRET_HERE',
-  'merchant_id'   => 'WOQRUJU9OH2HH1',
+  'merchant_id'   => 'INSERT_MERCHANT_ID',
   'access_token'  => 'INSERT_MERCHANT_ACCESS_TOKEN'
 );
 
@@ -76,8 +76,26 @@ Set the 'Redirect URI' in your developer dashboard to http://[your domain]/thank
 Now in `thankyou.php`, add the following:
 
 ```php
-// Required confirm variables
+//include the library
 <?
+include_once 'lib/GoCardless.php';
+
+// Uncomment this and change your keys over to go live - but make
+// sure you test in sandbox first!
+//GoCardless::$environment = 'production';
+
+// Set config vars
+$account_details = array(
+  'app_id'        => 'DUMMY_APP',
+  'app_secret'    => 'INSERT_APP_SECRET_HERE',
+  'merchant_id'   => 'WOQRUJU9OH2HH1',
+  'access_token'  => 'INSERT_MERCHANT_ACCESS_TOKEN'
+);
+
+// Initialize GoCardless
+GoCardless::set_account_details($account_details);
+
+// Required confirm variables
 $confirm_params = array(
   'resource_id'    => $_GET['resource_id'],
   'resource_type'  => $_GET['resource_type'],

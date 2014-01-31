@@ -28,7 +28,7 @@ import gocardless
 GoCardless.set_details(app_id="DUMMY_APP",
         app_secret="INSERT_APP_SECRET_HERE",
         access_token="INSERT_MERCHANT_ACCESS_TOKEN",
-        merchant_id="WOQRUJU9OH2HH1")
+        merchant_id="INSERT_MERCHANT_ID")
 ```
 
 ## Creating a Payment Request

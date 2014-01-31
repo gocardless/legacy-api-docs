@@ -19,6 +19,9 @@ A user pays a **fixed amount** to a merchant each fixed interval of time, until 
 `description`
 :    A more detailed description, which will be displayed to the user.
 
+`user`
+:    Allows prepopulation of user information - see [prepopulating information](#prepopulating-information)
+
 `start_at`
 :    The date the first bill will be created on. If you don't provide a `start_at`, it will result in a bill being created immediately after the subscription is confirmed. Note that it needs to be in the future and be before the  `expires_at` if provided. Should be [ISO8601 format](http://www.w3.org/TR/NOTE-datetime).
 
@@ -30,6 +33,9 @@ A user pays a **fixed amount** to a merchant each fixed interval of time, until 
 
 `setup_fee`
 :    A one-off amount to add to the beginning of the subscription. For example, adding a £25.00 setup fee to a £5 per month subscription would mean that the customer is charged £30 at sign up, and then £5 per month.
+
+`state`
+:    This allows you to pass a value of your choice through the payment process, receiving it in the redirect page. If present, it will be passed back as a parameter when the user is returned to the merchant's site at the end of an authorization process. If a merchant's site passes in `state="id_9SX5G36"`, it will receive back `state="id_9SX5G36"` when the user returns to the merchant's site. This state is not persisted in the GoCardless database.
 
 #### Returns
 
