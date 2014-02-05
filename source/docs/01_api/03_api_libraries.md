@@ -82,4 +82,7 @@ Please submit a pull request to this page to add any missing libraries that shou
 * [GoCardless Wordpress plugin](https://github.com/DHS/wp-gocardless) by [David Haywood-Smith](https://twitter.com/DHS)
 * [GoCardless for Wordpress](http://codecanyon.net/item/gocardless-for-wordpress-plugin/3207246?ref=outerbridge) by [Outerbridge](http://outerbridge.co.uk/2013/03/gocardless-wordpress-plugin/)
 
+#### Clojure
+* [gocardless-clj](https://github.com/karls/gocardless-clj) by [Karl Sutt](https://twitter.com/karlsutt)
+
 
