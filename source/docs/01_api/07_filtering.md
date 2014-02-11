@@ -67,7 +67,7 @@ Many of the index resources available via the API can be filtered to cut down th
       <td><code>status</code></td>
       <td>string</td>
       <td>Bill</td>
-      <td>Return only bills with the given status. <a href="#bill-docs">Available statuses</a>.</td>
+      <td>Return only bills with the given status. <a href="#bill-statuses">Available statuses</a>.</td>
     </tr>
     <tr>
       <td><code>paid</code></td>
