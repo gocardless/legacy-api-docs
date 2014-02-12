@@ -27,7 +27,7 @@ Note that a pre-authorization allows the Merchant to bill the User in future wit
 :    A more detailed description, which will be displayed to the user.
 
 `user`
-:    Allows prepopulation of user information - see [prepopulating information](#prepopulating-information)
+:    Allows pre-population of user information - see [pre-populating information](#pre-populating-information)
 
 `interval_count`
 :	Calculates the `expires_at` date based on the number of payment intervals that you would like the resource to have. Must be a positive integer greater than 0. Also if you specify an `interval_count` and a `expires_at` date, the later takes precedence. For example if the pre-authorization is created on the 15th of February and has a 1 day interval and an  `interval_count` of 2 then the `expires_at` will be set for the 17th of February. The two intervals will be from the 15th to the 16th and from the 16th to the 17th.
