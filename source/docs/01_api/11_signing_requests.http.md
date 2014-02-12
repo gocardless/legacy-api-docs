@@ -12,8 +12,6 @@ This is used widely throughout the "Connect" web interface and webhooks. The sig
 
 The process for generating the signature broadly follows the process described in the OAuth 1.0 spec (RFC 5849, §3.4).
 
-There is a handy "Signature tool" in the Developer Panel that takes a JSON object, generates a percent-encoded string and signs it with your app secret. Check it out if you're having problems.
-
 ## Constructing the parameter array
 
 The initial set of parameters is a dictionary mapping parameter names to values. The values may be primitive types (strings, integers) or complex types (arrays, dictionaries). The first step is to convert the dictionary to an array of key-value pairs. If there are any complex values, the dictionary will need to be flattened so that each leaf-level value is promoted to a top-level key-value pair in the resulting array. The following scheme is used for constructing the keys of promoted values:

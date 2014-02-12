@@ -34,11 +34,3 @@ Both of the above are important: checking webhooks ensures they came from GoCard
 Now we need to tell GoCardless to send webhooks to the path we just created. This is done in the 'Webhook URI' field of your developer dashboard. If your site is already hosted somewhere you can just enter `http://[yourwebsite.com]/gocardless/webhook` as your Webhook URI.
 
 If on the other hand you're running your site locally, GoCardless will have no way to send your site webhooks (as it's not public). Therefore you must host your site somewhere to test webhooks.
-
-### Testing webhooks
-
-To test that we're receiving webhooks successfully we'll use the GoCardless webhook tester. This is an incredibly useful feature that lets you send test webhooks from GoCardless, rather than waiting for an actual event in your GoCardless account.
-
-In the 'Test webhooks' section of your developer dashboard check that the 'Webhook URL' field is as set up in the previous section, select an object type, and click 'Fire webhook'. Navigating to the 'Response' section of the results modal, the first line should be a `200 OK` response.
-
-Congratulations! You're now receiving webhooks from GoCardless.

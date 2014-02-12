@@ -46,8 +46,11 @@ Example bill webhook object:
 `failed`
 :    This is fired when a bill could not be debited from a customer's account. This is usually because insufficient funds are available. By default, GoCardless will not attempt to take the payment again.
 
+`cancelled`
+:    This is fired when a bill has been cancelled by you or the customer (through the dashboards). A cancelled bill cannot be retried.
+
 `refunded`
-:    This is fired when a bill is refunded by you (through the API or the dashboards) or by GoCardless, usually at your or your customer's request.
+:    This is fired when a bill is refunded by you (through the dashboards) or by GoCardless, usually at your or your customer's request.
 
 `chargedback`
 :    This is fired when a customer contacts their bank and has them reverse the payment under the Direct Debit Guarantee.

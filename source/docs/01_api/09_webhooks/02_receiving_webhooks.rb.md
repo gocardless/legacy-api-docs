@@ -51,11 +51,3 @@ Now (as long as we keep this terminal window open) we have a public URL that lin
     http://8bv2.localtunnel.com/gocardless/webhooks
 
 (but note that we'll need to update this address every time we close the localtunnel connection).
-
-### Testing webhooks
-
-To test that we're receiving webhooks successfully we'll use the GoCardless webhook tester. This is an incredibly useful feature that lets you send test webhooks from GoCardless, rather than waiting for an actual event in your GoCardless account.
-
-In the 'Test webhooks' section of your developer dashboard check that the 'Webhook URL' field is as set up in the previous section, select an object type, and click 'Fire webhook'. Navigating to the 'Response' section of the results modal, the first line should be a `200 OK` response.
-
-Congratulations! You're now receiving webhooks from GoCardless.
