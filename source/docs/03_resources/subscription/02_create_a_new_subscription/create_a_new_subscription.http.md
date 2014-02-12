@@ -20,7 +20,7 @@ A user pays a **fixed amount** to a merchant each fixed interval of time, until 
 :    A more detailed description, which will be displayed to the user.
 
 `subscription [user]`
-:    Allows prepopulation of user information - see [prepopulating information](#prepopulating-information)
+:    Allows pre-population of user information - see [pre-populating information](#pre-populating-information)
 
 `subscription [start_at]`
 :    The date the first bill will be created on. If you don't provide a `start_at`, it will result in a bill being created immediately after the subscription is confirmed. Note that it needs to be in the future and be before the  `expires_at` if provided. Should be [ISO8601 format](http://www.w3.org/TR/NOTE-datetime).
