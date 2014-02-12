@@ -34,7 +34,7 @@ To start the process the user should be redirected to the authorization URL (`ht
 
 You may also include a `state` argument which is passed back at the end of the process. This may be useful in identifying the user on return from GoCardless.
 
-You may also include a `merchant` object which will be used to prepopulate fields for the user during the connect flow. See the final section on prepopulating information.
+You may also include a `merchant` object which will be used to pre-populate fields for the user during the connect flow. See the final section on pre-populating information.
 
 The resulting request will look like this:
 
@@ -84,9 +84,9 @@ Authenticated API requests can now be made by setting the Authorization header t
 
     bearer MvYX0i6snRh3gevXWbE5a56blveHqPLpLFjfOuZoWusd5AewvXuhcMU/1PXfPoc6
 
-## Prepopulating information
+## Pre-populating information
 
-You can provide certain information in the initial request to enable GoCardless to prepopulate registration fields for your user. This is highly encouraged, as it increases user conversion.
+You can provide certain information in the initial request to enable GoCardless to pre-populate registration fields for your user. This is highly encouraged, as it increases user conversion.
 
 You may provide the following information:
 
