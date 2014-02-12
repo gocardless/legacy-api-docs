@@ -12,7 +12,7 @@ Adds a retried web hook for when a bill is resubmitted to the banks after having
 
 ### May 20th, 2013
 
-Added a `is_setup_fee` attribute to each bill, allowing you to determine whether a bill was created as an intial charge on a subscription or pre-authorization using the setup_fee parameter.
+Added a `is_setup_fee` attribute to each bill, allowing you to determine whether a bill was created as an initial charge on a subscription or pre-authorization using the setup_fee parameter.
 
 ### May 15th, 2013
 
