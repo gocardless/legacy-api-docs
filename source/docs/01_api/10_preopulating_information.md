@@ -1,6 +1,6 @@
 # Pre-populating information
 
-When redirecting users to payment pages, you have the option to provide a `user` object to prepopulate the user's payment form on GoCardless. This can dramatically increase conversion of your users to paying customers.
+When redirecting users to payment pages, you have the option to provide a `user` object to pre-populate the user's payment form on GoCardless. This can dramatically increase conversion of your users to paying customers.
 
     {
       "subscription": {
