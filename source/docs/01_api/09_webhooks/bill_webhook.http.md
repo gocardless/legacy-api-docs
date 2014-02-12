@@ -41,7 +41,7 @@ Example bill webhook object:
 :    This is fired when a bill has successfully been debited from a customer's account. It can take up to 5 business days after bill creation if it's the first bill taken from a customer. The cash will be held by GoCardless for the duration of the Merchant's holding period, after which it will be `withdrawn` (i.e. paid out) directly into the Merchant's registered bank account.
 
 `withdrawn`
-:    This is fired when a bill that is being held by GoCardless on behalf of a Merchant is withdrawn (i.e. paid out) into the Merchant's bank account. Money should appear in the accoun no later than 1 business day after the webhook is fired.
+:    This is fired when a bill that is being held by GoCardless on behalf of a Merchant is withdrawn (i.e. paid out) into the Merchant's bank account. Money should appear in the account no later than 1 business day after the webhook is fired.
 
 `failed`
 :    This is fired when a bill could not be debited from a customer's account. This is usually because insufficient funds are available. By default, GoCardless will not attempt to take the payment again.
