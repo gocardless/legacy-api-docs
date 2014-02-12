@@ -19,7 +19,7 @@ If the user has an existing active preauthorization, you may wish to [create a b
 :    A more verbose description, which will be displayed to the user.
 
 `user`
-:    Allows prepopulation of user information - see [prepopulating information](#prepopulating-information)
+:    Allows pre-population of user information - see [pre-populating information](#pre-populating-information)
 
 `redirect_uri`
 :    Where the user should be returned to after the authorization process. If it is not provided, the `redirect_uri` registered in the dashboard will be used. The scheme, host and port of a provided `redirect_uri` must match the URL set for the account.
