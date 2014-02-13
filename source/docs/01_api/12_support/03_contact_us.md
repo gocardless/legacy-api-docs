@@ -1,4 +1,4 @@
-# Support
+## Contact us
 
 Need help with your integration? We offer two forms of support for developers:
 
