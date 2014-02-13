@@ -72,5 +72,3 @@ Here are the functions that will catch exceptions in the languages that GoCardle
 - Java: http://docs.oracle.com/javase/tutorial/essential/exceptions/handling.html
 - .NET: http://msdn.microsoft.com/en-us/library/0yd65esw.aspx
 - Node.js: http://stackoverflow.com/questions/7310521/node-js-best-practice-exception-handling
-
-If you have caught an exception, and you are still not sure what to do, please visit the developer chat or email help@gocardless.com. 
