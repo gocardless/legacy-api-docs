@@ -10,4 +10,4 @@ Please try to [catch exceptions](#exception-handling) before contacting support 
 ### Email
 Alternatively, please email us at [help@gocardless.com](mailto:help@gocardless.com).
 
-We can provide the **most effective** support via these two channels. Please do not call us with questions relating to your code.
+We can provide the **most effective** support via these two channels as they allow us to see your code.
