@@ -41,7 +41,7 @@ Please be sure you have the correct redirect URI in both your sandbox and live d
 
 
 ### <a name="switch-env"></a>The payment page begins https://sandbox.gocardless.com but I want to use the live environment
-You have not set your environment to use "production". Please see the deployment guide for instructions on how to tell your application to use the live GoCardless environment.
+You have not set your environment to use "production".
 
 
 ### <a name="confirm-failure"></a>My payments are not getting confirmed
