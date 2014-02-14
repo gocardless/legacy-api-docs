@@ -58,7 +58,7 @@ To authorize an with a partner, the merchant must be redirected to the GoCardles
 
 The URL that the merchant is sent to contains information about the app, as well as the URL (redirect_uri) that the merchant should be sent back to once they've completed the process.
 
-If you wish, you can also include details about the merchant for pre-population on arrival on our signup pages so the user doesn't have to type them in again. You can see a list of all the different fields [you can pre-fill here](#prepopulating-information).
+If you wish, you can also include details about the merchant for pre-population on arrival on our signup pages so the user doesn't have to type them in again. You can see a list of all the different fields [you can pre-fill here](#pre-populating-information).
 
 The .NET client library takes care of most of this - only the `redirect_uri` must be provided:
 
