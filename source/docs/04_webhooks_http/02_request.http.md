@@ -1,4 +1,4 @@
-## Request
+# Request
 
 The API server will send a POST request to the `web_hook_uri` associated with the merchant/app. This can be set in Developer Panel.
 

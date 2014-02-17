@@ -1,4 +1,4 @@
-# Getting started
+# Your first payment
 
 Looking to get a feel for how easy it is to develop with the GoCardless API?
 

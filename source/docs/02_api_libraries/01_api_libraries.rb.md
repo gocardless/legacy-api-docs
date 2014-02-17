@@ -1,11 +1,13 @@
-# Python Library
+<h0>Ruby Library</h0>
+
+# Installation
 
 We strongly encourage use of our official libraries for accessing the GoCardless API. Our official libraries are listed below, as well as community supported libraries.
 
 ### Getting the library
 
-Install from pip:
+Added to your Gemfile:
 
-	 pip install gocardless
+	gem 'gocardless'
 
-Check out our [Python docs](/python) or view [source on Github](https://github.com/gocardless/gocardless-python).
+Check out our [Ruby docs](/ruby) or view [source on Github](https://github.com/gocardless/gocardless-ruby).

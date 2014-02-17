@@ -1,4 +1,6 @@
-# API Libraries
+<h0>API Libraries</h0>
+
+# Official Libraries
 
 We strongly encourage use of our official libraries for accessing the GoCardless API. Our official libraries are listed below, as well as community supported libraries.
 
@@ -74,9 +76,9 @@ Check out our [Java docs](/java) or view [source on Github](https://github.com/g
 
 ---
 
-### Community libraries
+# Community libraries
 
-Please submit a pull request to this page to add any missing libraries that should be featured here.
+Please submit a pull request to this page to add any missing libraries that should be featured here. Please note that GoCardless does not offer any support for community libraries.
 
 #### Wordpress
 * [GoCardless Wordpress plugin](https://github.com/DHS/wp-gocardless) by [David Haywood-Smith](https://twitter.com/DHS)

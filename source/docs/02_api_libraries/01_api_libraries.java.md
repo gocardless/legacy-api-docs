@@ -1,4 +1,6 @@
-# Java Library
+<h0>Java Library</h0>
+
+# Installation
 
 We strongly encourage use of our official libraries for accessing the GoCardless API.
 

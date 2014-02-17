@@ -1,4 +1,4 @@
-# Getting Started
+# Your first payment
 
 This lightning fast, super simple tutorial will help you create your first bill in less than 5 minutes.
 

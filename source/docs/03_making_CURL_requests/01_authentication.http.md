@@ -1,3 +1,5 @@
+<h0>Making CURL Requests</h0>
+
 # Authentication
 
 To access the API, simply pass an Authorization header containing `bearer` for the merchant (you can also find this in the developer panel):

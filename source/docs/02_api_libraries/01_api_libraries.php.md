@@ -1,8 +1,10 @@
-# PHP Library
+<h0>PHP Library</h0>
+
+# Installation
 
 We strongly encourage use of our official libraries for accessing the GoCardless API. Our official libraries are listed below, as well as community supported libraries.
 
-### Getting the library
+## Getting the library
 
 Install from source:
 
