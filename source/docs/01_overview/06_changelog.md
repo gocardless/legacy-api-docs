@@ -2,6 +2,10 @@
 
 This page serves as a record of changes to the GoCardless API. Any major updates will also be announced to developers via email.
 
+### November 22nd, 2013
+
+Adds a `cancelled` status to bills & webhooks. Previously, when a payment was cancelled by a merchant or customer, the status given would be `failed`. This update means that, in this scenario, the new `cancelled` status will be shown.
+
 ### August 23rd, 2013
 
 Adds a `charge_customer_at` attribute to choose on what date a payment will be debited from the customer's account when creating a bill against a pre-authorization.
