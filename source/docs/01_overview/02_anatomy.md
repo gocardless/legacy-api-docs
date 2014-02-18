@@ -36,19 +36,21 @@ Webhooks allow your website to react to changes in a payment status. For example
 ## <a name="resource-types"></a> Resource Types
 There are three resources that can be set up through GoCardless: bill, subscription, and pre-authorisation. Please note that subscriptions and pre-authorisations will create bills for each payment under them.
 
+
+
 #### [Bill](#bill)
 A bill resource represents a payment from a customer's bank account. A bill can exist on its own, or it can be created under a subscription or a pre-authorisation. A bill cannot be altered after its creation, however it can be cancelled.
 
 #### [Subscription](#subscription)
-A subscription is a resource that will automatically create a bill after a defined interval (eg. monthly). 
+A subscription is a resource that will automatically create a bill after a defined interval (eg. monthly). The customer will not need to take any further steps to authorise each variable payment.
 
-A subscription can be indefinite, or set to end after either a set number of intervals have passed (eg. 12 months), or set to end on a specific end date (eg. 01/11/2015). 
+A subscription can be indefinite, or set to end after either a set number of intervals have passed (eg. 12 months), or set to end on a specific end date (eg. 01/11/2015).
 
 A subscription cannot be altered after its creation; if you will need variable payments, or a pricing change at some point in the future, you should use pre-authorisation.
 
 #### [Pre-Authorisation](#pre-authorization)
 A pre-authorisation is a resource that enables you to take variable payments. The customer will not need to take any further steps to authorise each variable payment.
 
-Using a pre-authorisation, you set a maximum amount that you will be able to take in a particular interval. Then you send a [request for a payment](#create-a-bill-under-a-pre-auth) whenever you need a payment taken, this request will create a bill resource. Payment requests can be for any amount, and sent as many times as you like, so long as the maximum amount is not reached for that interval. 
+Using a pre-authorisation, you set a maximum amount that you will be able to take in a particular interval. Then you send a [request for a payment](#create-a-bill-under-a-pre-auth) whenever you need a payment taken, this request will create a bill resource. Payment requests can be for any amount, and sent as many times as you like, so long as the maximum amount is not reached for that interval.
 
 To give an example: you set up a pre-authorisation for a maximum amount of £1000/month, this means that in a monthly period you request a maximum amount of 5 payments of £200, or 9 payments of £100 and 2 payments of £50 (or any other combination that doesn't add up to more than £1000/month).
