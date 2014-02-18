@@ -60,14 +60,14 @@ Many of the index resources available via the API can be filtered to cut down th
     <tr>
       <td><code>after</code></td>
       <td>Datetime</td>
-      <td>Bill, Subscription, Pre_Authorization,</td>
+      <td>Bill, Subscription, Pre_Authorization</td>
       <td>Created after a given date. A string representing datetime (must be url-encoded). e.g. "2011-11-17T15:00:23Z"</td>
     </tr>
     <tr>
       <td><code>status</code></td>
       <td>string</td>
-      <td>Bill</td>
-      <td>Return only bills with the given status. <a href="#bill-statuses">Available statuses</a>.</td>
+      <td>Bill, Subscription, Pre_Authorization</td>
+      <td>Return only resources with the given status.</td>
     </tr>
     <tr>
       <td><code>paid</code></td>
