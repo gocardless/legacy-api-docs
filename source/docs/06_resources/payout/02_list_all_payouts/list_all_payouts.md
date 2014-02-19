@@ -8,3 +8,5 @@
 #### Returns
 
 Returns an array of payout objects
+
+`paid_at` is the date that the funds will reach your bank account.

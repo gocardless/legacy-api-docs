@@ -8,3 +8,5 @@
 #### Returns
 
 Returns a payout object
+
+`paid_at` is the date that the funds will reach your bank account.
