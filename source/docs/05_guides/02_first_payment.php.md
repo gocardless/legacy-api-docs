@@ -20,27 +20,41 @@ Once you've signed up, we'll install the GoCardless PHP client library, which ma
 
 You can download the PHP client library from Github. Then you need to copy the `/lib` folder into your code.
 
-Now we're ready to configure the GoCardless client within your app.
+Now we're ready to configure the GoCardless client within your app. The best way to do this is to create a central configuration file which you will include each time you wish to use the GoCardless PHP library. You can find your developer credentials in the developer panels of your live and sandbox dashboard.
 
 ```php
-// Include the library
+// gocardless-init.php
+
 <?
+// Include the GoCardless PHP library 
 include_once 'lib/GoCardless.php';
 
 // Uncomment this and change your keys over to go live - but make
 // sure you test in sandbox first!
 //GoCardless::$environment = 'production';
 
-// Set config vars
-$account_details = array(
-  'app_id'        => 'DUMMY_APP',
-  'app_secret'    => 'INSERT_APP_SECRET_HERE',
-  'merchant_id'   => 'INSERT_MERCHANT_ID',
-  'access_token'  => 'INSERT_MERCHANT_ACCESS_TOKEN'
-);
+if (GoCardless::$environment == 'production') {
+    // Set your live environment developer credentials
+    $account_details = array(
+      'app_id'        => 'INSERT_LIVE_APP_ID',
+      'app_secret'    => 'INSERT_LIVE_APP_SECRET',
+      'merchant_id'   => 'INSERT_LIVE_MERCHANT_ID',
+      'access_token'  => 'INSERT_LIVE_MERCHANT_ACCESS_TOKEN'
+    );
+}
+else {
+    // Set your sandbox environment developer credentials
+    $account_details = array(
+      'app_id'        => 'INSERT_SANDBOX_APP_ID',
+      'app_secret'    => 'INSERT_SANDBOX_APP_SECRET',
+      'merchant_id'   => 'INSERT_SANDBOX_MERCHANT_ID',
+      'access_token'  => 'INSERT_SANDBOX_MERCHANT_ACCESS_TOKEN'
+    );  
+}
 
 // Initialize GoCardless
 GoCardless::set_account_details($account_details);
+?>
 ```
 
 ## Creating a payment Request
@@ -50,8 +64,12 @@ To start the billing process you need to redirect your user to the GoCardless ch
 The PHP client library does all the heavy lifting of generating the payment URL for you. All you need to do is enter details of the payment you're setting up:
 
 ```php
-// The parameters for the payment
+// payment.php
+
 <?
+// Include our GoCardless library initialization file
+include_once 'gocardless-init.php';
+
 $subscription_details = array(
   'amount'           => '10.00',
   'interval_length'  => 1,
@@ -63,6 +81,8 @@ $subscription_url = GoCardless::new_subscription_url($subscription_details);
 
 // Display the link
 echo '<a href="'.$subscription_url.'">New subscription</a>';
+
+?>
 ```
 
 When the customer clicks the link generated they'll be redirected to the GoCardless payment pages to enter their bank details and create a new subscription.
@@ -76,24 +96,11 @@ Set the 'Redirect URI' in your developer dashboard to http://[your domain]/thank
 Now in `thankyou.php`, add the following:
 
 ```php
-//include the library
+// thankyou.php
+
 <?
-include_once 'lib/GoCardless.php';
-
-// Uncomment this and change your keys over to go live - but make
-// sure you test in sandbox first!
-//GoCardless::$environment = 'production';
-
-// Set config vars
-$account_details = array(
-  'app_id'        => 'DUMMY_APP',
-  'app_secret'    => 'INSERT_APP_SECRET_HERE',
-  'merchant_id'   => 'INSERT_MERCHANT_ID',
-  'access_token'  => 'INSERT_MERCHANT_ACCESS_TOKEN'
-);
-
-// Initialize GoCardless
-GoCardless::set_account_details($account_details);
+// Include our GoCardless library initialization file
+include_once 'gocardless-init.php';
 
 // Required confirm variables
 $confirm_params = array(
@@ -109,6 +116,8 @@ if (isset($_GET['state'])) {
 }
 
 $confirmed_resource = GoCardless::confirm_resource($confirm_params);
+
+?>
 ```
 
 Some users experience an "Unknown Error" exception at this point due to an issue with how their PHP's Curl library connects to HTTPS-secured servers. If this happens to you in your testing environment, try uncommenting line 93 of the Request.php file. You shouldn't do this in production for security reasons.
