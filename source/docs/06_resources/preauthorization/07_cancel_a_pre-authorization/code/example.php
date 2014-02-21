@@ -2,6 +2,6 @@
 /*
 Example request
 */
-$pre_auth = GoCardless_PreAuthorization::find('#PREAUTH ID#')->cancel()
+$pre_auth = GoCardless_PreAuthorization::find('#PREAUTH ID#')->cancel();
 
-print_($pre_atuh);
+print_r($pre_auth);
