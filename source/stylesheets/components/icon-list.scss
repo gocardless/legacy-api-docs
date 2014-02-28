@@ -1,0 +1,27 @@
+@import "mixins/clearfix-mixin";
+
+.icon-list {
+    @include clearfix();
+    display: block;
+    margin-top: 20px;
+}
+
+.icon-list__row {
+    @include clearfix();
+    display: block;
+    clear: both;
+    padding-bottom: 20px;
+}
+
+.icon-list__row__icon {
+    float: left;
+    width: 13%;
+    text-align: center;
+    padding-top: 8px;
+}
+
+.icon-list__row__definition {
+    float: left;
+    width: 80%;
+    margin-left: 10px;
+}

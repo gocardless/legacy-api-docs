@@ -9,8 +9,9 @@ gem "redcarpet"
 gem "builder"
 gem "nokogiri"
 gem "middleman", "~>3.2.0"
-gem "middleman-livereload", "~> 3.1.0"
+gem "middleman-livereload", "~> 3.2.1"
 gem "middleman-syntax"
+gem "middleman-sprockets"
 gem "angularjs_template_assets", git: "git@github.com:gocardless/angularjs_template_assets.git", branch: "v0.2.0"
 
 # For faster file watcher updates on Windows:

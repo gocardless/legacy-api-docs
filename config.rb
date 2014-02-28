@@ -10,6 +10,7 @@ set :images_dir, "images"
 
 activate :livereload
 activate :syntax
+activate :sprockets
 
 activate :doc_generator do |doc_generator|
   doc_generator.languages = data.languages
