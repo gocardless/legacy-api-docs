@@ -98,6 +98,22 @@
       g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
       s.parentNode.insertBefore(g,s)
     }(document,'script'));
+
+    // GoCardless tracking code
+    (function(w, d, t, g, e, r){
+      w[g] || (w[g] = function(){ (w[g].q = w[g].q || []).push(arguments) });
+      w[g].l = + new Date;
+      e = d.createElement(t);
+      r = d.getElementsByTagName(t)[0];
+      e.async = true;
+      e.src = '//d1mmrmxi7sv2ut.cloudfront.net/gct.js';
+      r.parentNode.insertBefore(e, r);
+    }(window, document, 'script', 'gct'));
+    gct('initialize', 'mixpanel', {
+      token: '0ebe37c4ed96a0432e989cc20ca1db04',
+      debug: false,
+      cookieName: '_gc_visitorid'
+    });
     </script>
     <% end %>
   </body>
