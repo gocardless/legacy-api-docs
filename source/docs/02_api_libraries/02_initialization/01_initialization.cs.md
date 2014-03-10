@@ -1,7 +1,5 @@
 # Initialization
 
-You will need to initialize the GoCardless .NET library on each page that you would like to use the library.
-
 Once you have [installed](#installation) the library via NuGet, you will need to set your `environment` to _sandbox_ or _production_:
 
 ```csharp
