@@ -14,7 +14,8 @@ The link must be generated of a number of elements:
     * For subscriptions: `/connect/subscriptions/new?`
     * For pre-authorizations: `/connect/pre_authorizations/new?`
 * __A resource parameters array:__ the parameters passed will depend upon the [resource type](#resource-parameters). Any parameters must be URL encoded.
-    * An example parameter array for a £10 bill with the name 'my first payment': `bill%5Bamount%5D=10.0&bill%5Bname%5D=my%20first%20payment`
+    * An example parameter array for a £10 bill with the name 'my first payment' (before URL encoding): `bill[amount]=10.0&bill[name]=my first payment`
+    * An example parameter array for a £10 bill with the name 'my first payment' (after URL encoding): `bill%5Bamount%5D=10.0&bill%5Bname%5D=my%20first%20payment`
 * __An optional users array:__ this array should contain any customer details that you would like to see [pre-populated](#pre-populating-information) on the GoCardless payment page.
 * __Required parameters:__ these parameters include a `merchant_id`, `client_id`, `timestamp` and `nonce`. To see the required parameters for a resource, see the section for the [resource type](#resource-parameters) that you are trying to create.
 * __Signature:__ this is a security parameter generated to ensure that you have permission to setup this resource. Please see the [signing requests](#signing-requests) section for more information.

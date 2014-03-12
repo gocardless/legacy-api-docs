@@ -1,5 +1,7 @@
 ## Confirm a new one-off bill
 
+### Redirection of customer after GoCardless payment page
+
 When a user has completed the authorization process, the bill will exist in an 'inactive' state. The resource must be confirmed within a short period of time otherwise it will be removed from the database.
 
 The user will be redirected (a GET request) back to the redirect URI specified in the [developer panel](https://dashboard.gocardless.com/developer-details/uri-settings) with the following parameters:
@@ -35,3 +37,6 @@ A `POST` should be sent back to GoCardless. You will need to send a [Basic Authe
 `resource_type`
 :     _required_ the resource type provided in the initial `GET` request
 
+#### Returns
+
+Returns a bill object

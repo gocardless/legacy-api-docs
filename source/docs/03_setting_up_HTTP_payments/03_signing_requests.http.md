@@ -1,16 +1,12 @@
 # Signing requests
 
-**The process of creating signatures can be handled by GoCardless client libraries.**
-
-The process for generating the signature broadly follows the process described in the OAuth 1.0 spec (RFC 5849, §3.4). The complete process is outlined in more detail below.
-
 ## Signature Guide
 
-You'll only need this guide if you're writing your own client library in another language - otherwise, we'll cover all of this for you.
+__You'll only need this guide if you're writing your own client library in another language - otherwise, our official libraries cover all of this for you.__
 
 This is used widely throughout the "Connect" web interface and webhooks. The signature ensures that data transmitted over insecure connections cannot be tampered with by attackers.
 
-The process for generating the signature broadly follows the process described in the OAuth 1.0 spec (RFC 5849, §3.4).
+The process for generating the signature broadly follows the process described in the OAuth 1.0 spec ([RFC 5849, §3.4](http://tools.ietf.org/html/rfc5849#section-3.4)).
 
 ## Constructing the parameter array
 
@@ -42,7 +38,7 @@ Becomes:
 
 ## Normalizing the parameters
 
-Both the key and value in each pair are percent-encoded according to RFC 5849, §3.6. Note that the standard URL and query-string encoding functions in most languages are not by default compliant with the RFC. Language specific examples are provided below.
+Both the key and value in each pair are percent-encoded according to [RFC 5849, §3.6](http://tools.ietf.org/html/rfc5849#section-3.6). Note that the standard URL and query-string encoding functions in most languages are not by default compliant with the RFC. Language specific examples are provided below.
 
 	[ ['user[email]', 'fred@example.com' ], ['user[age]', '30' ] ]
 

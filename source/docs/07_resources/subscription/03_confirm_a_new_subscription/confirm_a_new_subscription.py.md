@@ -1,8 +1,8 @@
 ## Confirm a new subscription
 
-When a user has completed the authorization process, the subscription will exist in an 'inactive' state. The resource must be confirmed within a short period of time otherwise it will be removed from the database.
+### Redirection of customer after GoCardless payment page
 
-The user will be redirected (a GET request) back to the URI specified with the following parameters:
+When a user has completed the authorization process, the subscription will exist in an 'inactive' state. The resource must be confirmed within a short period of time otherwise it will be removed from the database.
 
 The user will be redirected (a GET request) back to the redirect URI specified in the [developer panel](https://dashboard.gocardless.com/developer-details/uri-settings) with the following parameters:
 
@@ -33,3 +33,6 @@ A `POST` should be sent back to GoCardless with the following parameters:
 `resource_type`
 :     _required_ the resource type provided in the initial `GET` request
 
+#### Returns
+
+Returns a subscription object
