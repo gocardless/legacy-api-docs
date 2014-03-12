@@ -16,6 +16,21 @@ var gocardless = require('gocardless')(gcConfig);
 
 You should now be able to make requests to the GoCardless library.
 
+### Sandbox mode
+You can use GoCardless in sandbox mode by adding a `sandbox` key to the initialization options:
+
+```js
+var gcConfig = {
+  sandbox: true,
+  appId: 'DUMMY_APP',
+  appSecret: 'INSERT_APP_SECRET_HERE',
+  token: 'INSERT_MERCHANT_ACCESS_TOKEN',
+  merchantId: 'INSERT_MERCHANT_ID'
+};
+var gocardless = require('gocardless')(gcConfig);
+```
+
+
 ### Checking that it works:
 To ensure you have initialized the library properly, you should try to load your merchant details using the following request:
 ```js
