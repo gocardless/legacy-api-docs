@@ -21,6 +21,11 @@ GoCardless.account_details = {
 }
 ```
 
+By default, the library will use https://gocardless.com as the base URL. Until you are ready to go live, you'll be using a sandbox account so you need to tell the client library to connect to the correct endpoint (https://sandbox.gocardless.com):
+```ruby
+GoCardless.environment = :sandbox
+```
+
 Since we're adding a new initializer here, you'll need to restart your rails server after adding the above file. When you restart you'll also be asked to run bundle install, as we've added a new gem.
 
 
