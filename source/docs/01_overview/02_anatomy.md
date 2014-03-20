@@ -1,4 +1,4 @@
-# GoCardless Anatomy
+# GoCardless anatomy
 
 ### Payment resources
 There are three resources that can be set up through GoCardless to take payments: bill, subscription, and pre-authorisation. Please note that subscriptions and pre-authorisations will create bills for each payment under them.

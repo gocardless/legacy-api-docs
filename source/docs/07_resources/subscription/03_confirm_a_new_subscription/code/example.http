@@ -1,0 +1,28 @@
+POST https://gocardless.com/api/v1/confirm HTTP/1.1
+{
+  "resource_id": "1234ABCD",
+  "resource_type": "subscription"
+}
+
+HTTP/1.1 200 OK
+{
+  "amount": "44.0",
+  "gocardless_fees": "0.44",
+  "partner_fees": "0",
+  "currency": "GBP",
+  "created_at": "2013-08-20T21: 41: 25Z",
+  "description": "Month 2 payment",
+  "id": "123ABC",
+  "name": "Bill 2 for Subscription description",
+  "paid_at":  null,
+  "status": "pending",
+  "merchant_id": "06Z06JWQW1",
+  "user_id": "FIVWCCVEST6S4D",
+  "source_type": "subscription",
+  "source_id": "YH1VEVQHYVB1UT",
+  "uri": "https://gocardless.com/api/v1/bills/123ABC",
+  "can_be_retried": false,
+  "payout_id": "09ERD0XC54",
+  "is_setup_fee": false,
+  "charge_customer_at": "2013-09-01"
+}
