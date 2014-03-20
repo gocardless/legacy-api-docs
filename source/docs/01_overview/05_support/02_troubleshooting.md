@@ -6,7 +6,6 @@
 - [The payment page says 400 error: "Redirect uri does not match the uri registered in the developer panel"](#redirect-invalid)
 - [The payment page begins https://sandbox.gocardless.com but I want to use the live environment](#switch-env)
 - [My payments are not getting confirmed](#confirm-failure)
-- [My testing bill webhook says amount = £20](#webhook-20)
 - [Something else is broken](#exception-handling)
 
 
@@ -50,12 +49,6 @@ Firstly, please ensure that you are attempting to confirm your payment on the re
 Secondly, ensure that you have the correct developer credentials and environment set up on your confirmation page. If you are trying to create payments in the live environment, but you are attempting to confirm using sandbox environment or developer credentials, you will run into an error.
 
 If you payments still fail to confirm, try catching the exception thrown by the GoCardless library when running the confirm function. More details [here](#exception-handling).
-
-
-### <a name="webhook-20"></a>My testing bill webhook says amount = £20
-All test webhooks are created from a template, so the amount will always equal £20. The resource ID, source ID and status will be set to those given in the webhook tester.
-
-For more information on testing webhooks, please see the [testing webhooks section](#testing-webhooks).
 
 
 ### <a name="exception-handling"></a>Something else is broken
