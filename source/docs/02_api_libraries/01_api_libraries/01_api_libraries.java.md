@@ -11,7 +11,7 @@ Install with Maven:
 	<dependency>
 	  <groupId>com.gocardless</groupId>
 	  <artifactId>gocardless-java</artifactId>
-	  <version>1.1.0</version>
+	  <version>2.0.0</version>
 	</dependency>
 
 Check out our [Java docs](/java) or view [source on Github](https://github.com/gocardless/gocardless-java).
