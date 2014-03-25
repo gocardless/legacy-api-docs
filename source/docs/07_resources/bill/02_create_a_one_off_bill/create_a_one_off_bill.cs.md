@@ -6,11 +6,11 @@ If the user has an existing active preauthorization, you may wish to [create a b
 
 #### Request params
 
-`amount`
-:    _required_ the amount of the bill.
-
 `merchant_id`
 :    _required_ your merchant ID.
+
+`amount`
+:    _required_ the amount of the bill.
 
 `name`
 :    Brief description used to identify the payment, displayed to the user alongside the amount. Often useful for an invoice reference.
