@@ -36,7 +36,3 @@ A `POST` should be sent back to GoCardless. You will need to send a [Basic Authe
 
 `resource_type`
 :     _required_ the resource type provided in the initial `GET` request
-
-#### Returns
-
-Returns a bill object
