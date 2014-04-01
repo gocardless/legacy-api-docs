@@ -18,7 +18,7 @@ Note that a pre-authorization allows the Merchant to bill the User in future wit
 :    _required_ The unit of measurement for the interval. Can be `day`, `week` or `month`.
 
 `pre_authorization [expires_at]`
-:    Date the pre-authorization expires. Note that pre-authorization will be expired just after midnight of the `expires_at` date. Should be [ISO8601 format](http://www.w3.org/TR/NOTE-datetime).
+:    Date the pre-authorization expires. Note that pre-authorization will be expired just after midnight (UTC) of the `expires_at` date. Should be [ISO8601 format](http://www.w3.org/TR/NOTE-datetime).
 
 `pre_authorization [name]`
 :    brief description used to identify the pre-authorization, displayed to the user alongside the amount. Often useful for an "invoice reference".
