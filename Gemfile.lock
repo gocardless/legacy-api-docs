@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:gocardless/angularjs_template_assets.git
+  remote: git://github.com/gocardless/angularjs_template_assets.git
   revision: e7fa8555ee26c15764e31749f5f3669b774c9cad
   branch: v0.2.0
   specs:
