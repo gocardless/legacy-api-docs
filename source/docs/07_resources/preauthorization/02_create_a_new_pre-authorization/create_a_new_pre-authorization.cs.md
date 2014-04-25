@@ -8,6 +8,9 @@ Note that a pre-authorization allows the Merchant to bill the User in future wit
 
 #### Request params
 
+`merchant_id`
+:    _required_ your merchant ID.
+
 `max_amount`
 :    _required_ the maximum amount that can be collected within one of the specified intervals.
 

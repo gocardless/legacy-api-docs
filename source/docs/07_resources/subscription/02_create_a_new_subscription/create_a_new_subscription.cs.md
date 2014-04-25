@@ -4,6 +4,9 @@ A user pays a **fixed amount** to a merchant each fixed interval of time, until 
 
 #### Request params
 
+`merchant_id`
+:    _required_ your merchant ID.
+
 `amount`
 :    _required_ amount to collect at each `interval_unit`.
 
