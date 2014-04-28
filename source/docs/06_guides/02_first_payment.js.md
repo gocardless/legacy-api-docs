@@ -69,7 +69,7 @@ app.post('/subscriptions', function(req, res) {
     name: 'Premium subscription',
     // Set the user email from the submitted value
     user: {
-      email: req.params.email
+      email: req.body.email
     }
   });
   res.redirect(url);
