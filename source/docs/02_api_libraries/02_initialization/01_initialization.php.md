@@ -38,4 +38,4 @@ GoCardless_Merchant::find('INSERT_MERCHANT_ID');
 ?>
 ```
 
-You can see all requests under the [resources section](php#bill)
+You can see all requests under the [resources section](/php#bill)
