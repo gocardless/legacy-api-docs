@@ -102,7 +102,7 @@ The following state diagrams show the entire state of a resource from setup to p
 
 Your customers will only have to interact with GoCardless at the time of authorising payments. No interaction from customers is needed for future payments to be collected. The following screencaps illustrate a typical payment flow from a customer's point of views.
 
-**Step one** – customer is directed to GoCardless payment page ([view a live example](https://example.gocardless.com))
+**Step one** – customer is directed to GoCardless payment page ([view a live example](https://gocardless.com/example-checkout))
 
 ![Customers first land on the payment page](/images/user-flow-1.png)
 
