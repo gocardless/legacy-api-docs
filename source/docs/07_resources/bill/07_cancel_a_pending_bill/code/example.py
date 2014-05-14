@@ -1,1 +1,2 @@
-# The Python library does not currently support cancelling bills
+bill = gocardless.client.bill("#BILL ID#")
+bill.cancel()

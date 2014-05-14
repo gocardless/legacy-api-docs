@@ -1,1 +1,0 @@
-// The .NET library does not currently support cancelling bills

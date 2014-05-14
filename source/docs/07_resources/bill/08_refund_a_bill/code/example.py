@@ -1,1 +1,2 @@
-# The Python library does not currently support refunding bills
+bill = gocardless.client.bill("#BILL ID#")
+bill.refund()
