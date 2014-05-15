@@ -1,0 +1,26 @@
+POST https://gocardless.com/api/v1/bills/{BILL_ID}/refund HTTP/1.1
+
+HTTP/1.1 201 CREATED
+{
+  "amount": "1.0",
+  "gocardless_fees": "0.01",
+  "amount_minus_fees": "0.99",
+  "partner_fees": "0.0",
+  "currency": "GBP",
+  "created_at": "2014-05-12T16:06:54Z",
+  "description": "Bill description",
+  "id": "123ABC",
+  "name": "Bill name",
+  "paid_at":  null,
+  "status": "refunded",
+  "merchant_id": "0A1B2C3D4E",
+  "user_id": "4A3B2C1D0E",
+  "source_type": "subscription",
+  "source_id": "0B1B2B3B4B",
+  "uri": "https://gocardless.com/api/v1/bills/123ABC",
+  "can_be_retried": false,
+  "can_be_cancelled": false,
+  "payout_id": null,
+  "is_setup_fee": false,
+  "charge_customer_at": "2014-05-27"
+}
