@@ -54,7 +54,7 @@ The state variable will also be returned in the URL if it was provided in the or
 
 ## Exchange authorization code for access token
 
-The authorization code needs to be exchanged for an access token before you can make authenticated API requests. To perform the exchange, you need to send a POST request to the access token endpoint: https://gocardless.com/oauth/access_token
+The authorization code needs to be exchanged for an access token before you can make authenticated API requests. To perform the exchange, you need to send a POST request to the access token endpoint: `https://gocardless.com/oauth/access_token`.
 
 This request should be authenticated by passing the app identifier and app secret via HTTP Basic Authorization. The request should be made with the following parameters:
 
