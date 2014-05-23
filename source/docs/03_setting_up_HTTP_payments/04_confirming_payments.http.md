@@ -7,9 +7,9 @@ Once a payment has been created, the customer will be redirected back to the red
 
 The customer will be returned with a number of parameters. To read about the parameters returned on each payment type, please see the following resources:
 
-* [Confirming a one-off bill](#http://0.0.0.0:4567/#confirm-a-new-one-off-bill).
-* [Confirming a subscription](#http://0.0.0.0:4567/#confirm-a-new-subscription).
-* [Confirming a pre-authorization](#http://0.0.0.0:4567/#confirm-a-new-pre-auth).
+* [Confirming a one-off bill](#confirm-a-new-one-off-bill).
+* [Confirming a subscription](#confirm-a-new-subscription).
+* [Confirming a pre-authorization](#confirm-a-new-pre-auth).
 
 ## Sending the confirmation
 
