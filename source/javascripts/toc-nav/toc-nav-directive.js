@@ -18,7 +18,7 @@ angular.module('gcTocNavDirective', [
 
       function escapeSelector(selector) {
         return selector
-          .replace(/[^a-zA-Z0-9_-]/, '')
+          .replace(/[^a-zA-Z0-9_-]/g, '')
           .replace(/^[\d\-]+/, '');
       }
 
