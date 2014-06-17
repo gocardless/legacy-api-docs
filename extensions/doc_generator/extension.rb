@@ -73,7 +73,7 @@ module Middleman
       def codes_for_page(current_page)
         doc.pages.select do |page|
           has_code = page.categories.last == doc.options.code_source
-          is_current_code = page.categories[-2] == current_page.categories.last
+          is_current_code = page.categories[0..-2] == current_page.categories
           is_current_language = page.language == current_language
 
           has_code && is_current_code && is_current_language
