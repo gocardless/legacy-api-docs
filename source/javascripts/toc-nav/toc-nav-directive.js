@@ -22,14 +22,14 @@ angular.module('gcTocNavDirective', [
           .replace(/^[\d\-]+/, '');
       }
 
-      var titles = [];
+      var ids = [];
       function makeId(title) {
         var id = escapeSelector(
           title.toLowerCase().replace(/[\s\t\n\v\f]/g, '-')
         );
 
-        if (_.indexOf(titles, title) === -1) {
-          titles.push(title);
+        if (_.indexOf(ids, id) === -1) {
+          ids.push(id);
           return id;
         } else {
           return _.uniqueId(id + '-');
