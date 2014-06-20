@@ -18,18 +18,18 @@ angular.module('gcTocNavDirective', [
 
       function escapeSelector(selector) {
         return selector
-          .replace(/[^a-zA-Z0-9_-]/, '')
+          .replace(/[^a-zA-Z0-9_-]/g, '')
           .replace(/^[\d\-]+/, '');
       }
 
-      var titles = [];
+      var ids = [];
       function makeId(title) {
         var id = escapeSelector(
           title.toLowerCase().replace(/[\s\t\n\v\f]/g, '-')
         );
 
-        if (_.indexOf(titles, title) === -1) {
-          titles.push(title);
+        if (_.indexOf(ids, id) === -1) {
+          ids.push(id);
           return id;
         } else {
           return _.uniqueId(id + '-');
