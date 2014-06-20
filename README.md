@@ -81,7 +81,7 @@ for the same resource.
 
 ## Code samples
 
-**The default language is Curl**
+**The default language is HTTP**
 
 Article independent code samples must be placed in a `code` folder in the
 article folder.
@@ -91,13 +91,13 @@ Name the code examples using the appropriate `extname` from `./data/languages.ym
 
 ## Code articles
 
-**The default language is Curl**
+**The default language is HTTP**
 
 Entire pages can be shown for specific languages by adding the
 language `extname` to the filename.
 
 Example:
 - Only show for Ruby `getting_started.rb.md`
-- Show default (Curl): `getting_started.http.md`
+- Show default (HTTP): `getting_started.http.md`
 
 The appropriate `extname` can be found in `./data/languages.yml`

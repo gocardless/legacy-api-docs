@@ -1,6 +1,6 @@
 ## Reacting to webhooks
 
-Now we're receiving webhooks we want to react to them. In this section we'll walk through an example where we disable a user's account if they cancel their subscription with us. You can see full details of all the webhooks you might want to respond to in our [Curl documentation](/curl/#webhooks).
+Now we're receiving webhooks we want to react to them. In this section we'll walk through an example where we disable a user's account if they cancel their subscription with us. You can see full details of all the webhooks you might want to respond to in our [HTTP documentation](/http/#webhooks).
 
 ### Responding to cancelled subscriptions
 
