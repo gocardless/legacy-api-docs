@@ -12,16 +12,16 @@ Pre-authorizations that you've created with the API can only be charged this way
 :    _required_ amount to charge customer (e.g. "10.00")
 
 `pre_authorization_id`
-:    _required_ id of pre-authorization to charge bill under
+:    _required_ id of pre-authorization to charge bill under.
 
 `name`
-:    name of the bill that will be shown to customer on the payment page
+:    name of the bill. This will be shown to the customer.
 
 `description`
-:    further description of the bill that will be shown to customer on the payment page
+:    further description of the bill.
 
 `charge_customer_at`
-:    should be in the format `YYYY-MM-DD`. Attribute to choose when a payment will leave the customer's account
+:    should be in the format `YYYY-MM-DD`. Attribute to choose when a payment will leave the customer's account.
 
 #### Returns
 
