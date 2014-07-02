@@ -4,7 +4,7 @@
 
 To create a GoCardless payment you will need to send your customer to a GoCardless payment page (to read more about the GoCardless payment flow, please see the [GoCardless anatomy](#gocardless-anatomy) section). 
 
-The link must be generated of a number of elements:
+The link must consist of a number of elements:
 
 * __A GoCardless environment:__ Currently the options are:
     * For the live environment: `https://gocardless.com`
