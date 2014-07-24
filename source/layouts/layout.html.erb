@@ -85,22 +85,6 @@
 
     <%= javascript_include_tag  "all" %>
 
-    <% if build? %>
-    <script>
-    window._gaq || (window._gaq = []);
-    window._gaq.unshift(
-      ['_setAccount','UA-22094249-2'],
-      ['_setDomainName', '.gocardless.com'],
-      ['_trackPageview']
-    );
-    (function(d,t){
-      var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=true;
-      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-      s.parentNode.insertBefore(g,s)
-    }(document,'script'));
-    </script>
-    <% end %>
-
     <!-- Google Tag Manager -->
     <script>
       dataLayer = [];
@@ -110,6 +94,5 @@
       (function(w,l){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});})(window, 'dataLayer');
     </script>
     <!-- End Google Tag Manager -->
-
   </body>
 </html>
