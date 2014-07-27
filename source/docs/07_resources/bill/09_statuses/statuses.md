@@ -9,6 +9,12 @@
 `failed`
 :    Bill could not be debited from a customer's account. This usually means that there were insufficient funds in the customer's account.
 
+`refunded`
+:    Bill has been refunded by you or by GoCardless at your request.
+
+`chargedback`
+:    Bill has been reversed by the customer at their bank under the Direct Debit Guarantee.
+
 `cancelled`
 :    Bill was cancelled by the merchant or customer before it was submitted to the banks.
 

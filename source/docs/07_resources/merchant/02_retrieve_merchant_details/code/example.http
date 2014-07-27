@@ -3,16 +3,16 @@ GET https://gocardless.com/api/v1/merchants/{MERCHANT_ID} HTTP/1.1
 HTTP/1.1 200 OK
 {
   "created_at": "2011-11-18T17:07:09Z",
-  "description": null,
+  "description": "Payments for monthly magazine subscriptions",
   "id": "MERCHANT_ID",
-  "name": "Tom's Delicious Chicken Shop",
+  "name": "Tom's Magazine",
   "first_name": "Tom",
   "last_name": "Blomfield",
-  "email": "tom@gocardless.com",
+  "email": "help@gocardless.com",
   "uri": "https://gocardless.com/api/v1/merchants/MERCHANT_ID",
   "balance": "12.00",
-  "pending_balance": "0.00",
-  "next_payout_date": "2011-11-25T17: 07: 09Z",
+  "pending_balance": "20.00",
+  "next_payout_date": "2014-08-01",
   "next_payout_amount": "12.00",
   "hide_variable_amount": true,
   "sub_resource_uris": {

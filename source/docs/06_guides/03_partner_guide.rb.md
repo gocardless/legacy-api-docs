@@ -1,16 +1,16 @@
 # Partner guide
 
-<p class="intro">Our Partner API lets you create and manage multiple merchants. There's more information about <a href="https://help.gocardless.com/what-is-the-partner-programme/">how it works in our help section</a></p>
+<p class="intro">Our Partner API allows you to manage multiple merchant accounts. There's more information about <a href="https://help.gocardless.com/what-is-the-partner-programme/">how it works in our help section</a></p>
 
 ## Example partner integration
 
-We have an example partner integration built in Sinatra that is [available on GitHub](https://github.com/gocardless/gocardless-partner-example-ruby). You will need to have a partner account to use this example integration ([please email us](mailto:help@gocardless.com) to be set up with a partner account).
+We have an example partner integration built in Sinatra that is [available on GitHub](https://github.com/gocardless/gocardless-partner-example-ruby). You will need to have a partner account to use this example integration.
 
 ## Partner account setup
 
-If you'd like to create a partner app, [please email us](mailto:help@gocardless.com).
+If you're interested in using our Partner API, [please email us](mailto:help@gocardless.com) for more information.
 
-Once you have used the Partner API to create merchant(s), see the [resources section](https://developer.gocardless.com/#bill) for more information about how to create new bills and subscriptions for these merchants.
+Once you have used the API to create merchant(s), see the [resources section](https://developer.gocardless.com/#bill) for more information about how to create new bills and subscriptions for these merchants.
 
 First, download and install the Ruby client library:
 

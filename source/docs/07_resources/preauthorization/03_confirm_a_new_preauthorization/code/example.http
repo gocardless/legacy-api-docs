@@ -6,23 +6,20 @@ POST https://gocardless.com/api/v1/confirm HTTP/1.1
 
 HTTP/1.1 200 OK
 {
-  "amount": "44.0",
-  "gocardless_fees": "0.44",
-  "partner_fees": "0",
   "currency": "GBP",
-  "created_at": "2013-08-20T21: 41: 25Z",
-  "description": "Month 2 payment",
-  "id": "123ABC",
-  "name": "Bill 2 for Subscription description",
-  "paid_at":  null,
-  "status": "pending",
+  "created_at": "2014-08-20T21:41:25Z",
+  "expires_at": "2016-08-20T21:41:25Z",
+  "id": "1234ABCD",
+  "name": "Computer support invoices",
+  "description": "GoCardless magazine",
+  "max_amount": "750.00",
+  "setup_fee": "10.00",
+  "remaining_amount": "750.00"
+  "interval_unit": "month",
+  "interval_length": "1"
+  "status": "active",
+  "next_interval_start": "2014-09-20T00:00:00Z",
   "merchant_id": "06Z06JWQW1",
   "user_id": "FIVWCCVEST6S4D",
-  "source_type": "subscription",
-  "source_id": "YH1VEVQHYVB1UT",
-  "uri": "https://gocardless.com/api/v1/bills/123ABC",
-  "can_be_retried": false,
-  "payout_id": "09ERD0XC54",
-  "is_setup_fee": false,
-  "charge_customer_at": "2013-09-01"
+  "uri": "https://gocardless.com/api/v1/pre-authorisations/1234ABCD"
 }
