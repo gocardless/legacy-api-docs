@@ -15,7 +15,7 @@ HTTP/1.1 200 OK
   "amount": "7.50",
   "setup_fee": "0.00",
   "interval_unit": "month",
-  "interval_length": "1"
+  "interval_length": "1",
   "status": "active",
   "next_interval_start": "2014-09-20T00:00:00Z",
   "merchant_id": "06Z06JWQW1",
