@@ -14,7 +14,7 @@ HTTP/1.1 200 OK
   "description": "GoCardless magazine",
   "max_amount": "750.00",
   "setup_fee": "10.00",
-  "remaining_amount": "750.00"
+  "remaining_amount": "750.00",
   "interval_unit": "month",
   "interval_length": "1",
   "status": "active",
