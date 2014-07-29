@@ -50,7 +50,7 @@ Example bill webhook object:
 :    This is fired when a bill has been cancelled by you or the customer (through the dashboards). A cancelled bill cannot be retried.
 
 `refunded`
-:    This is fired when a bill is refunded by you (through the dashboards) or by GoCardless, usually at your or your customer's request.
+:    This is fired when a bill is refunded by you (through the dashboards) or by GoCardless at your request.
 
 `chargedback`
 :    This is fired when a customer contacts their bank and has them reverse the payment under the Direct Debit Guarantee.

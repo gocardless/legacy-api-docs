@@ -1,12 +1,10 @@
 # Partner guide
 
-<p class="intro">Our Partner API lets you to create and manage multiple merchants. There's more information about <a href="https://help.gocardless.com/what-is-the-partner-programme/">how it works in our help section</a></p>
+<p class="intro">Our Partner API allows you to manage multiple merchant accounts. There's more information about <a href="https://help.gocardless.com/what-is-the-partner-programme/">how it works in our help section</a></p>
 
 ## Getting started
 
-Our Partner API lets you to create and manage multiple merchants. There's more information about how it works here. If you'd like to create a partner app, just email us and we'll get you set up in the Sandbox.
-
-To start using GoCardless as a partner, you'll need a partner account. If you'd like to create a partner app, [please email us](mailto:help@gocardless.com).
+If you're interested in using our Partner API, [please email us](mailto:help@gocardless.com) for more information.
 
 First, download and install the .NET client library:
 

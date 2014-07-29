@@ -2,7 +2,7 @@
 
 # Installation
 
-We strongly encourage use of our official libraries for accessing the GoCardless API. Our official libraries are listed below, as well as community supported libraries.
+We strongly encourage use of our official libraries for accessing the GoCardless API.
 
 ## Getting the library
 

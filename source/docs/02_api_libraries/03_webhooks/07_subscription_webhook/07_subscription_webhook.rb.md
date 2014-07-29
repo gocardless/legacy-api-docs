@@ -23,7 +23,7 @@ Example subscription webhook object:
 ### Possible actions
 
 `cancelled`
-:    This is fired when a subscription is cancelled by a customer. No further bills can be created under this subscription.
+:    This is fired when a subscription is cancelled by a customer. No further bills will be created under the subscription.
 
 `expired`
-:    This is fired when a subscription reaches its expiry date. No further bills will be automatically created under the subscription.
+:    This is fired when a subscription reaches its expiry date. No further bills will be created under the subscription.

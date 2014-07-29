@@ -20,7 +20,7 @@ There are three resources that can be set up through GoCardless to take payments
         </div>
         <div class="icon-list__row__definition">
             <h5>Subscription</h5>
-            <p>A subscription is a resource that will automatically create a bill after a defined interval (eg. monthly). The customer will not need to take any further steps to authorise each variable payment. A subscription cannot be altered after its creation.</p>
+            <p>A subscription is a resource that will automatically create a bill after a defined interval (eg. monthly). The customer will not need to take any further steps to authorise each recurring payment. A subscription cannot be altered after its creation.</p>
         </div>
     </div>
 

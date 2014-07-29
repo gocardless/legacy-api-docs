@@ -8,4 +8,4 @@ $payment_details = array(
 );
 
 $bill_url = GoCardless::new_bill_url($payment_details);
-echo $bill_url; // Link to set up one off bill
+echo htmlentities($bill_url); // Link to set up one off bill

@@ -1,7 +1,7 @@
 
 # Confirming payments
 
-Once a payment has been created, the customer will be redirected back to the redirect URI set in your GoCardless [developer panel](https://dashboard.gocardless.com/developer-details/uri-settings) or the redirect URI set in your payment URL. You must then notify GoCardless via a 'POST' request that the customer was successfully returned to your website.
+Once a payment has been created, the customer will be redirected back to the redirect URI set in your GoCardless [developer panel](https://dashboard.gocardless.com/developer-details/uri-settings) or the redirect URI set in your payment URL. You must then notify GoCardless that the customer was successfully returned to your website by sending GoCardless a `POST` request.
 
 ## Returned parameters
 

@@ -2,7 +2,7 @@
 
 A user pays a one-off amount to the merchant. The user should be redirected to the url and will be asked for authorisation.
 
-If the user has an existing active preauthorization, you may wish to [create a bill under a pre-authorization](#create-a-bill-under-a-pre-auth)
+If the user has an existing active pre-authorization, you may wish to [create a bill under a pre-authorization](#create-a-bill-under-a-pre-auth)
 
 #### Request params
 
