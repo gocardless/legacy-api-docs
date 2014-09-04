@@ -88,4 +88,4 @@ Please submit a pull request to this page to add any missing libraries that shou
 * [gocardless-clj](https://github.com/karls/gocardless-clj) by [Karl Sutt](https://twitter.com/karlsutt)
 
 #### Perl
-* [GoCardless Perl client library](https://github.com/pdw-mb/gocardless-perl) by [Mythic Beasts](https://www.mythic-beasts.com/)
+* [GoCardless Perl client library](https://metacpan.org/release/Business-GoCardless) by [Lee Johnson](https://github.com/leejo/business-gocardless)
