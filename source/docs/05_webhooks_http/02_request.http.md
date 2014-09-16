@@ -51,6 +51,3 @@ The POST request will contain JSON data in the body, providing details of the ac
 	    }
 	}
 
-The signature is generated from the contents of the payload object, not including the container payload itself. The url-encoded string to be signed should look something like:
-
-	action=paid&bills%5B%5D%5Bid%5D=ASDK12323&bills%5B%5D%5Bsource_id%5D=KJHAD978A&bills%5B%5D%5Bsource_type%5D=subscription&bills%5B%5D%5Bstatus%5D=paid&bills%5B%5D%5Buri%5D=https%3A%2F%2Fgocardless.com%2Fapi%2Fv1%2Fbills%2F1&resource_type=bill
