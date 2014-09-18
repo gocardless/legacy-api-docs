@@ -12,7 +12,7 @@ Install from source:
 
 or install from tarball:
 
-	curl -L https://github.com/downloads/gocardless/gocardless-php/gocardless-php-v0.4.1.tgz | tar xzv
+	curl -L https://github.com/gocardless/gocardless-php/tarball/master | tar xzv
 
 Check out our [PHP docs](/php) or view [source on Github](https://github.com/gocardless/gocardless-php).
 
