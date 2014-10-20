@@ -123,4 +123,3 @@ Your customers will only have to interact with GoCardless at the time of authori
 **Step four** – GoCardless emails the customer to confirm receipt of payment
 
 ![The customer confirms their details](/images/user-flow-3.png)
-

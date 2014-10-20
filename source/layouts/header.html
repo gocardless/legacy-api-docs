@@ -5,9 +5,7 @@
   <head>
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-    <title><%= current_page.data.title || "GoCardless API Docs" %></title>
-    <%= stylesheet_link_tag "all" %>
-    <%= javascript_include_tag "libs/modernizr" %>
+    <link rel="stylesheet" href="https://developer.gocardless.com/stylesheets/all-83efc030.css">
     <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6271452/780042/css/fonts.css">
   </head>
 
@@ -43,13 +41,7 @@
           </button>
           <div class="lang-select__dropdown"
             ng-class="{ 'is-open': isLangSelectVisiable }">
-            <% data.languages.each do |lang| %>
-              <a href="/<%= lang[:slug] %>"
-                class="lang-select__item"
-                on-click-anchor>
-                  <%= lang[:name] %>
-              </a>
-            <% end %>
+
           </div>
         </div>
       </div>
@@ -80,19 +72,3 @@
       <toc-nav></toc-nav>
     </nav>
     <main class="site-frame__main">
-      <%= yield %>
-    </main>
-
-    <%= javascript_include_tag  "all" %>
-
-    <!-- Google Tag Manager -->
-    <script>
-      dataLayer = [];
-    </script>
-    <script src="//www.googletagmanager.com/gtm.js?id=GTM-PRFKNC" async></script>
-    <script>
-      (function(w,l){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});})(window, 'dataLayer');
-    </script>
-    <!-- End Google Tag Manager -->
-  </body>
-</html>
