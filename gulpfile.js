@@ -5,8 +5,6 @@ var clean = require('gulp-clean');
 var connect = require('gulp-connect');
 var sass = require('gulp-ruby-sass');
 var open = require("gulp-open");
-var swig = require("gulp-swig");
-var headerfooter = require('gulp-headerfooter');
 
 gulp.task('default', ['docs']);
 
