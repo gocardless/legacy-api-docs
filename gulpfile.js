@@ -49,11 +49,11 @@ gulp.task('docs', function() {
     var obj = config[i];
 
     console.log("Building " + obj.slug + "...");
-    buildLanguages(obj);
+    buildLanguage(obj);
   }
 });
 
-function buildLanguages(language){
+function buildLanguage(language){
   var filter = gulpFilter(['*.md', '!*.*.md', '*.' + language.extname + '.md']);
   return gulp.src(chapters)
     .pipe(filter)
