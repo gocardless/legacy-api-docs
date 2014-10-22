@@ -20,7 +20,22 @@ var chapters = [
   docs_dir + '01_overview/06_*.md',
   docs_dir + '01_overview/07_*.md',
   docs_dir + '02_api_libraries/01_api_libraries/*.md',
-  docs_dir + '02_api_libraries/02_initialization/*.md'
+  docs_dir + '02_api_libraries/02_initialization/*.md',
+  docs_dir + '02_api_libraries/03_webhooks/01_overview/*.md',
+  docs_dir + '02_api_libraries/03_webhooks/02_receiving_webhooks/*.md',
+  docs_dir + '02_api_libraries/03_webhooks/03_reacting_to_webhooks/*.md',
+  docs_dir + '02_api_libraries/03_webhooks/04_testing_webhooks/*.md',
+  docs_dir + '02_api_libraries/03_webhooks/05_bill_webhook/*.md',
+  docs_dir + '02_api_libraries/03_webhooks/06_pre_auth_webhook/*.md',
+  docs_dir + '02_api_libraries/03_webhooks/07_subscription_webhook/*.md',
+  docs_dir + '02_api_libraries/04_prepopulation/*.md',
+  docs_dir + '02_api_libraries/05_deployment/*.md',
+  docs_dir + '03_setting_up_HTTP_payments/*.md',
+  docs_dir + '04_making_REST_requests/*.md',
+  docs_dir + '05_webhooks_http/*.md',
+  docs_dir + '05_webhooks_http/04_webhook_types/*.md',
+  docs_dir + '06_guides/*.md'
+  docs_dir + '07_resources/*.md'
 ]
 
 gulp.task('default', ['docs']);
