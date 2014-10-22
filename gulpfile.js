@@ -16,7 +16,7 @@ var chapters = [
   docs_dir + '01_overview/02_*.md',
   docs_dir + '01_overview/03_*.md',
   docs_dir + '01_overview/04_*.md',
-  docs_dir + '01_overview/05_*/*.md',
+  docs_dir + '01_overview/05_support/*.md',
   docs_dir + '01_overview/06_*.md',
   docs_dir + '01_overview/07_*.md',
   docs_dir + '02_api_libraries/01_api_libraries/*.md',
