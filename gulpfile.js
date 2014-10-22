@@ -7,6 +7,7 @@ var sass = require('gulp-ruby-sass');
 var open = require("gulp-open");
 var gulpFilter = require('gulp-filter');
 
+var config = require('./data/languages');
 
 var docs_dir = 'source/docs/';
 
@@ -22,28 +23,7 @@ var chapters = [
   docs_dir + '02_api_libraries/02_initialization/*.md'
 ]
 
-gulp.task('default', ['rubyDocs', 'nodeDocs']);
-
-gulp.task('rubyDocs', function () {
-  var filterRuby = gulpFilter(['*.md', '!*.*.md', '*.rb.md']);
-  return gulp.src(chapters)
-    .pipe(filterRuby)
-    .pipe(markdown())
-    .pipe(concat('index.html'))
-    .pipe(gulp.dest('./_site/ruby/'))
-    .pipe(connect.reload());
-});
-
-gulp.task('nodeDocs', function () {
-  var filterNode = gulpFilter(['*.md', '!*.*.md', '*.js.md']);
-  return gulp.src(chapters)
-    .pipe(filterNode)
-    .pipe(markdown())
-    .pipe(concat('index.html'))
-    .pipe(gulp.dest('./_site/node/'))
-    .pipe(connect.reload());
-});
-
+gulp.task('default', ['docs']);
 
 gulp.task('images', function () {
   return gulp.src('source/images/**')
@@ -64,6 +44,25 @@ gulp.task('clean', function() {
     .pipe(clean());
 });
 
+gulp.task('docs', function() {
+  for(var i = 0; i < config.length; i++) {
+    var obj = config[i];
+
+    console.log("Building " + obj.slug + "...");
+    buildLanguages(obj);
+  }
+});
+
+function buildLanguages(language){
+  var filter = gulpFilter(['*.md', '!*.*.md', '*.' + language.extname + '.md']);
+  return gulp.src(chapters)
+    .pipe(filter)
+    .pipe(markdown())
+    .pipe(concat('index.html'))
+    .pipe(gulp.dest('./_site/'+language.slug))
+    .pipe(connect.reload());
+}
+
 gulp.task('connect', function () {
   connect.server({
     root: ['_site'],
@@ -72,7 +71,7 @@ gulp.task('connect', function () {
   });
 });
 
-gulp.task('watch', ['clean', 'rubyDocs', 'nodeDocs', 'images', 'connect'], function () {
-    gulp.watch(['source/docs/**'], ['rubyDocs', 'nodeDocs']);
+gulp.task('watch', ['clean', 'docs', 'images', 'connect'], function () {
+    gulp.watch(['source/docs/**'], ['docs']);
     connect.reload();
 });
