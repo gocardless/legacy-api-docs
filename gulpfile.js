@@ -73,5 +73,6 @@ gulp.task('connect', function () {
 
 gulp.task('watch', ['clean', 'docs', 'images', 'connect'], function () {
     gulp.watch(['source/docs/**'], ['docs']);
+    gulp.watch(['source/docs/**/*.jpg', 'source/docs/**/*.png'], ['images']);
     connect.reload();
 });
