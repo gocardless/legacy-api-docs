@@ -24,7 +24,7 @@ The `currency` parameter can be one of the following:
 
 ## Billing information
 
-When redirecting users to payment pages, you have the option to provide a `user` object to pre-populate the user's payment form on GoCardless. This can dramatically increase conversion of your users to paying customers.  
+When redirecting users to payment pages, you have the option to provide a `user` object to pre-populate the user's payment form on GoCardless. This can dramatically increase conversion of your users to paying customers.
 
 The `user` object should be provided inside of the payment details when creating a payment link:
 
@@ -53,7 +53,21 @@ For EUR payments **`[user]country_code`** can be one of the following:
 
 * `AT`: Austria
 * `BE`: Belgium
+* `CY`: Cyprus
+* `EE`: Estonia
+* `FI`: Finland
 * `FR`: France
 * `DE`: Germany
+* `GR`: Greece
 * `IE`: Ireland
+* `IT`: Italy
+* `LV`: Latvia
+* `LU`: Luxembourg
+* `MT`: Malta
+* `MC`: Monaco
 * `NL`: Netherlands
+* `PT`: Portugal
+* `SM`: San Marino
+* `SK`: Slovakia
+* `SI`: Slovenia
+* `ES`: Spain
