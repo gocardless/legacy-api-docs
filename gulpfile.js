@@ -5,16 +5,45 @@ var clean = require('gulp-clean');
 var connect = require('gulp-connect');
 var sass = require('gulp-ruby-sass');
 var open = require("gulp-open");
+var gulpFilter = require('gulp-filter');
 
-gulp.task('default', ['docs']);
 
-gulp.task('docs', function () {
-  return gulp.src('source/docs/**/*.md')
+var docs_dir = 'source/docs/';
+
+var chapters = [
+  docs_dir + '01_overview/01_*.md',
+  docs_dir + '01_overview/02_*.md',
+  docs_dir + '01_overview/03_*.md',
+  docs_dir + '01_overview/04_*.md',
+  docs_dir + '01_overview/05_*/*.md',
+  docs_dir + '01_overview/06_*.md',
+  docs_dir + '01_overview/07_*.md',
+  docs_dir + '02_api_libraries/01_api_libraries/*.md',
+  docs_dir + '02_api_libraries/02_initialization/*.md'
+]
+
+gulp.task('default', ['rubyDocs', 'nodeDocs']);
+
+gulp.task('rubyDocs', function () {
+  var filterRuby = gulpFilter(['*.md', '!*.*.md', '*.rb.md']);
+  return gulp.src(chapters)
+    .pipe(filterRuby)
     .pipe(markdown())
     .pipe(concat('index.html'))
-    .pipe(gulp.dest('./_site/'))
+    .pipe(gulp.dest('./_site/ruby/'))
     .pipe(connect.reload());
 });
+
+gulp.task('nodeDocs', function () {
+  var filterNode = gulpFilter(['*.md', '!*.*.md', '*.js.md']);
+  return gulp.src(chapters)
+    .pipe(filterNode)
+    .pipe(markdown())
+    .pipe(concat('index.html'))
+    .pipe(gulp.dest('./_site/node/'))
+    .pipe(connect.reload());
+});
+
 
 gulp.task('images', function () {
   return gulp.src('source/images/**')
@@ -43,7 +72,7 @@ gulp.task('connect', function () {
   });
 });
 
-gulp.task('watch', ['clean', 'docs', 'images', 'connect'], function () {
-    gulp.watch(['source/docs/**/*.md'], ['docs']);
+gulp.task('watch', ['clean', 'rubyDocs', 'nodeDocs', 'images', 'connect'], function () {
+    gulp.watch(['source/docs/**'], ['rubyDocs', 'nodeDocs']);
     connect.reload();
 });

@@ -18,11 +18,12 @@
   "homepage": "https://github.com/gocardless/api-docs",
   "dependencies": {
     "gulp": "~3.8.8",
-    "gulp-markdown": "~1.0.0",
-    "gulp-concat": "~2.4.1",
     "gulp-clean": "~0.3.1",
+    "gulp-concat": "~2.4.1",
     "gulp-connect": "~2.0.6",
-    "gulp-ruby-sass": "~0.7.1",
-    "gulp-open": "~0.3.0"
+    "gulp-filter": "^1.0.2",
+    "gulp-markdown": "~1.0.0",
+    "gulp-open": "~0.3.0",
+    "gulp-ruby-sass": "~0.7.1"
   }
 }
