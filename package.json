@@ -24,6 +24,10 @@
     "gulp-filter": "^1.0.2",
     "gulp-markdown": "~1.0.0",
     "gulp-open": "~0.3.0",
-    "gulp-ruby-sass": "~0.7.1"
+    "gulp-ruby-sass": "~0.7.1",
+    "gulp-headerfooter": "~1.0.3"
+  },
+  "devDependencies": {
+    "gulp-template": "~1.1.1"
   }
 }

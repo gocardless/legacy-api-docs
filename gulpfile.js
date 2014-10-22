@@ -1,14 +1,18 @@
-var gulp = require('gulp');
-var markdown = require('gulp-markdown');
-var concat = require('gulp-concat');
-var clean = require('gulp-clean');
-var connect = require('gulp-connect');
-var sass = require('gulp-ruby-sass');
-var open = require("gulp-open");
-var gulpFilter = require('gulp-filter');
+// Plugins
+var gulp        = require('gulp');
+var markdown    = require('gulp-markdown');
+var concat      = require('gulp-concat');
+var clean       = require('gulp-clean');
+var connect     = require('gulp-connect');
+var sass        = require('gulp-ruby-sass');
+var open        = require("gulp-open");
+var gulpFilter  = require('gulp-filter');
+var headerfooter = require('gulp-headerfooter');
 
-var config = require('./data/languages');
+// Configuration
+var config      = require('./data/languages');
 
+// Globals
 var docs_dir = 'source/docs/';
 
 var chapters = [
@@ -34,10 +38,11 @@ var chapters = [
   docs_dir + '04_making_REST_requests/*.md',
   docs_dir + '05_webhooks_http/*.md',
   docs_dir + '05_webhooks_http/04_webhook_types/*.md',
-  docs_dir + '06_guides/*.md'
+  docs_dir + '06_guides/*.md',
   docs_dir + '07_resources/*.md'
 ]
 
+// Gulp tasks
 gulp.task('default', ['docs']);
 
 gulp.task('images', function () {
@@ -68,16 +73,6 @@ gulp.task('docs', function() {
   }
 });
 
-function buildLanguage(language){
-  var filter = gulpFilter(['*.md', '!*.*.md', '*.' + language.extname + '.md']);
-  return gulp.src(chapters)
-    .pipe(filter)
-    .pipe(markdown())
-    .pipe(concat('index.html'))
-    .pipe(gulp.dest('./_site/'+language.slug))
-    .pipe(connect.reload());
-}
-
 gulp.task('connect', function () {
   connect.server({
     root: ['_site'],
@@ -91,3 +86,17 @@ gulp.task('watch', ['clean', 'docs', 'images', 'connect'], function () {
     gulp.watch(['source/docs/**/*.jpg', 'source/docs/**/*.png'], ['images']);
     connect.reload();
 });
+
+// Functions
+function buildLanguage(language){
+  var filter = gulpFilter(['*.md', '!*.*.md', '*.' + language.extname + '.md']);
+  return gulp.src(chapters)
+    .pipe(filter)
+    .pipe(markdown())
+    .pipe(headerfooter.header('./source/layouts/doc-header.html'))
+    .pipe(headerfooter.footer('./source/layouts/doc-footer.html'))
+    .pipe(concat('index.html'))
+    .pipe(headerfooter.header('./source/layouts/header.html'))
+    .pipe(gulp.dest('./_site/'+language.slug))
+    .pipe(connect.reload());
+}
