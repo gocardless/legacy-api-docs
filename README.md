@@ -16,8 +16,8 @@ bundle exec middleman server
 
 ## TOC Ordering
 
-Pages are ordered by sorting a concatenated string constructed
-from the folder three plus the file name.
+Pages are ordered by sorting a concatenated string
+constructed from the folder tree plus the file name.
 
 Example:
 ```
