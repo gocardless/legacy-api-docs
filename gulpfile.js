@@ -2,7 +2,7 @@
 var gulp        = require('gulp');
 var markdown    = require('gulp-markdown');
 var concat      = require('gulp-concat');
-var clean       = require('gulp-clean');
+var del = require('del');
 var connect     = require('gulp-connect');
 var sass        = require('gulp-ruby-sass');
 var open        = require("gulp-open");
@@ -61,7 +61,7 @@ var md = [
 ]
 
 // Gulp tasks
-gulp.task('default', ['watch']);
+gulp.task('default', ['make']);
 
 gulp.task('images', function () {
   return gulp.src('source/images/**')
@@ -77,14 +77,14 @@ gulp.task('sass', function () {
     .pipe(gulp.dest('_site/stylesheets/'));
 });
 
-gulp.task('prepareCode', function () {
+gulp.task('prepare:code', function () {
   gulp.src(code)
     .pipe(headerfooter.header('./source/layouts/code-header.html'))
     .pipe(headerfooter.footer('./source/layouts/code-footer.html'))
     .pipe(gulp.dest('.tmp/code/'));
 });
 
-gulp.task('prepareMd', function () {
+gulp.task('prepare:markdown', function () {
   gulp.src(md)
     .pipe(markdown())
     .pipe(headerfooter.header('./source/layouts/doc-header.html'))
@@ -92,12 +92,14 @@ gulp.task('prepareMd', function () {
     .pipe(gulp.dest('.tmp/docs/'));
 });
 
-gulp.task('clean', function() {
-  return gulp.src(['_site', '.tmp'], {read: false})
-    .pipe(clean());
+gulp.task('clean', function(cb) {
+  del([
+    '.tmp',
+    '_site',
+  ], cb);
 });
 
-gulp.task('docs', ['prepareCode', 'prepareMd'], function() {
+gulp.task('docs', ['prepare:code', 'prepare:markdown'], function() {
   setTimeout(function() {
     for(var i = 0; i < config.length; i++) {
       var obj = config[i];
@@ -112,7 +114,7 @@ gulp.task('docs', ['prepareCode', 'prepareMd'], function() {
   //
 });
 
-gulp.task('connect', function () {
+gulp.task('server', function () {
   connect.server({
     root: ['_site'],
     port: 9000,
@@ -120,7 +122,10 @@ gulp.task('connect', function () {
   });
 });
 
-gulp.task('watch', ['clean', 'docs', 'images', 'connect'], function () {
+gulp.task('make', ['clean', 'docs', 'images'], function () {
+});
+
+gulp.task('watch', ['clean', 'docs', 'images', 'server'], function () {
     gulp.watch(['source/docs/**'], ['docs']);
     gulp.watch(['source/docs/**/*.jpg', 'source/docs/**/*.png'], ['images']);
     connect.reload();
