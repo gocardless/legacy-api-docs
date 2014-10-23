@@ -39,7 +39,7 @@ var chapters = [
   docs_dir + '05_webhooks_http/*.md',
   docs_dir + '05_webhooks_http/04_webhook_types/*.md',
   docs_dir + '06_guides/*.md',
-  docs_dir + '07_resources/*.md'
+  docs_dir + '07_resources/**/**/*.md'
 ]
 
 // Gulp tasks
@@ -97,6 +97,7 @@ function buildLanguage(language){
     .pipe(headerfooter.footer('./source/layouts/doc-footer.html'))
     .pipe(concat('index.html'))
     .pipe(headerfooter.header('./source/layouts/header.html'))
+    .pipe(headerfooter.header('./source/layouts/footer.html'))
     .pipe(gulp.dest('./_site/'+language.slug))
     .pipe(connect.reload());
 }
