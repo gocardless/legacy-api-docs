@@ -86,7 +86,7 @@ for the same resource.
 Article independent code samples must be placed in a `code` folder in the
 article folder.
 
-Name the code examples using the appropriate `extname` from `./data/languages.yml`
+Name the code examples using the appropriate `extname` from `./data/languages.json`
 
 
 ## Code articles
@@ -100,4 +100,4 @@ Example:
 - Only show for Ruby `getting_started.rb.md`
 - Show default (HTTP): `getting_started.http.md`
 
-The appropriate `extname` can be found in `./data/languages.yml`
+The appropriate `extname` can be found in `./data/languages.json`
