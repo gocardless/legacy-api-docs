@@ -7,9 +7,9 @@ View API Docs: https://developer.gocardless.com
 ## Running locally
 
 ```bash
-bundle install
+npm install
 
-bundle exec middleman server
+gulp
 ```
 
 ---
