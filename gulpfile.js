@@ -1,24 +1,24 @@
 // Plugins
-var gulp        = require('gulp');
-var markdown    = require('gulp-markdown');
-var concat      = require('gulp-concat');
-var del = require('del');
-var connect     = require('gulp-connect');
-var sass        = require('gulp-ruby-sass');
-var open        = require("gulp-open");
-var gulpFilter  = require('gulp-filter');
+var gulp         = require('gulp');
+var markdown     = require('gulp-markdown');
+var concat       = require('gulp-concat');
+var del          = require('del');
+var connect      = require('gulp-connect');
+var sass         = require('gulp-ruby-sass');
+var open         = require("gulp-open");
+var gulpFilter   = require('gulp-filter');
 var headerfooter = require('gulp-headerfooter');
-var cheerio     = require('gulp-cheerio');
-var foreach     = require('gulp-foreach');
-var ext = require('gulp-ext-replace');
+var cheerio      = require('gulp-cheerio');
+var foreach      = require('gulp-foreach');
+var ext          = require('gulp-ext-replace');
 
 // Configuration
-var config      = require('./data/languages');
+var config       = require('./data/languages');
 
-// Globals
-var docs_dir = 'source/docs/';
+// Directories
+var docs_dir      = 'source/docs/';
 var code_temp_dir = '.tmp/code/';
-var md_temp_dir = '.tmp/docs/';
+var md_temp_dir   = '.tmp/docs/';
 
 var chapters = [
   md_temp_dir + '01_overview/01_*.html',
