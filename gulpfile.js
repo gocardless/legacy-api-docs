@@ -133,7 +133,13 @@ gulp.task('watch', ['clean', 'docs', 'images', 'server'], function () {
 
 // Functions
 function buildLanguage(language){
-  var filter = gulpFilter(['*.html', '!*.*.html', '*.' + language.extname + '.html', 'example.' + language.extname]);
+  var filter = gulpFilter([
+    '*.html',
+    '!*.*.html',
+    '*.' + language.extname + '.html',
+    'example.' + language.extname
+  ]);
+
   return gulp.src(chapters)
     .pipe(filter)
     .pipe(concat('index.html'))
