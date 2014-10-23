@@ -11,3 +11,4 @@ node_modules
 vendor/bundle
 .ruby-version
 _site
+.tmp

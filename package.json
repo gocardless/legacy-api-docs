@@ -25,7 +25,10 @@
     "gulp-markdown": "~1.0.0",
     "gulp-open": "~0.3.0",
     "gulp-ruby-sass": "~0.7.1",
-    "gulp-headerfooter": "~1.0.3"
+    "gulp-headerfooter": "~1.0.3",
+    "gulp-cheerio": "~0.3.2",
+    "gulp-foreach": "0.0.1",
+    "gulp-ext-replace": "~0.1.0"
   },
   "devDependencies": {
     "gulp-template": "~1.1.1"
