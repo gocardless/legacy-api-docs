@@ -61,7 +61,7 @@ var md = [
 ]
 
 // Gulp tasks
-gulp.task('default', ['docs']);
+gulp.task('default', ['watch']);
 
 gulp.task('images', function () {
   return gulp.src('source/images/**')
