@@ -11,6 +11,7 @@ var headerfooter = require('gulp-headerfooter');
 var cheerio      = require('gulp-cheerio');
 var foreach      = require('gulp-foreach');
 var ext          = require('gulp-ext-replace');
+var minifyCss    = require('gulp-minify-css');
 
 // Configuration
 var config       = require('./data/languages');
@@ -130,6 +131,7 @@ gulp.task('sass', function () {
   gulp.src('./source/stylesheets/**/*.scss')
     .pipe(sass())
     .pipe(concat('all.css'))
+    .pipe(minifyCss())
     .on('error', function (err) { console.log(err.message); })
     .pipe(gulp.dest('_site/stylesheets/'));
 });
