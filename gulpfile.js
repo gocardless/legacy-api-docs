@@ -133,7 +133,8 @@ gulp.task('sass', function () {
     .pipe(concat('all.css'))
     .pipe(minifyCss())
     .on('error', function (err) { console.log(err.message); })
-    .pipe(gulp.dest('_site/stylesheets/'));
+    .pipe(gulp.dest('_site/stylesheets/'))
+    .pipe(connect.reload());
 });
 
 gulp.task('prepare:code', function () {
@@ -183,7 +184,7 @@ gulp.task('make', ['clean', 'docs', 'images', 'sass'], function () {
 });
 
 gulp.task('watch', ['clean', 'docs', 'images', 'sass', 'server'], function () {
-  gulp.watch(['source/docs/**'], ['docs']);
+  gulp.watch(['source/docs/**', 'source/layouts/**'], ['docs']);
   gulp.watch(['source/images/**'], ['images']);
   gulp.watch(['source/stylesheets/**',], ['sass']);
   connect.reload();
