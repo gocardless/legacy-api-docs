@@ -1,18 +1,20 @@
 // Plugins
-var gulp         = require('gulp');
-var markdown     = require('gulp-markdown');
-var concat       = require('gulp-concat');
-var del          = require('del');
-var connect      = require('gulp-connect');
-var sass         = require('gulp-sass');
-var minifyCss    = require('gulp-minify-css');
-var sourcemaps   = require('gulp-sourcemaps');
-var open         = require("gulp-open");
-var gulpFilter   = require('gulp-filter');
-var headerfooter = require('gulp-headerfooter');
-var cheerio      = require('gulp-cheerio');
-var foreach      = require('gulp-foreach');
-var ext          = require('gulp-ext-replace');
+var gulp          = require('gulp');
+var markdown      = require('gulp-markdown');
+var concat        = require('gulp-concat');
+var del           = require('del');
+var connect       = require('gulp-connect');
+var sass          = require('gulp-sass');
+var minifyCss     = require('gulp-minify-css');
+var uglify        = require('gulp-uglify');
+var templateCache = require('gulp-angular-templatecache');
+var sourcemaps    = require('gulp-sourcemaps');
+var open          = require("gulp-open");
+var gulpFilter    = require('gulp-filter');
+var headerfooter  = require('gulp-headerfooter');
+var cheerio       = require('gulp-cheerio');
+var foreach       = require('gulp-foreach');
+var ext           = require('gulp-ext-replace');
 
 
 // Configuration
@@ -120,6 +122,23 @@ var md = [
   docs_dir + '**/*.md'
 ]
 
+// source/javascripts/
+var scripts = [
+  'source/javascripts/libs/angular.js',
+  'source/javascripts/libs/angular-touch.js',
+  'source/javascripts/libs/lodash.js',
+
+  'source/javascripts/config/*',
+  'source/javascripts/nav-toggle/*',
+  'source/javascripts/scroll-spy/*',
+  'source/javascripts/toc-nav/*',
+  'source/javascripts/close-when-outside/*',
+  'source/javascripts/on-click-anchor/*',
+
+  'source/javascripts/docs.js',
+]
+
+
 // Gulp tasks
 gulp.task('default', ['make']);
 
@@ -149,6 +168,23 @@ gulp.task('font', function () {
     .pipe(connect.reload());
 });
 
+gulp.task('javascript', function () {
+  var jsFilter = gulpFilter(['**/*.js']);
+  var htmlFilter = gulpFilter(['**/*.html']);
+  gulp.src(scripts)
+    .pipe(sourcemaps.init())
+      .pipe(htmlFilter)
+      // replace this line with GC Angular template generator
+      .pipe(templateCache({ base: '/Users/samjewell/gc/api-docs/source/javascripts/', standalone: true }))
+      .pipe(htmlFilter.restore())
+      .pipe(jsFilter) // defensive step in case html files don't get converted
+      .pipe(concat('all.js'))
+      //.pipe(uglify())
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest('_site/javascripts/'))
+    .pipe(connect.reload());
+});
+
 gulp.task('prepare:code', function () {
   gulp.src(code)
     .pipe(headerfooter.header('./source/layouts/code-header.html'))
@@ -164,12 +200,12 @@ gulp.task('prepare:markdown', function () {
     .pipe(gulp.dest('.tmp/docs/'));
 });
 
-gulp.task('clean', function(cb) {
-  del([
-    '.tmp',
-    '_site',
-  ], cb);
-});
+// gulp.task('clean', function(cb) {
+//   del([
+//     '.tmp',
+//     '_site',
+//   ], cb);
+// });
 
 gulp.task('docs', ['prepare:code', 'prepare:markdown'], function() {
   setTimeout(function() {
@@ -178,7 +214,7 @@ gulp.task('docs', ['prepare:code', 'prepare:markdown'], function() {
       buildLanguage(obj);
     }
 
-  }, 1000);
+  }, 5000);
   //
   // Hacky alert: This timeout is needed for the code files to be read from /tmp
   //
@@ -192,10 +228,10 @@ gulp.task('server', function () {
   });
 });
 
-gulp.task('make', ['clean', 'docs', 'images', 'sass', 'font'], function () {
+gulp.task('make', ['docs', 'images', 'sass', 'font', 'javascript'], function () {
 });
 
-gulp.task('watch', ['clean', 'docs', 'images', 'sass', 'font', 'server'], function () {
+gulp.task('watch', ['make', 'server'], function () {
   gulp.watch(['source/docs/**', 'source/layouts/**'], ['docs']);
   gulp.watch(['source/images/**'], ['images']);
   gulp.watch(['source/stylesheets/**',], ['sass']);
