@@ -48,7 +48,9 @@ var chapters = [
   md_temp_dir + '07_resources/bill/02_create_a_one_off_bill/*.html',
   code_temp_dir + '07_resources/bill/02_create_a_one_off_bill/code/*',
   md_temp_dir + '07_resources/bill/03_confirm_a_new_one_off_bill/*.html',
+  code_temp_dir + '07_resources/bill/03_confirm_a_new_one_off_bill/code/*',
   md_temp_dir + '07_resources/bill/04_list_all_bills/*.html',
+  code_temp_dir + '07_resources/bill/04_list_all_bills/code/*',
   md_temp_dir + '07_resources/bill/05_retrieve_an_existing_bill/*.html',
 ]
 
@@ -103,8 +105,6 @@ gulp.task('docs', ['prepare:code', 'prepare:markdown'], function() {
   setTimeout(function() {
     for(var i = 0; i < config.length; i++) {
       var obj = config[i];
-
-      console.log("Building " + obj.slug + "...");
       buildLanguage(obj);
     }
 
@@ -126,23 +126,34 @@ gulp.task('make', ['clean', 'docs', 'images'], function () {
 });
 
 gulp.task('watch', ['clean', 'docs', 'images', 'server'], function () {
-    gulp.watch(['source/docs/**'], ['docs']);
-    gulp.watch(['source/docs/**/*.jpg', 'source/docs/**/*.png'], ['images']);
-    connect.reload();
+  gulp.watch(['source/docs/**'], ['docs']);
+  gulp.watch(['source/docs/**/*.jpg', 'source/docs/**/*.png'], ['images']);
+  connect.reload();
 });
 
 // Functions
 function buildLanguage(language){
   var filter = gulpFilter([
     '*.html',
-    '!*.*.html',
-    '*.' + language.extname + '.html',
-    'example.' + language.extname
+    '!*.*.html',                        // Get rid of inspecific articles
+    '*.' + language.extname + '.html',  // Articles specific to this language
+    'example.' + language.extname       // Code files for this language
   ]);
 
   return gulp.src(chapters)
     .pipe(filter)
     .pipe(concat('index.html'))
+    .pipe(cheerio({
+      run: function ($) {
+        $('.content-container__description').each(function () {
+          if ($(this).next().hasClass('content-container__code')) {
+            $(this).next().after('<article class="content content-container"></article>');
+          }else{
+            $(this).after('<div class="content-container__code"><div class="content__code">&nbsp;</div></div><article class="content content-container"></article>');
+          };
+        });
+      }
+    }))
     .pipe(headerfooter.header('./source/layouts/header.html'))
     .pipe(headerfooter.footer('./source/layouts/footer.html'))
     .pipe(gulp.dest('./_site/' + language.slug))
