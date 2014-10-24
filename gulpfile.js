@@ -44,6 +44,8 @@ var chapters = [
   md_temp_dir + '05_webhooks_http/*.html',
   md_temp_dir + '05_webhooks_http/04_webhook_types/*.html',
   md_temp_dir + '06_guides/*.html',
+  
+  md_temp_dir + '07_resources/*.html',
   md_temp_dir + '07_resources/bill/*.html',
   md_temp_dir + '07_resources/bill/02_create_a_one_off_bill/*.html',
   code_temp_dir + '07_resources/bill/02_create_a_one_off_bill/code/*',
@@ -52,6 +54,59 @@ var chapters = [
   md_temp_dir + '07_resources/bill/04_list_all_bills/*.html',
   code_temp_dir + '07_resources/bill/04_list_all_bills/code/*',
   md_temp_dir + '07_resources/bill/05_retrieve_an_existing_bill/*.html',
+  code_temp_dir + '07_resources/bill/05_retrieve_an_existing_bill/code/*',
+  md_temp_dir + '07_resources/bill/06_retry_a_failed_bill/*.html',
+  code_temp_dir + '07_resources/bill/06_retry_a_failed_bill/code/*',
+  md_temp_dir + '07_resources/bill/07_cancel_a_pending_bill/*.html',
+  code_temp_dir + '07_resources/bill/07_cancel_a_pending_bill/code/*',
+  md_temp_dir + '07_resources/bill/08_refund_a_bill/*.html',
+  code_temp_dir + '07_resources/bill/08_refund_a_bill/code/*',
+  md_temp_dir + '07_resources/bill/09_statuses/*.html',
+
+  md_temp_dir + '07_resources/merchant/*.html',
+
+  md_temp_dir + '07_resources/merchant/02_retrieve_merchant_details/*.html',
+  code_temp_dir + '07_resources/merchant/02_retrieve_merchant_details/code/*',
+  md_temp_dir + '07_resources/payout/*.html',
+
+  md_temp_dir + '07_resources/payout/02_list_all_payouts/*.html',
+  code_temp_dir + '07_resources/payout/02_list_all_payouts/code/*',
+  md_temp_dir + '07_resources/payout/03_retrieve_an_existing_payout/*.html',
+  code_temp_dir + '07_resources/payout/03_retrieve_an_existing_payout/code/*',
+  md_temp_dir + '07_resources/preauthorization/*.html',
+
+  md_temp_dir + '07_resources/preauthorization/02_create_a_new_pre-authorization/*.html',
+  code_temp_dir + '07_resources/preauthorization/02_create_a_new_pre-authorization/code/*',
+  md_temp_dir + '07_resources/preauthorization/03_confirm_a_new_preauthorization/*.html',
+  code_temp_dir + '07_resources/preauthorization/03_confirm_a_new_preauthorization/code/*',
+  md_temp_dir + '07_resources/preauthorization/04_create_a_bill_under_a_preauthorization/*.html',
+  code_temp_dir + '07_resources/preauthorization/04_create_a_bill_under_a_preauthorization/code/*',
+  md_temp_dir + '07_resources/preauthorization/05_list_all_pre-authorizations/*.html',
+  code_temp_dir + '07_resources/preauthorization/05_list_all_pre-authorizations/code/*',
+  md_temp_dir + '07_resources/preauthorization/06_retrieve_an_existing_pre-authorization/*.html',
+  code_temp_dir + '07_resources/preauthorization/06_retrieve_an_existing_pre-authorization/code/*',
+  md_temp_dir + '07_resources/preauthorization/07_cancel_a_pre-authorization/*.html',
+  code_temp_dir + '07_resources/preauthorization/07_cancel_a_pre-authorization/code/*',
+  md_temp_dir + '07_resources/preauthorization/08_statuses/*.html',
+
+  md_temp_dir + '07_resources/subscription/*.html',
+
+  md_temp_dir + '07_resources/subscription/02_create_a_new_subscription/*.html',
+  code_temp_dir + '07_resources/subscription/02_create_a_new_subscription/code/*',
+  md_temp_dir + '07_resources/subscription/03_confirm_a_new_subscription/*.html',
+  code_temp_dir + '07_resources/subscription/03_confirm_a_new_subscription/code/*',
+  md_temp_dir + '07_resources/subscription/03_list_all_subscriptions/*.html',
+  code_temp_dir + '07_resources/subscription/03_list_all_subscriptions/code/*',
+  md_temp_dir + '07_resources/subscription/04_retrieve_an_existing_subscription/*.html',
+  code_temp_dir + '07_resources/subscription/04_retrieve_an_existing_subscription/code/*',
+  md_temp_dir + '07_resources/subscription/05_cancel_a_subscription/*.html',
+  code_temp_dir + '07_resources/subscription/05_cancel_a_subscription/code/*',
+  md_temp_dir + '07_resources/subscription/06_statuses/*.html',
+
+  md_temp_dir + '07_resources/user/*.html',
+
+  md_temp_dir + '07_resources/user/02_list_all_users/*.html',
+  code_temp_dir + '07_resources/user/02_list_all_users/code/*'
 ]
 
 var code = [
