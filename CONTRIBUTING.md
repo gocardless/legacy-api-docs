@@ -18,7 +18,7 @@ Before you submit your pull request consider the following guidelines:
 * Build your changes locally to ensure it all works
 
     ```shell
-    middleman build
+    gulp watch
     ```
 
 * Push your branch to Github:
