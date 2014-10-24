@@ -45,7 +45,7 @@ var chapters = [
   md_temp_dir + '05_webhooks_http/*.html',
   md_temp_dir + '05_webhooks_http/04_webhook_types/*.html',
   md_temp_dir + '06_guides/*.html',
-  
+
   md_temp_dir + '07_resources/*.html',
   md_temp_dir + '07_resources/bill/*.html',
   md_temp_dir + '07_resources/bill/02_create_a_one_off_bill/*.html',
@@ -208,6 +208,7 @@ function buildLanguage(language){
           if ($(this).next().hasClass('content-container__code')) {
             $(this).next().after('<article class="content content-container"></article>');
           }else{
+            // Add empty code container
             $(this).after('<div class="content-container__code"><div class="content__code">&nbsp;</div></div><article class="content content-container"></article>');
           };
         });
