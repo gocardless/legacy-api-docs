@@ -4,7 +4,26 @@
 @import "shared/scaffold";
 @import "shared/forms";
 
-@import "components/*";
+@import "components/content-container";
+@import "components/content";
+@import "components/deprecation-warning";
+@import "components/highlight";
+@import "components/icon-list";
+@import "components/icon";
+@import "components/intro";
+@import "components/lang-select";
+@import "components/last-article-footer";
+@import "components/section-header";
+@import "components/site-frame";
+@import "components/site-header-logo";
+@import "components/site-header-nav";
+@import "components/site-header";
+@import "components/site-main";
+@import "components/site-nav";
+@import "components/site";
+@import "components/toc-nav";
+@import "components/top-nav";
+@import "components/well-notice";
 
 @import "utils/dimension";
 @import "utils/layout";
@@ -15,4 +34,12 @@
 @import "utils/display";
 @import "utils/border";
 
-@import "modules/*";
+@import "modules/anchors";
+@import "modules/code";
+@import "modules/definition-lists";
+@import "modules/em";
+@import "modules/headers";
+@import "modules/paragraph";
+@import "modules/pre";
+@import "modules/strong";
+@import "modules/table";
