@@ -4,14 +4,16 @@ var markdown     = require('gulp-markdown');
 var concat       = require('gulp-concat');
 var del          = require('del');
 var connect      = require('gulp-connect');
-var sass         = require('gulp-ruby-sass');
+var sass         = require('gulp-sass');
+var minifyCss    = require('gulp-minify-css');
+var sourcemaps   = require('gulp-sourcemaps');
 var open         = require("gulp-open");
 var gulpFilter   = require('gulp-filter');
 var headerfooter = require('gulp-headerfooter');
 var cheerio      = require('gulp-cheerio');
 var foreach      = require('gulp-foreach');
 var ext          = require('gulp-ext-replace');
-var minifyCss    = require('gulp-minify-css');
+
 
 // Configuration
 var config       = require('./data/languages');
@@ -128,10 +130,12 @@ gulp.task('images', function () {
 });
 
 gulp.task('sass', function () {
-  gulp.src('./source/stylesheets/**/*.scss')
-    .pipe(sass())
-    .pipe(concat('all.css'))
-    .pipe(minifyCss())
+  gulp.src('./source/stylesheets/all.scss')
+    .pipe(sourcemaps.init())
+      .pipe(sass())
+      .pipe(concat('all.css'))
+      .pipe(minifyCss())
+    .pipe(sourcemaps.write('./'))
     .on('error', function (err) { console.log(err.message); })
     .pipe(gulp.dest('_site/stylesheets/'))
     .pipe(connect.reload());
