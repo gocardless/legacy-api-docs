@@ -1,19 +1,20 @@
 // Plugins
-var gulp         = require('gulp');
-var markdown     = require('gulp-markdown');
-var concat       = require('gulp-concat');
-var del          = require('del');
-var connect      = require('gulp-connect');
-var sass         = require('gulp-sass');
-var minifyCss    = require('gulp-minify-css');
-var uglify       = require('gulp-uglify');
-var sourcemaps   = require('gulp-sourcemaps');
-var open         = require("gulp-open");
-var gulpFilter   = require('gulp-filter');
-var headerfooter = require('gulp-headerfooter');
-var cheerio      = require('gulp-cheerio');
-var foreach      = require('gulp-foreach');
-var ext          = require('gulp-ext-replace');
+var gulp          = require('gulp');
+var markdown      = require('gulp-markdown');
+var concat        = require('gulp-concat');
+var del           = require('del');
+var connect       = require('gulp-connect');
+var sass          = require('gulp-sass');
+var minifyCss     = require('gulp-minify-css');
+var uglify        = require('gulp-uglify');
+var templateCache = require('gulp-angular-templatecache');
+var sourcemaps    = require('gulp-sourcemaps');
+var open          = require("gulp-open");
+var gulpFilter    = require('gulp-filter');
+var headerfooter  = require('gulp-headerfooter');
+var cheerio       = require('gulp-cheerio');
+var foreach       = require('gulp-foreach');
+var ext           = require('gulp-ext-replace');
 
 
 // Configuration
@@ -130,7 +131,7 @@ var scripts = [
   'source/javascripts/config/*',
   'source/javascripts/nav-toggle/*',
   'source/javascripts/scroll-spy/*',
-  'source/javascripts/toc-nav/*.js',
+  'source/javascripts/toc-nav/*',
   'source/javascripts/close-when-outside/*',
   'source/javascripts/on-click-anchor/*',
 
@@ -169,10 +170,17 @@ gulp.task('font', function () {
 });
 
 gulp.task('javascript', function () {
+  var jsFilter = gulpFilter(['**/*.js']);
+  var htmlFilter = gulpFilter(['**/*.html']);
   gulp.src(scripts)
     .pipe(sourcemaps.init())
+      .pipe(htmlFilter)
+      // replace this line with GC Angular template generator
+      .pipe(templateCache({ base: '/Users/samjewell/gc/api-docs/source/javascripts/', standalone: true }))
+      .pipe(htmlFilter.restore())
+      .pipe(jsFilter) // defensive step in case html files don't get converted
       .pipe(concat('all.js'))
-      .pipe(uglify())
+      //.pipe(uglify())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('_site/javascripts/'))
     .pipe(connect.reload());
