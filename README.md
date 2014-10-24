@@ -9,7 +9,7 @@ View API Docs: https://developer.gocardless.com
 ```bash
 npm install
 
-gulp
+gulp watch
 ```
 
 ---
