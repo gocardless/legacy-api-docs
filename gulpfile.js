@@ -137,6 +137,15 @@ gulp.task('sass', function () {
     .pipe(connect.reload());
 });
 
+gulp.task('font', function () {
+  gulp.src('./source/stylesheets/**/*.css')
+    .pipe(concat('font.css'))
+    .pipe(minifyCss())
+    .on('error', function (err) { console.log(err.message); })
+    .pipe(gulp.dest('_site/stylesheets/'))
+    .pipe(connect.reload());
+});
+
 gulp.task('prepare:code', function () {
   gulp.src(code)
     .pipe(headerfooter.header('./source/layouts/code-header.html'))
@@ -180,10 +189,10 @@ gulp.task('server', function () {
   });
 });
 
-gulp.task('make', ['clean', 'docs', 'images', 'sass'], function () {
+gulp.task('make', ['clean', 'docs', 'images', 'sass', 'font'], function () {
 });
 
-gulp.task('watch', ['clean', 'docs', 'images', 'sass', 'server'], function () {
+gulp.task('watch', ['clean', 'docs', 'images', 'sass', 'font', 'server'], function () {
   gulp.watch(['source/docs/**', 'source/layouts/**'], ['docs']);
   gulp.watch(['source/images/**'], ['images']);
   gulp.watch(['source/stylesheets/**',], ['sass']);
