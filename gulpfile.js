@@ -190,8 +190,8 @@ gulp.task('watch', ['clean', 'docs', 'images', 'server'], function () {
 function buildLanguage(language){
   var filter = gulpFilter([
     '*.html',
-    '!*.*.html',                        // Get rid of inspecific articles
-    '*.' + language.extname + '.html',  // Articles specific to this language
+    '!*.*.html',                        // Get rid of ALL language-specific articles
+    '*.' + language.extname + '.html',  // Get articles specific to THIS language
     'example.' + language.extname       // Code files for this language
   ]);
 
