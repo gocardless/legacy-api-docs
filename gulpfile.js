@@ -201,12 +201,12 @@ gulp.task('prepare:markdown', function () {
     .pipe(gulp.dest('.tmp/docs/'));
 });
 
-gulp.task('clean', function(cb) {
-  del([
-    '.tmp',
-    '_site',
-  ], cb);
-});
+// gulp.task('clean', function(cb) {
+//   del([
+//     '.tmp',
+//     '_site',
+//   ], cb);
+// });
 
 gulp.task('docs', ['prepare:code', 'prepare:markdown'], function() {
   setTimeout(function() {
@@ -229,7 +229,7 @@ gulp.task('server', function () {
   });
 });
 
-gulp.task('make', ['clean', 'docs', 'images', 'sass', 'font', 'javascript'], function () {
+gulp.task('make', ['docs', 'images', 'sass', 'font', 'javascript'], function () {
 });
 
 gulp.task('watch', ['make', 'server'], function () {
