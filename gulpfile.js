@@ -142,10 +142,9 @@ gulp.task('sass', function () {
 });
 
 gulp.task('font', function () {
-  gulp.src('./source/stylesheets/**/*.css')
+  gulp.src('./source/stylesheets/fonts/*.css')
     .pipe(concat('font.css'))
     .pipe(minifyCss())
-    .on('error', function (err) { console.log(err.message); })
     .pipe(gulp.dest('_site/stylesheets/'))
     .pipe(connect.reload());
 });
