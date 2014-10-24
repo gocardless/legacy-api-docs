@@ -177,12 +177,13 @@ gulp.task('server', function () {
   });
 });
 
-gulp.task('make', ['clean', 'docs', 'images'], function () {
+gulp.task('make', ['clean', 'docs', 'images', 'sass'], function () {
 });
 
-gulp.task('watch', ['clean', 'docs', 'images', 'server'], function () {
+gulp.task('watch', ['clean', 'docs', 'images', 'sass', 'server'], function () {
   gulp.watch(['source/docs/**'], ['docs']);
-  gulp.watch(['source/docs/**/*.jpg', 'source/docs/**/*.png'], ['images']);
+  gulp.watch(['source/images/**'], ['images']);
+  gulp.watch(['source/stylesheets/**',], ['sass']);
   connect.reload();
 });
 
