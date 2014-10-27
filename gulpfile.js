@@ -16,8 +16,8 @@ var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var angularTemplate = require('./tasks/gulp-angular-template');
 var glob = require('glob');
-var fs = require('fs');
 var swig = require('swig');
+var pygments = require('pygmentize-bundled');
 
 // Languages configuration
 var languages = require('./data/languages');
@@ -100,7 +100,13 @@ gulp.task('docs', function () {
 
   var preppedStream = gulp.src(mdFilepaths.concat(codeFilepaths).sort())
     .pipe(mdFilter)
-      .pipe(markdown())
+      .pipe(markdown({
+        highlight: function (code, lang, callback) {
+          pygments({ lang: lang, format: 'html' }, code, function (err, result) {
+            callback(err, result.toString());
+          });
+        }
+      }))
       .pipe(headerfooter.header('./source/layouts/doc-header.html'))
       .pipe(headerfooter.footer('./source/layouts/doc-footer.html'))
     .pipe(mdFilter.restore())
