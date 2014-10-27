@@ -6,7 +6,6 @@ var del = require('del');
 var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
 var uglify = require('gulp-uglify');
-var templateCache = require('gulp-angular-templatecache');
 var sourcemaps = require('gulp-sourcemaps');
 var gulpFilter = require('gulp-filter');
 var headerfooter = require('gulp-headerfooter');
