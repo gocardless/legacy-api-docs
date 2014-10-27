@@ -1,18 +1,19 @@
 // Plugins
-var gulp          = require('gulp');
-var markdown      = require('gulp-markdown');
-var concat        = require('gulp-concat');
-var del           = require('del');
-var connect       = require('gulp-connect');
-var sass          = require('gulp-sass');
-var minifyCss     = require('gulp-minify-css');
-var uglify        = require('gulp-uglify');
+var gulp = require('gulp');
+var markdown = require('gulp-markdown');
+var concat = require('gulp-concat');
+var del = require('del');
+var connect = require('gulp-connect');
+var sass = require('gulp-sass');
+var minifyCss = require('gulp-minify-css');
+var uglify = require('gulp-uglify');
 var templateCache = require('gulp-angular-templatecache');
-var sourcemaps    = require('gulp-sourcemaps');
-var gulpFilter    = require('gulp-filter');
-var headerfooter  = require('gulp-headerfooter');
-var cheerio       = require('gulp-cheerio');
-var globule       = require('globule');
+var sourcemaps = require('gulp-sourcemaps');
+var gulpFilter = require('gulp-filter');
+var headerfooter = require('gulp-headerfooter');
+var cheerio = require('gulp-cheerio');
+var angularTemplate = require('./tasks/gulp-angular-template');
+var globule = require('globule');
 
 // Languages configuration
 var languages     = require('./data/languages');
@@ -71,8 +72,7 @@ gulp.task('javascript', function () {
   gulp.src(scripts)
     .pipe(sourcemaps.init())
       .pipe(htmlFilter)
-        // replace this line with GC Angular template generator
-        .pipe(templateCache({ base: '/Users/samjewell/gc/api-docs/source/javascripts/', standalone: true }))
+        .pipe(angularTemplate({ stripPrefix: 'source/javascripts/' }))
       .pipe(htmlFilter.restore())
       .pipe(jsFilter) // defensive step in case html files don't get converted
         .pipe(concat('all.js'))
@@ -116,7 +116,7 @@ gulp.task('docs', function () {
       '*.' + language.extname + '.html',  // Get articles specific to THIS language
       'example.' + language.extname       // Code files for this language
     ]);
-    
+
     var langStream = preppedStream;
     langStream
     .pipe(langFilter)
