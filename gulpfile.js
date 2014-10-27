@@ -11,6 +11,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var gulpFilter = require('gulp-filter');
 var headerfooter = require('gulp-headerfooter');
 var cheerio = require('gulp-cheerio');
+var autoprefixer = require('gulp-autoprefixer');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
@@ -39,7 +40,19 @@ var scripts = [
   'source/javascripts/on-click-anchor/*',
 
   'source/javascripts/docs.js',
-]
+];
+
+var AUTOPREFIXER_BROWSERS = [
+  'ie >= 10',
+  'ie_mob >= 10',
+  'ff >= 30',
+  'chrome >= 34',
+  'safari >= 7',
+  'opera >= 23',
+  'ios >= 7',
+  'android >= 4.4',
+  'bb >= 10'
+];
 
 // Gulp tasks
 gulp.task('default', ['make']);
@@ -56,7 +69,7 @@ gulp.task('css', function () {
       .pipe(concat('all.css'))
       .pipe(minifyCss())
     .pipe(sourcemaps.write('./'))
-    .on('error', function (err) { console.log(err.message); })
+    .pipe(autoprefixer({ browsers: AUTOPREFIXER_BROWSERS }))
     .pipe(gulp.dest('_site/stylesheets/'));
 });
 
