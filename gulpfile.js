@@ -3,7 +3,6 @@ var gulp = require('gulp');
 var markdown = require('gulp-markdown');
 var concat = require('gulp-concat');
 var del = require('del');
-var connect = require('gulp-connect');
 var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
 var uglify = require('gulp-uglify');
@@ -12,15 +11,20 @@ var sourcemaps = require('gulp-sourcemaps');
 var gulpFilter = require('gulp-filter');
 var headerfooter = require('gulp-headerfooter');
 var cheerio = require('gulp-cheerio');
+var runSequence = require('run-sequence');
+var browserSync = require('browser-sync');
+var reload = browserSync.reload;
 var angularTemplate = require('./tasks/gulp-angular-template');
-var globule = require('globule');
+var glob = require('glob');
+var fs = require('fs');
+var swig = require('swig');
 
 // Languages configuration
-var languages     = require('./data/languages');
+var languages = require('./data/languages');
 
 // Docs directories
-var mdFilepaths = globule.find('source/docs/**/*.md')
-var codeFilepaths = globule.find('source/docs/**/z_code/*.*')
+var mdFilepaths = glob.sync('source/docs/**/*.md')
+var codeFilepaths = glob.sync('source/docs/**/z_code/*.*')
 
 var scripts = [
   'source/javascripts/libs/angular.js',
@@ -42,34 +46,31 @@ gulp.task('default', ['make']);
 
 gulp.task('images', function () {
   return gulp.src('source/images/**')
-    .pipe(gulp.dest('./_site/images/'))
-    .pipe(connect.reload());
+    .pipe(gulp.dest('./_site/images/'));
 });
 
-gulp.task('sass', function () {
-  gulp.src('./source/stylesheets/all.scss')
+gulp.task('css', function () {
+  return gulp.src('./source/stylesheets/all.scss')
     .pipe(sourcemaps.init())
       .pipe(sass())
       .pipe(concat('all.css'))
       .pipe(minifyCss())
     .pipe(sourcemaps.write('./'))
     .on('error', function (err) { console.log(err.message); })
-    .pipe(gulp.dest('_site/stylesheets/'))
-    .pipe(connect.reload());
+    .pipe(gulp.dest('_site/stylesheets/'));
 });
 
 gulp.task('font', function () {
-  gulp.src('./source/stylesheets/fonts/*.css')
+  return gulp.src('./source/stylesheets/fonts/*.css')
     .pipe(concat('font.css'))
     .pipe(minifyCss())
-    .pipe(gulp.dest('_site/stylesheets/'))
-    .pipe(connect.reload());
+    .pipe(gulp.dest('_site/stylesheets/'));
 });
 
 gulp.task('javascript', function () {
   var jsFilter = gulpFilter(['**/*.js']);
   var htmlFilter = gulpFilter(['**/*.html']);
-  gulp.src(scripts)
+  return gulp.src(scripts)
     .pipe(sourcemaps.init())
       .pipe(htmlFilter)
         .pipe(angularTemplate({ stripPrefix: 'source/javascripts/' }))
@@ -78,8 +79,7 @@ gulp.task('javascript', function () {
         .pipe(concat('all.js'))
         //.pipe(uglify())
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('_site/javascripts/'))
-    .pipe(connect.reload());
+    .pipe(gulp.dest('_site/javascripts/'));
 });
 
 gulp.task('docs', function () {
@@ -109,6 +109,10 @@ gulp.task('docs', function () {
       .pipe(headerfooter.footer('./source/layouts/code-footer.html'))
     .pipe(codeFilter.restore());
 
+  var headerPartial = swig.renderFile('./source/layouts/header.html', {
+    languages: languages
+  });
+
   languages.forEach(function(language) {
     var langFilter = gulpFilter([
       '*.html',
@@ -122,32 +126,37 @@ gulp.task('docs', function () {
     .pipe(langFilter)
       .pipe(concat('index.html'))
       .pipe(cheerio({ run: containContent }))
-      .pipe(headerfooter.header('./source/layouts/header.html'))
+      .pipe(headerfooter.header(new Buffer(headerPartial)))
       .pipe(headerfooter.footer('./source/layouts/footer.html'))
-      .pipe(gulp.dest('_site/' + language.slug))
-      .pipe(connect.reload());
+      .pipe(gulp.dest('_site/' + language.slug));
   });
 });
 
 gulp.task('clean', function(cb) {
-  del([
-    '_site',
-  ], cb);
+  del(['_site'], cb);
 });
 
-gulp.task('server', function () {
-  connect.server({
-    root: ['_site'],
+gulp.task('build', ['clean'], function(cb) {
+  runSequence(['docs', 'images', 'css', 'font', 'javascript'], cb);
+});
+
+gulp.task('start', ['build'], function () {
+  browserSync({
+    notify: false,
+    // Customize the BrowserSync console logging prefix
+    logPrefix: 'WSK',
+    // Run as an https by uncommenting 'https: true'
+    // Note: this uses an unsigned certificate which on first access
+    //       will present a certificate warning in the browser.
+    // https: true,
     port: 9000,
-    livereload: true
+    server: {
+      baseDir: '_site'
+    }
   });
-});
 
-gulp.task('make', ['docs', 'images', 'sass', 'font', 'javascript']);
-
-gulp.task('watch', ['make', 'server'], function () {
-  gulp.watch(['source/docs/**', 'source/layouts/**'], ['docs']);
-  gulp.watch(['source/images/**'], ['images']);
-  gulp.watch(['source/stylesheets/**',], ['sass']);
-  connect.reload();
+  gulp.watch(['source/docs/**', 'source/layouts/**'], ['docs', reload]);
+  gulp.watch(['source/images/**'], ['images', reload]);
+  gulp.watch(['source/stylesheets/**'], ['css', reload]);
+  gulp.watch(['source/javascripts/**'], ['javascript', reload]);
 });

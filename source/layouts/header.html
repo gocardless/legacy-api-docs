@@ -10,7 +10,7 @@
     <link href="/stylesheets/font.css" rel="stylesheet" type="text/css">
   </head>
 
-  <body class="site-frame site <%= page_classes %>" ng-app="gc.docs" scroll-spy>
+  <body class="site-frame site" ng-app="gc.docs" scroll-spy>
     <!--[if lt IE 9]>
       <div class="u-padding-Am deprecation-warning">
         <h1 class="u-margin-Tn">You are using an outdated browser.</h1>
@@ -42,13 +42,13 @@
           </button>
           <div class="lang-select__dropdown"
             ng-class="{ 'is-open': isLangSelectVisiable }">
-            <% data.languages.each do |lang| %>
-              <a href="/<%= lang[:slug] %>"
+            {% for language in languages %}
+              <a href="/{{ language.slug }}"
                 class="lang-select__item"
                 on-click-anchor>
-                  <%= lang[:name] %>
+                  {{ language.name }}
               </a>
-            <% end %>
+            {% endfor %}
           </div>
         </div>
       </div>

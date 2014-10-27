@@ -1,8 +1,9 @@
 'use strict';
 
 angular.module('gcTocNavDirective', [
-])
-  .directive('tocNav', [
+  'toc-nav/toc-nav-template.html',
+  'toc-nav/toc-nav-item-template.html'
+]).directive('tocNav', [
     function tocNavDirective() {
 
       function createAnchor(id, node) {

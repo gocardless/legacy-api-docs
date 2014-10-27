@@ -6,6 +6,5 @@ angular.module('gc.docs', [
   'gcTocNavDirective',
   'gcNavToggleDirective',
   'gcCloseWhenOutside',
-  'gcOnClickAnchor',
-  'templates'
+  'gcOnClickAnchor'
 ]);
