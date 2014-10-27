@@ -9,18 +9,15 @@ var minifyCss     = require('gulp-minify-css');
 var uglify        = require('gulp-uglify');
 var templateCache = require('gulp-angular-templatecache');
 var sourcemaps    = require('gulp-sourcemaps');
-var open          = require("gulp-open");
 var gulpFilter    = require('gulp-filter');
 var headerfooter  = require('gulp-headerfooter');
 var cheerio       = require('gulp-cheerio');
-var foreach       = require('gulp-foreach');
-var ext           = require('gulp-ext-replace');
 var globule       = require('globule');
 
-// Configuration
+// Languages configuration
 var languages     = require('./data/languages');
 
-// Directories
+// Docs directories
 var mdFilepaths = globule.find('source/docs/**/*.md')
 var codeFilepaths = globule.find('source/docs/**/z_code/*.*')
 
@@ -74,21 +71,19 @@ gulp.task('javascript', function () {
   gulp.src(scripts)
     .pipe(sourcemaps.init())
       .pipe(htmlFilter)
-      // replace this line with GC Angular template generator
-      .pipe(templateCache({ base: '/Users/samjewell/gc/api-docs/source/javascripts/', standalone: true }))
+        // replace this line with GC Angular template generator
+        .pipe(templateCache({ base: '/Users/samjewell/gc/api-docs/source/javascripts/', standalone: true }))
       .pipe(htmlFilter.restore())
       .pipe(jsFilter) // defensive step in case html files don't get converted
-      .pipe(concat('all.js'))
-      //.pipe(uglify())
+        .pipe(concat('all.js'))
+        //.pipe(uglify())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('_site/javascripts/'))
     .pipe(connect.reload());
 });
 
 gulp.task('docs', function () {
-
-  console.log(mdFilepaths.concat(codeFilepaths).sort());
-
+  //console.log(mdFilepaths.concat(codeFilepaths).sort());
   var mdFilter = gulpFilter(['**/*.md']);
   var codeFilter = gulpFilter(['**/*.*', '!*.html', '!*.md']);
 
@@ -103,7 +98,6 @@ gulp.task('docs', function () {
     });
   }
 
-  // gulp-order not working, so use CHAPTERS array:-
   var preppedStream = gulp.src(mdFilepaths.concat(codeFilepaths).sort())
     .pipe(mdFilter)
       .pipe(markdown())
@@ -114,9 +108,6 @@ gulp.task('docs', function () {
       .pipe(headerfooter.header('./source/layouts/code-header.html'))
       .pipe(headerfooter.footer('./source/layouts/code-footer.html'))
     .pipe(codeFilter.restore());
-    // DON'T set gulp.dest here, as it screws up everything downstream - see log for details.
-    // .pipe(gulp.dest('.samTest/docs/'))
-    // .pipe(fileLog())
 
   languages.forEach(function(language) {
     var langFilter = gulpFilter([
