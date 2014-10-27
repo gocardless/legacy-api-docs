@@ -143,8 +143,7 @@ gulp.task('server', function () {
   });
 });
 
-gulp.task('make', ['docs', 'images', 'sass', 'font', 'javascript'], function () {
-});
+gulp.task('make', ['docs', 'images', 'sass', 'font', 'javascript']);
 
 gulp.task('watch', ['make', 'server'], function () {
   gulp.watch(['source/docs/**', 'source/layouts/**'], ['docs']);
