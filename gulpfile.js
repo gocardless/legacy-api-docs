@@ -11,11 +11,14 @@ var gulpFilter = require('gulp-filter');
 var headerfooter = require('gulp-headerfooter');
 var cheerio = require('gulp-cheerio');
 var autoprefixer = require('gulp-autoprefixer');
+var angularTemplate = require('./tasks/gulp-angular-template');
+var gulpPygments = require('./tasks/gulp-pygments');
+var swigTemplate = require('./tasks/gulp-swig-template');
+var gulpSort = require('./tasks/gulp-sort');
+
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
-var angularTemplate = require('./tasks/gulp-angular-template');
-var swigTemplate = require('./tasks/gulp-swig-template');
 var glob = require('glob');
 var swig = require('swig');
 var pygments = require('pygmentize-bundled');
@@ -138,9 +141,11 @@ gulp.task('docs', function () {
       .pipe(headerfooter.footer('./source/layouts/doc-footer.html'))
     .pipe(mdFilter.restore())
     .pipe(codeFilter)
+      .pipe(gulpPygments())
       .pipe(headerfooter.header('./source/layouts/code-header.html'))
       .pipe(headerfooter.footer('./source/layouts/code-footer.html'))
-    .pipe(codeFilter.restore());
+    .pipe(codeFilter.restore())
+    .pipe(gulpSort())
 
   languages.forEach(function(language) {
     var headerPartial = swig.renderFile('./source/layouts/header.html', {
