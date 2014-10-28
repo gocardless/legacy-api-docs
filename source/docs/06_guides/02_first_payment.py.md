@@ -48,23 +48,25 @@ urlpatterns = patterns('',
   )
 ```
 
-    <!-- In gc_app/templates/gc_app/index.html
-         (you'll need to create this file) -->
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <title>Signup via GoCardless</title>
-    </head>
-    <body>
-      <h2>Signup up via GoCardless!</h2>
-      <form action ="{% url gc_submit %}" method='POST'>
-        {% csrf_token %}
-        <h3>Enter your email to subscribe</h3>
-        <input type="text" name="email">
-        <input type="submit">
-      </form>
-    </body>
-    </html>
+```html
+<!-- In gc_app/templates/gc_app/index.html
+     (you'll need to create this file) -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Signup via GoCardless</title>
+</head>
+<body>
+  <h2>Signup up via GoCardless!</h2>
+  <form action ="{#% url gc_submit %#}" method='POST'>
+    {#% csrf_token %#}
+    <h3>Enter your email to subscribe</h3>
+    <input type="text" name="email">
+    <input type="submit">
+  </form>
+</body>
+</html>
+```
 
 Next, we need to handle the post request sent from the form submission. This is where we send the user to the GoCardless checkout pages, and we'll use the Python library to do the heavy lifting of creating the payment URL. Since the customer has already given us their email address we'll also pre-populate the email field of the checkout form.
 
@@ -137,17 +139,19 @@ Note that the view above has some work to do. It confirms the safe receipt of th
 
 Finally we need to add a success template:
 
-    <!-- In gc_app/templates/gc_app/success.html
-         (you'll need to create this file) -->
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <title>Signup via GoCardless</title>
-    </head>
-    <body>
-      <h2>New subscription created!</h2>
-    </body>
-    </html>
+```html
+<!-- In gc_app/templates/gc_app/success.html
+     (you'll need to create this file) -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Signup via GoCardless</title>
+</head>
+<body>
+  <h2>New subscription created!</h2>
+</body>
+</html>
+```
 
 That's it! Your app is now set up to take subscription payments! Take a moment to test it out (don't forget to log out of your GoCardless merchant account before testing). Your customers can now easily subscribe to pay you £10 every month, via direct debit.
 

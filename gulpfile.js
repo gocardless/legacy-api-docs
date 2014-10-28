@@ -15,6 +15,7 @@ var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var angularTemplate = require('./tasks/gulp-angular-template');
+var swigTemplate = require('./tasks/gulp-swig-template');
 var glob = require('glob');
 var swig = require('swig');
 var pygments = require('pygmentize-bundled');
@@ -112,6 +113,10 @@ gulp.task('docs', function () {
 
   var preppedStream = gulp.src(mdFilepaths.concat(codeFilepaths).sort())
     .pipe(mdFilter)
+      .pipe(swigTemplate({
+        locals: {
+        }
+      }))
       .pipe(markdown({
         highlight: function (code, lang, callback) {
           pygments({ lang: lang, format: 'html' }, code, function (err, result) {
