@@ -132,11 +132,12 @@ gulp.task('docs', function () {
       .pipe(headerfooter.footer('./source/layouts/code-footer.html'))
     .pipe(codeFilter.restore());
 
-  var headerPartial = swig.renderFile('./source/layouts/header.html', {
-    languages: languages
-  });
-
   languages.forEach(function(language) {
+    var headerPartial = swig.renderFile('./source/layouts/header.html', {
+      languages: languages,
+      currentLanguage: language
+    });
+
     var langFilter = gulpFilter([
       '*.html',
       '!*.*.html',                        // Get rid of ALL language-specific articles
