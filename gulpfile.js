@@ -102,12 +102,22 @@ gulp.task('docs', function () {
 
   var containContent = function ($) {
     $('.content-container__description').each(function () {
-      if ($(this).next().hasClass('content-container__code')) {
-        $(this).next().after('<article class="content content-container"></article>');
-      }else{
-        // Add empty code container
-        $(this).after('<div class="content-container__code"><div class="content__code">&nbsp;</div></div><article class="content content-container"></article>');
-      };
+      var $desc = $(this);
+      var $descClone = $desc.clone();
+      var $wrapper = $('<article class="content content-container"></article>');
+      $desc.before($wrapper);
+      $desc.remove();
+      var $code = $desc.next();
+      var $codeClone;
+
+      if ($code.hasClass('content-container__code')) {
+        $codeClone = $code.clone();
+        $code.remove();
+      } else {
+        $codeClone = '<div class="content-container__code"></div>';
+      }
+
+      $wrapper.append($descClone, $codeClone);
     });
   }
 
