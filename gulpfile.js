@@ -145,7 +145,7 @@ gulp.task('docs', function () {
       .pipe(headerfooter.header('./source/layouts/code-header.html'))
       .pipe(headerfooter.footer('./source/layouts/code-footer.html'))
     .pipe(codeFilter.restore())
-    .pipe(gulpSort())
+    .pipe(gulpSort());
 
   languages.forEach(function(language) {
     var headerPartial = swig.renderFile('./source/layouts/header.html', {
