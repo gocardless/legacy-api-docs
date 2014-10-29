@@ -36,6 +36,7 @@
     "gulp-uglify": "^1.0.1",
     "gulp-util": "^3.0.1",
     "lodash": "^2.4.1",
+    "marked": "^0.3.2",
     "pygmentize-bundled": "^2.2.0",
     "run-sequence": "^1.0.1",
     "stable": "^0.1.5",

@@ -15,6 +15,7 @@ var angularTemplate = require('./tasks/gulp-angular-template');
 var gulpPygments = require('./tasks/gulp-pygments');
 var swigTemplate = require('./tasks/gulp-swig-template');
 var gulpSort = require('./tasks/gulp-sort');
+var marked = require('marked');
 
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
@@ -124,6 +125,25 @@ gulp.task('docs', function () {
     });
   }
 
+  var renderer = new marked.Renderer();
+  renderer.paragraph = function (text) {
+    var dlTest = /(^|\n\n+)(\S.+)(\n\:(\s{4,}|\t))(\S.+)/
+
+    var dl = '\n\n' +
+      '<dl>' +
+      '<dt><p>$2</p></dt>' +
+      '<dd><p>$5</p></dd>' +
+      '</dl>' +
+      '\n\n';
+
+    if (text.match(dlTest)) {
+      text = text.replace(dlTest, dl);
+      return text;
+    } else {
+      return '<p>' + text + '</p>\n';
+    }
+  };
+
   var preppedStream = gulp.src(mdFilepaths.concat(codeFilepaths).sort())
     .pipe(mdFilter)
       .pipe(swigTemplate({
@@ -135,7 +155,8 @@ gulp.task('docs', function () {
           pygments({ lang: lang, format: 'html' }, code, function (err, result) {
             callback(err, result.toString());
           });
-        }
+        },
+        renderer: renderer
       }))
       .pipe(headerfooter.header('./source/layouts/doc-header.html'))
       .pipe(headerfooter.footer('./source/layouts/doc-footer.html'))
