@@ -21,7 +21,7 @@ set :s3_endpoint, 's3-eu-west-1.amazonaws.com'
 
 namespace :deploy do
   task :build do
-    system 'OUTPUT=public gulp build'
+    system 'NODE_ENV=production OUTPUT=public gulp build'
   end
 
   task :clean do

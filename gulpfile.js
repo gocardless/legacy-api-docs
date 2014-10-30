@@ -25,6 +25,8 @@ var uglify = require('gulp-uglify');
 
 var dest = process.env.OUTPUT || "_site";
 
+var isProduction = process.env.NODE_ENV === 'production';
+
 // Languages configuration
 var languages = require('./data/languages');
 
@@ -69,11 +71,11 @@ gulp.task('images', function () {
 
 gulp.task('css', function () {
   return gulp.src('./source/stylesheets/all.scss')
-    .pipe(sourcemaps.init())
+    .pipe(gulpif(isProduction, sourcemaps.init()))
       .pipe(sass())
       .pipe(concat('all.css'))
-      .pipe(minifyCss())
-    .pipe(sourcemaps.write('./'))
+      .pipe(gulpif(isProduction, minifyCss()))
+    .pipe(gulpif(isProduction, sourcemaps.write('./')))
     .pipe(autoprefixer({ browsers: AUTOPREFIXER_BROWSERS }))
     .pipe(gulp.dest(dest + '/stylesheets/'));
 });
@@ -84,22 +86,22 @@ gulp.task('font', function () {
 });
 
 gulp.task('javascript', function () {
-  var jsFilter = gulpFilter(['**/*.js']);
   var htmlFilter = gulpFilter(['**/*.html']);
   return gulp.src(scripts)
-    .pipe(sourcemaps.init())
+    .pipe(gulpif(isProduction, sourcemaps.init()))
       .pipe(htmlFilter)
         .pipe(angularTemplate({ stripPrefix: 'source/javascripts/' }))
       .pipe(htmlFilter.restore())
-      .pipe(jsFilter) // defensive step in case html files don't get converted
-        .pipe(concat('all.js'))
-        // .pipe(uglify())
-    .pipe(sourcemaps.write('./'))
+      .pipe(concat('all.js'))
+      .pipe(gulpif(isProduction, uglify({
+        mangle: false,
+        screwIe8: true
+      })))
+    .pipe(gulpif(isProduction, sourcemaps.write('./')))
     .pipe(gulp.dest(dest + '/javascripts/'));
 });
 
 gulp.task('docs', function () {
-  //console.log(mdFilepaths.concat(codeFilepaths).sort());
   var mdFilter = gulpFilter(['**/*.md']);
   var codeFilter = gulpFilter(['**/*.*', '!*.html', '!*.md']);
 
@@ -190,7 +192,7 @@ gulp.task('docs', function () {
     .pipe(codeFilter.restore())
     .pipe(gulpSort());
 
-  languages.forEach(function(language) {
+  return languages.reduce(function(language) {
     var headerPartial = swig.renderFile('./source/layouts/header.html', {
       languages: languages,
       currentLanguage: language
@@ -204,8 +206,7 @@ gulp.task('docs', function () {
     ]);
 
     var langStream = preppedStream;
-    langStream
-    .pipe(langFilter)
+    return langStream.pipe(langFilter)
       .pipe(concat('index.html'))
       .pipe(cheerio({ run: containContent }))
       .pipe(headerfooter.header(new Buffer(headerPartial)))
@@ -216,11 +217,11 @@ gulp.task('docs', function () {
 });
 
 gulp.task('clean', function(cb) {
-  del([dest], cb);
+  return del([dest], cb);
 });
 
 gulp.task('build', ['clean'], function(cb) {
-  runSequence(['docs', 'images', 'css', 'font', 'javascript'], cb);
+  return runSequence(['docs', 'images', 'css', 'font', 'javascript'], cb);
 });
 
 gulp.task('start', ['build'], function () {

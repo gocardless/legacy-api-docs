@@ -11,6 +11,12 @@ npm install
 npm start
 ```
 
+## Deploying
+```bash
+cap staging deploy
+cap production deploy
+```
+
 ---
 
 ## TOC Ordering
