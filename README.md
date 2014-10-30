@@ -8,8 +8,7 @@ View API Docs: https://developer.gocardless.com
 
 ```bash
 npm install
-
-gulp watch
+npm start
 ```
 
 ---
