@@ -77,10 +77,8 @@ gulp.task('css', function () {
 });
 
 gulp.task('font', function () {
-  return gulp.src('./source/stylesheets/fonts/*.css')
-    .pipe(concat('font.css'))
-    .pipe(minifyCss())
-    .pipe(gulp.dest('_site/stylesheets/'));
+  return gulp.src('./source/fonts/*')
+    .pipe(gulp.dest('_site/fonts/'));
 });
 
 gulp.task('javascript', function () {
@@ -152,7 +150,7 @@ gulp.task('docs', function () {
         + '\n</code></pre>';
     }
 
-    return '<pre><code class="hljs">'
+    return '<pre><code class="hljs language-' + lang + '">'
       + (escaped ? code : escape(code, true))
       + '\n</code></pre>\n';
   };

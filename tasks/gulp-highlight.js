@@ -23,7 +23,7 @@ module.exports = function () {
       java: 'java',
       js: 'js',
       php: 'php',
-      py: 'py',
+      py: 'python',
       rb: 'ruby' //rb also fine
     };
     var language = langs[suffix];
@@ -36,7 +36,12 @@ module.exports = function () {
 
     try {
       var result = highlight.highlight(language, content).value;
-      file.contents = new Buffer(result);
+      var wrapped = '<pre><code class="hljs language-' +
+        language +
+        '">' +
+        result +
+        '\n</code></pre>\n';
+      file.contents = new Buffer(wrapped);
       cb(null, file);
     } catch (err) {
       cb(new gutil.PluginError('gulp-highlight', err, {
