@@ -1,7 +1,7 @@
 var path = require('path');
 var gutil = require('gulp-util');
 var through = require('through2');
-var pygments = require('pygmentize-bundled');
+var highlight = require('highlight.js');
 
 module.exports = function () {
   return through.obj(function (file, enc, cb) {
@@ -11,12 +11,12 @@ module.exports = function () {
     }
 
     if (file.isStream()) {
-      cb(new gutil.PluginError('gulp-pygments', 'Streaming not supported'));
+      cb(new gutil.PluginError('gulp-highlight', 'Streaming not supported'));
       return;
     }
 
     var content = file.contents.toString();
-    var suffix = path.extname(file.path).replace('.','')
+    var suffix = path.extname(file.path).replace('.', '');
     var langs = {
       cs: 'csharp',
       http: 'http',
@@ -25,21 +25,21 @@ module.exports = function () {
       php: 'php',
       py: 'py',
       rb: 'ruby' //rb also fine
+    };
+    var language = langs[suffix];
+
+    if (!language) {
+      cb(new gutil.PluginError('gulp-highlight', 'no language found for ext: ' + suffix, {
+        fileName: file.path
+      }));
     }
 
     try {
-      pygments({
-      	lang: langs[suffix],
-      	format: 'html'
-      },
-      	content,
-      	function (err, result) {
-          file.contents = result;
-          cb(err, file);
-        }
-      );
+      var result = highlight.highlight(language, content).value;
+      file.contents = new Buffer(result);
+      cb(null, file);
     } catch (err) {
-      cb(new gutil.PluginError('gulp-pygments', err, {
+      cb(new gutil.PluginError('gulp-highlight', err, {
         fileName: file.path
       }));
     }

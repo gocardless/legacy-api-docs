@@ -1,29 +1,27 @@
 // Plugins
-var gulp = require('gulp');
-var markdown = require('gulp-markdown');
+var angularTemplate = require('./tasks/gulp-angular-template');
+var autoprefixer = require('gulp-autoprefixer');
+var browserSync = require('browser-sync');
+var cheerio = require('gulp-cheerio');
 var concat = require('gulp-concat');
 var del = require('del');
-var sass = require('gulp-sass');
-var minifyCss = require('gulp-minify-css');
-var uglify = require('gulp-uglify');
-var sourcemaps = require('gulp-sourcemaps');
-var gulpFilter = require('gulp-filter');
-var headerfooter = require('gulp-headerfooter');
-var cheerio = require('gulp-cheerio');
-var autoprefixer = require('gulp-autoprefixer');
-var gulpif = require('gulp-if');
-var angularTemplate = require('./tasks/gulp-angular-template');
-var gulpPygments = require('./tasks/gulp-pygments');
-var swigTemplate = require('./tasks/gulp-swig-template');
-var gulpSort = require('./tasks/gulp-sort');
-var marked = require('marked');
-
-var runSequence = require('run-sequence');
-var browserSync = require('browser-sync');
-var reload = browserSync.reload;
 var glob = require('glob');
+var gulp = require('gulp');
+var gulpFilter = require('gulp-filter');
+var gulpHighlight = require('./tasks/gulp-highlight');
+var gulpif = require('gulp-if');
+var gulpSort = require('./tasks/gulp-sort');
+var headerfooter = require('gulp-headerfooter');
+var highlight = require('highlight.js');
+var markdown = require('gulp-markdown');
+var marked = require('marked');
+var minifyCss = require('gulp-minify-css');
+var reload = browserSync.reload;
+var runSequence = require('run-sequence');
+var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
 var swig = require('swig');
-var pygments = require('pygmentize-bundled');
+var uglify = require('gulp-uglify');
 
 // Languages configuration
 var languages = require('./data/languages');
@@ -95,7 +93,7 @@ gulp.task('javascript', function () {
       .pipe(htmlFilter.restore())
       .pipe(jsFilter) // defensive step in case html files don't get converted
         .pipe(concat('all.js'))
-        //.pipe(uglify())
+        // .pipe(uglify())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('_site/javascripts/'));
 });
@@ -127,6 +125,38 @@ gulp.task('docs', function () {
   }
 
   var renderer = new marked.Renderer();
+
+  function escape(html, encode) {
+    return html
+      .replace(!encode ? /&(?!#?\w+;)/g : /&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  renderer.code = function (code, lang, escaped) {
+    var out;
+    if (lang) {
+      out = highlight.highlight(lang, code).value;
+    }
+
+    if (out != null && out !== code) {
+      escaped = true;
+      code = out;
+    }
+
+    if (!lang) {
+      return '<pre><code class="hljs">'
+        + (escaped ? code : escape(code, true))
+        + '\n</code></pre>';
+    }
+
+    return '<pre><code class="hljs">'
+      + (escaped ? code : escape(code, true))
+      + '\n</code></pre>\n';
+  };
+
   renderer.paragraph = function (text) {
     var dlTest = /(^|\n\n+)(\S.+)(\n\:(\s{4,}|\t))(\S.+)/
 
@@ -147,23 +177,14 @@ gulp.task('docs', function () {
 
   var preppedStream = gulp.src(mdFilepaths.concat(codeFilepaths).sort())
     .pipe(mdFilter)
-      .pipe(swigTemplate({
-        locals: {
-        }
-      }))
       .pipe(markdown({
-        highlight: function (code, lang, callback) {
-          pygments({ lang: lang, format: 'html' }, code, function (err, result) {
-            callback(err, result.toString());
-          });
-        },
         renderer: renderer
       }))
       .pipe(headerfooter.header('./source/layouts/doc-header.html'))
       .pipe(headerfooter.footer('./source/layouts/doc-footer.html'))
     .pipe(mdFilter.restore())
     .pipe(codeFilter)
-      .pipe(gulpPygments())
+      .pipe(gulpHighlight())
       .pipe(headerfooter.header('./source/layouts/code-header.html'))
       .pipe(headerfooter.footer('./source/layouts/code-footer.html'))
     .pipe(codeFilter.restore())
