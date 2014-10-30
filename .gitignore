@@ -1,6 +1,7 @@
 .bundle
 build
 log
+public
 tmp
 .sass-cache
 .DS_Store
