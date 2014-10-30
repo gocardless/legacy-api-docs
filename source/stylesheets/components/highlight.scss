@@ -5,90 +5,154 @@
  * -------------------------
  */
 
-.highlight {
+.hljs {
   background-color: #FBFBFB;
-  padding: 12px;
-  font-family: Monaco, "Liberation Mono", Courier, monospace;
-  font-size: 11px;
   color: #586e75;
   word-wrap: normal;
-  box-shadow: 0px 1px 1px rgba(0,0,0,0.15);
+
+  overflow: scroll;
+  overflow-y: hidden;
+  overflow-x: auto;
+
+  border-radius: 5px;
+  display: block;
+  font-family: "Source Code Pro", Consolas, Monaco, Menlo, "Courier New", monospace;
+  padding: 1.45em;
+  border-left: 5px solid #586e75;
+}
+
+.language-ruby {
+  border-color: #c05c5c;
+}
+.language-python {
+  border-color: #3581ba;
+}
+.language-php {
+  border-color: #9098ba;
+}
+.language-java {
+  border-color: #b07219;
+}
+.language-csharp {
+  border-color: #5a25a2;
+}
+.language-js,
+.language-javascript {
+  border-color: #f1e05a;
+}
+.language-go {
+  border-color: #7b93c2;
 }
 
 @media (min-width: $layout-min-width--normal) {
   .content__code {
-    .highlight {
-      box-shadow: none;
+    .hljs {
+      border-left: none;
     }
   }
 }
 
-.highlight pre {
-  margin: 0;
-  overflow: scroll;
-  overflow-y: hidden;
-  overflow-x: auto;
+.hljs-comment,
+.hljs-preprocessor,
+.hljs-preprocessor .hljs-keyword,
+.hljs-template_comment,
+.diff .hljs-header,
+.hljs-doctype,
+.hljs-pi,
+.lisp .hljs-string,
+.hljs-javadoc {
+  color: $syntax-comment;
 }
 
-.highlight span {
-  color: #586e75;
-  font-style: normal;
-  font-weight: normal;
+/* Solarized Green */
+.hljs-keyword,
+.hljs-winutils,
+.method,
+.hljs-addition,
+.css .hljs-tag,
+.hljs-request,
+.hljs-status,
+.nginx .hljs-title {
+  color: $syntax-keyword;
 }
 
-.highlight .c      { color: #93a1a1; font-style: italic; } /* Comment */
-.highlight .cm     { color: #93a1a1; font-style: italic; } /* Comment.Multiline */
-.highlight .cp     { color: #93a1a1; font-style: italic;  } /* Comment.Preproc */
-.highlight .c1     { color: #93a1a1; font-style: italic; } /* Comment.Single */
-.highlight .cs     { color: #93a1a1; font-weight: bold; font-style: italic; }    /* Comment.Special */
-.highlight .err    { color: #dc322f; background: none; } /* Error */
-.highlight .k      { color: #cb4b16; } /* Keyword */
-.highlight .o      { color: #586e75; font-weight: bold; } /* Operator */
-.highlight .p      { color: #586e75; } /* Operator */
-.highlight .ow     { color: #2aa198; font-weight: bold; } /* Operator.Word */
-.highlight .gd     { color: #586e75; background-color: #E7BB43; display: inline-block; } /* Generic.Deleted */
-.highlight .gd .x  { color: #586e75; background-color: #E7BB43; display: inline-block; } /* Generic.Deleted.Specific */
-.highlight .ge     { color: #586e75; font-style: italic; } /* Generic.Emph */
-.highlight .gh     { color: #93a1a1; } /* Generic.Heading */
-.highlight .gi     { color: #586e75; background-color: #CEC77E; display: inline-block; } /* Generic.Inserted */
-.highlight .gi .x  { color: #586e75; background-color: #A79D37; display: inline-block; } /* Generic.Inserted.Specific */
-.highlight .gs     { color: #586e75; font-weight: bold; } /* Generic.Strong */
-.highlight .gu     { color: #6c71c4; } /* Generic.Subheading */
-.highlight .kc     { color: #859900; font-weight: bold; } /* Keyword.Constant */
-.highlight .kd     { color: #268bd2; } /* Keyword.Declaration */
-.highlight .kp     { color: #cb4b16; font-weight: bold; } /* Keyword.Pseudo */
-.highlight .kr     { color: #d33682; font-weight: bold; } /* Keyword.Reserved */
-.highlight .kt     { color: #2aa198; } /* Keyword.Type */
-.highlight .n      { color: #268bd2; }
-.highlight .na     { color: #268bd2; } /* Name.Attribute */
-.highlight .nb     { color: #859900; } /* Name.Builtin */
-.highlight .nc     { color: #d33682;} /* Name.Class */
-.highlight .no     { color: #b58900; } /* Name.Constant */
-.highlight .nl     { color: #859900; }
-.highlight .ne     { color: #268bd2; font-weight: bold; } /* Name.Exception */
-.highlight .nf     { color: #268bd2; font-weight: bold; } /* Name.Function */
-.highlight .nn     { color: #b58900; } /* Name.Namespace */
-.highlight .nt     { color: #268bd2; font-weight: bold; } /* Name.Tag */
-.highlight .nx     { color: #b58900; }
-.highlight .vg     { color: #268bd2; } /* Name.Variable.Global */
-.highlight .vi     { color: #268bd2; } /* Name.Variable.Instance */
-.highlight .nv     { color: #268bd2; } /* Name.Variable */
-.highlight .mf     { color: #2aa198; } /* Literal.Number.Float */
-.highlight .m      { color: #2aa198; } /* Literal.Number */
-.highlight .mh     { color: #2aa198; } /* Literal.Number.Hex */
-.highlight .mi     { color: #2aa198; } /* Literal.Number.Integer */
-.highlight .s      { color: #2aa198; } /* Literal.String */
-.highlight .sd     { color: #2aa198; } /* Literal.String.Doc */
-.highlight .s2     { color: #2aa198; } /* Literal.String.Double */
-.highlight .se     { color: #dc322f; } /* Literal.String.Escape */
-.highlight .si     { color: #268bd2; } /* Literal.String.Interpol */
-.highlight .sr     { color: #2aa198; } /* Literal.String.Regex */
-.highlight .s1     { color: #2aa198; } /* Literal.String.Single */
-
-.highlight div .gd,
-.highlight div .gd .x,
-.highlight div .gi,
-.highlight div .gi .x {
-  display: inline-block;
-  width: 100%;
+/* Solarized Cyan */
+.hljs-number,
+.hljs-command,
+.hljs-tag .hljs-value,
+.hljs-rules .hljs-value,
+.hljs-phpdoc,
+.hljs-dartdoc,
+.tex .hljs-formula,
+.hljs-regexp,
+.hljs-hexcolor,
+.hljs-link_url {
+  color: $syntax-number;
 }
+
+/* Solarized Blue */
+.hljs-title,
+.hljs-localvars,
+.hljs-string,
+.hljs-chunk,
+.hljs-decorator,
+.hljs-built_in,
+.hljs-identifier,
+.vhdl .hljs-literal,
+.hljs-id,
+.css .hljs-function {
+  color: $syntax-string;
+}
+
+/* Solarized Yellow */
+.hljs-attribute,
+.hljs-variable,
+.lisp .hljs-body,
+.smalltalk .hljs-number,
+.hljs-constant,
+.hljs-class .hljs-title,
+.hljs-parent,
+.hljs-type,
+.hljs-link_reference {
+  color: $syntax-name;
+}
+
+/* Solarized Orange */
+
+.hljs-pragma,
+.hljs-shebang,
+.hljs-symbol,
+.hljs-symbol .hljs-string,
+.diff .hljs-change,
+.hljs-special,
+.hljs-attr_selector,
+.hljs-subst,
+.hljs-cdata,
+.css .hljs-pseudo,
+.hljs-header {
+  color: $syntax-symbol;
+}
+
+/* Solarized Red */
+.hljs-deletion,
+.hljs-important {
+  color: #dc322f;
+}
+
+/* Solarized Violet */
+.hljs-link_label {
+  color: #6c71c4;
+}
+
+.tex .hljs-formula {
+  background: #eee8d5;
+}
+
+
+// .highlight div .gd,
+// .highlight div .gd .x,
+// .highlight div .gi,
+// .highlight div .gi .x {
+//   display: inline-block;
+//   width: 100%;
+// }

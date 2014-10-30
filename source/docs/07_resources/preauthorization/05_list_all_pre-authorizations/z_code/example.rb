@@ -1,0 +1,1 @@
+GoCardless.client.merchant.pre_authorizations

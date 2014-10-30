@@ -9,7 +9,7 @@ When you have created your API integration, and finished testing it, you will wa
     ```php
     <?php
     include_once 'lib/GoCardless.php';
-    
+
     GoCardless::$environment = 'production';
     ?>
     ```
@@ -25,7 +25,7 @@ When you have created your API integration, and finished testing it, you will wa
       'merchant_id'   => 'INSERT_LIVE_MERCHANT_ID',
       'access_token'  => 'INSERT_LIVE_ACCESS_TOKEN'
     );
-    
+
     // Initialize GoCardless
     GoCardless::set_account_details($account_details);
     ?>

@@ -6,7 +6,7 @@ If your account has been set up to accept international payments (see [gocardles
 
 To set the currency, please provide it inside of the payment details when creating a payment link:
 
-```
+```json
 {
   "subscription": {
     "amount":"50.00",
@@ -32,7 +32,7 @@ When redirecting users to payment pages, you have the option to provide a `user`
 The `user` object should be provided inside of the payment details when creating a payment link:
 
 
-```
+```json
 {
   "subscription": {
     "amount":"50.00",

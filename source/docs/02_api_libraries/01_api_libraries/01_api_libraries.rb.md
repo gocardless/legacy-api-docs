@@ -8,6 +8,8 @@ We strongly encourage use of our official libraries for accessing the GoCardless
 
 Added to your Gemfile:
 
-	gem 'gocardless'
+```ruby
+gem 'gocardless'
+```
 
 Check out our [Ruby docs](/ruby) or view [source on Github](https://github.com/gocardless/gocardless-ruby).

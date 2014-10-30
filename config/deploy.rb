@@ -20,12 +20,8 @@ set :secret_access_key, ENV['GC_AWS_SECRET']
 set :s3_endpoint, 's3-eu-west-1.amazonaws.com'
 
 namespace :deploy do
-  task :compile do
-    system 'middleman build'
-  end
-
-  task :move do
-    system 'mv build public'
+  task :build do
+    system 'NODE_ENV=production OUTPUT=public gulp build'
   end
 
   task :clean do
@@ -41,8 +37,7 @@ namespace :deploy do
 
   task :default do
     transaction do
-      compile
-      move
+      build
       update
       clean
       purge_cdn_cache

@@ -3,8 +3,7 @@
 angular.module('gcTocNavDirective', [
   'toc-nav/toc-nav-template.html',
   'toc-nav/toc-nav-item-template.html'
-])
-  .directive('tocNav', [
+]).directive('tocNav', [
     function tocNavDirective() {
 
       function createAnchor(id, node) {

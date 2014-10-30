@@ -16,7 +16,9 @@ First, download and install the Ruby client library:
 
 #### Add to your gemfile:
 
-    gem install gocardless
+```ruby
+gem install gocardless
+```
 
 Alternatively, view [source on Github](https://github.com/gocardless/gocardless-ruby).
 

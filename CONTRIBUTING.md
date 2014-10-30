@@ -18,7 +18,7 @@ Before you submit your pull request consider the following guidelines:
 * Build your changes locally to ensure it all works
 
     ```shell
-    middleman build
+    npm start
     ```
 
 * Push your branch to Github:

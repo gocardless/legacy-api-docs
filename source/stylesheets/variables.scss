@@ -1,7 +1,7 @@
 $font-family-base:      Arial, sans-serif;
 $font-family-heading:   "Gotham SSm A","Gotham SSm B", $font-family-base;
 $font-family-label:     $font-family-base;
-$font-family-monospace: Monaco, Menlo, Consolas, "Courier New", monospace;
+$font-family-monospace: "Source Code Pro", Consolas, Monaco, Menlo, "Courier New", monospace;
 
 $font-size-base: 13px;
 $line-height-base: 1.55;
@@ -94,3 +94,12 @@ $content-width: 55%;
 $content-max-width: 700px;
 
 ////////////////////////////////////////////////////////////////////////////////
+
+$syntax-name: #0b5ab6;
+$syntax-string: #17a042;
+$syntax-number: #0095b8;
+$syntax-comment: #93a1a1;
+$syntax-class: #b02454;
+$syntax-symbol: #cd8255;
+$syntax-keyword: #cb4b16;
+

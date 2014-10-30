@@ -1,1 +1,0 @@
-GoCardless.client.merchant.bills

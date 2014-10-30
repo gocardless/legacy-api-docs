@@ -72,11 +72,13 @@ This request should be authenticated by passing the app identifier and app secre
 
 If the request is successful then the response will look like this:
 
-    {
-      "access_token": "MvYX0i6snRh3gevXWbE5a56blveHqPLpLFjfOuZoWusd5AewvXuhcMU/1PXfPoc6",
-      "token_type": "bearer",
-      "scope": "manage_merchant:VSXU7HPAY7OZN6"
-    }
+```json
+{
+  "access_token": "MvYX0i6snRh3gevXWbE5a56blveHqPLpLFjfOuZoWusd5AewvXuhcMU/1PXfPoc6",
+  "token_type": "bearer",
+  "scope": "manage_merchant:VSXU7HPAY7OZN6"
+}
+```
 
 The ID following the colon within `scope` is the ID of the merchant account (`VSXU7HPAY7OZN6` in this case) that the user linked to the app. This should be used in future API requests to identify the merchant.
 
@@ -90,24 +92,27 @@ You can provide certain information in the initial request to enable GoCardless 
 
 You may provide the following information:
 
-    {
-      "merchant": {
-        "user": {
-          "email": "roy@roysburgeremporium.com",
-          "first_name": "Roy",
-          "last_name": "Roy"
-        },
-        "name": "Dr Roy",
-        "phone_number": "07500000000",
-        "description": "Burgers and mash",
-        "merchant_type": "business",
-        "company_name": "Roy's Burger Emporium",
-        "company_registration": "0112358132134",
-        "bank_reference": "ROYSBURGERS"
-      }
-    }
+```json
+{
+  "merchant": {
+    "user": {
+      "email": "roy@roysburgeremporium.com",
+      "first_name": "Roy",
+      "last_name": "Roy"
+    },
+    "name": "Dr Roy",
+    "phone_number": "07500000000",
+    "description": "Burgers and mash",
+    "merchant_type": "business",
+    "company_name": "Roy's Burger Emporium",
+    "company_registration": "0112358132134",
+    "bank_reference": "ROYSBURGERS"
+  }
+}
+```
 
 The variable `merchant['merchant_type']` can be set to one of the following values:
 
-    'business' | 'charity' | 'individual'
-
+```json
+'business' | 'charity' | 'individual'
+```

@@ -7,17 +7,22 @@ View API Docs: https://developer.gocardless.com
 ## Running locally
 
 ```bash
-bundle install
+npm install
+npm start
+```
 
-bundle exec middleman server
+## Deploying
+```bash
+cap staging deploy
+cap production deploy
 ```
 
 ---
 
 ## TOC Ordering
 
-Pages are ordered by sorting a concatenated string constructed
-from the folder three plus the file name.
+Pages are ordered by sorting a concatenated string
+constructed from the folder tree plus the file name.
 
 Example:
 ```
@@ -86,7 +91,7 @@ for the same resource.
 Article independent code samples must be placed in a `code` folder in the
 article folder.
 
-Name the code examples using the appropriate `extname` from `./data/languages.yml`
+Name the code examples using the appropriate `extname` from `./data/languages.json`
 
 
 ## Code articles
@@ -100,4 +105,4 @@ Example:
 - Only show for Ruby `getting_started.rb.md`
 - Show default (HTTP): `getting_started.http.md`
 
-The appropriate `extname` can be found in `./data/languages.yml`
+The appropriate `extname` can be found in `./data/languages.json`

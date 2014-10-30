@@ -1,6 +1,7 @@
 .bundle
 build
 log
+public
 tmp
 .sass-cache
 .DS_Store
@@ -10,4 +11,5 @@ tags
 node_modules
 vendor/bundle
 .ruby-version
-
+_site
+.tmp

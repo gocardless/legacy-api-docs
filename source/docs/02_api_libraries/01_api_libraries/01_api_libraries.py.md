@@ -8,6 +8,6 @@ We strongly encourage use of our official libraries for accessing the GoCardless
 
 Install from pip:
 
-	 pip install gocardless
+	pip install gocardless
 
 Check out our [Python docs](/python) or view [source on Github](https://github.com/gocardless/gocardless-python).
