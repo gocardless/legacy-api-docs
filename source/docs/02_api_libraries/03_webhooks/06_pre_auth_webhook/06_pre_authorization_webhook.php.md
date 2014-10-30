@@ -2,22 +2,24 @@
 
 Example pre-authorization webhook object:
 
-    {
-      "payload": {
-        "resource_type": "pre_authorization",
-        "action": "cancelled",
-        "pre_authorizations": [{
-          "id": "AKJ398H8KBOOO3",
-          "status": "cancelled",
-          "uri": "https://gocardless.com/api/v1/pre_authorizations/AKJ398H8KBOOO3"
-        }, {
-          "id": "AKJ398H8KBOOOA",
-          "status": "cancelled",
-          "uri": "https://gocardless.com/api/v1/pre_authorizations/AKJ398H8KBOOOA"
-        }],
-        "signature": "f6b9e6cd8eef30c444da48370e646839c9bb9e1cf10ea16164d5cf93a50231eb"
-      }
-    }
+```json
+{
+  "payload": {
+    "resource_type": "pre_authorization",
+    "action": "cancelled",
+    "pre_authorizations": [{
+      "id": "AKJ398H8KBOOO3",
+      "status": "cancelled",
+      "uri": "https://gocardless.com/api/v1/pre_authorizations/AKJ398H8KBOOO3"
+    }, {
+      "id": "AKJ398H8KBOOOA",
+      "status": "cancelled",
+      "uri": "https://gocardless.com/api/v1/pre_authorizations/AKJ398H8KBOOOA"
+    }],
+    "signature": "f6b9e6cd8eef30c444da48370e646839c9bb9e1cf10ea16164d5cf93a50231eb"
+  }
+}
+```
 
 ### Possible actions
 

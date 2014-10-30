@@ -22,7 +22,9 @@ Check out our [PHP docs](/php) or view [source on Github](https://github.com/goc
 
 Added to your Gemfile:
 
-	gem 'gocardless'
+```ruby
+gem 'gocardless'
+```
 
 Check out our [Ruby docs](/ruby) or view [source on Github](https://github.com/gocardless/gocardless-ruby).
 

@@ -1,7 +1,6 @@
 POST https://gocardless.com/api/v1/bills/{BILL_ID}/retry HTTP/1.1
 
 HTTP/1.1 201 CREATED
-
 {
   "amount": "44.0",
   "gocardless_fees": "0.44",
