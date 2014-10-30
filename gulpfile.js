@@ -25,7 +25,6 @@ var uglify = require('gulp-uglify');
 
 var dest = process.env.OUTPUT || "_site";
 
-
 // Languages configuration
 var languages = require('./data/languages');
 
