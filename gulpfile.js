@@ -11,6 +11,7 @@ var gulpFilter = require('gulp-filter');
 var headerfooter = require('gulp-headerfooter');
 var cheerio = require('gulp-cheerio');
 var autoprefixer = require('gulp-autoprefixer');
+var gulpif = require('gulp-if');
 var angularTemplate = require('./tasks/gulp-angular-template');
 var gulpPygments = require('./tasks/gulp-pygments');
 var swigTemplate = require('./tasks/gulp-swig-template');
@@ -188,7 +189,8 @@ gulp.task('docs', function () {
       .pipe(cheerio({ run: containContent }))
       .pipe(headerfooter.header(new Buffer(headerPartial)))
       .pipe(headerfooter.footer('./source/layouts/footer.html'))
-      .pipe(gulp.dest('_site/' + language.slug));
+      .pipe(gulp.dest('_site/' + language.slug))
+        .pipe(gulpif(language.slug == 'http', gulp.dest('_site/')));
   });
 });
 
