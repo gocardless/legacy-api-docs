@@ -192,7 +192,8 @@ gulp.task('docs', function () {
     .pipe(codeFilter.restore())
     .pipe(gulpSort());
 
-  return languages.reduce(function(language) {
+  return languages.reduce(function(__prev, language) {
+    console.log('building ' + language.slug);
     var headerPartial = swig.renderFile('./source/layouts/header.html', {
       languages: languages,
       currentLanguage: language
@@ -213,7 +214,9 @@ gulp.task('docs', function () {
       .pipe(headerfooter.footer('./source/layouts/footer.html'))
       .pipe(gulp.dest(dest + '/' + language.slug))
         .pipe(gulpif(language.slug == 'http', gulp.dest(dest + '/')));
-  });
+  // pass in 0 as previous element for arrayReduce,
+  //   so it still works for arrays of length 1
+  },0);
 });
 
 gulp.task('clean', function(cb) {
