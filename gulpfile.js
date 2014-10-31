@@ -138,6 +138,17 @@ gulp.task('docs', function () {
       .replace(/'/g, '&#39;');
   }
 
+  function parseDls(text) {
+    return text.replace(
+      /(^|\n\n+)(\S.+)(\n\:(\s{4,}|\t))(\S.+)/,
+      '\n\n' +
+      '<dl>' +
+      '<dt><p>$2</p></dt>' +
+      '<dd><p>$5</p></dd>' +
+      '</dl>' +
+      '\n\n');
+  }
+
   renderer.code = function (code, lang, escaped) {
     var out;
     if (lang) {
@@ -161,22 +172,16 @@ gulp.task('docs', function () {
   };
 
   renderer.paragraph = function (text) {
-    var dlTest = /(^|\n\n+)(\S.+)(\n\:(\s{4,}|\t))(\S.+)/
+    var dlText = parseDls(text)
 
-    var dl = '\n\n' +
-      '<dl>' +
-      '<dt><p>$2</p></dt>' +
-      '<dd><p>$5</p></dd>' +
-      '</dl>' +
-      '\n\n';
-
-    if (text.match(dlTest)) {
-      text = text.replace(dlTest, dl);
-      return text;
+    if (text != dlText) {
+      return dlText;
     } else {
       return '<p>' + text + '</p>\n';
     }
   };
+
+  renderer.html = parseDls;
 
   var preppedStream = gulp.src(mdFilepaths.concat(codeFilepaths).sort())
     .pipe(mdFilter)
