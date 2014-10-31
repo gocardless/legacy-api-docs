@@ -1,27 +1,28 @@
 // Plugins
-var angularTemplate = require('./tasks/gulp-angular-template');
+var gulp = require('gulp');
 var autoprefixer = require('gulp-autoprefixer');
-var browserSync = require('browser-sync');
 var cheerio = require('gulp-cheerio');
 var concat = require('gulp-concat');
-var del = require('del');
-var glob = require('glob');
-var gulp = require('gulp');
 var gulpFilter = require('gulp-filter');
-var gulpHighlight = require('./tasks/gulp-highlight');
-var gulpif = require('gulp-if');
-var gulpSort = require('./tasks/gulp-sort');
 var headerfooter = require('gulp-headerfooter');
-var highlight = require('highlight.js');
-var markdown = require('gulp-markdown');
-var marked = require('marked');
 var minifyCss = require('gulp-minify-css');
-var reload = browserSync.reload;
-var runSequence = require('run-sequence');
+var uglify = require('gulp-uglify');
+var gulpif = require('gulp-if');
+var markdown = require('gulp-markdown');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
+var angularTemplate = require('./tasks/gulp-angular-template');
+var gulpHighlight = require('./tasks/gulp-highlight');
+var gulpSort = require('./tasks/gulp-sort');
+
+var del = require('del');
+var glob = require('glob');
+var browserSync = require('browser-sync');
+var highlight = require('highlight.js');
+var marked = require('marked');
+var reload = browserSync.reload;
+var runSequence = require('run-sequence');
 var swig = require('swig');
-var uglify = require('gulp-uglify');
 
 var dest = process.env.OUTPUT || "_site";
 
@@ -192,7 +193,8 @@ gulp.task('docs', function () {
     .pipe(codeFilter.restore())
     .pipe(gulpSort());
 
-  return languages.reduce(function(language) {
+  return languages.reduce(function(__prev, language) {
+    console.log('building ' + language.slug);
     var headerPartial = swig.renderFile('./source/layouts/header.html', {
       languages: languages,
       currentLanguage: language
@@ -213,7 +215,9 @@ gulp.task('docs', function () {
       .pipe(headerfooter.footer('./source/layouts/footer.html'))
       .pipe(gulp.dest(dest + '/' + language.slug))
         .pipe(gulpif(language.slug == 'http', gulp.dest(dest + '/')));
-  });
+  // pass in 0 as previous element for arrayReduce,
+  //   so it still works for arrays of length 1
+  },0);
 });
 
 gulp.task('clean', function(cb) {
