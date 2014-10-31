@@ -1,27 +1,28 @@
 // Plugins
-var angularTemplate = require('./tasks/gulp-angular-template');
+var gulp = require('gulp');
 var autoprefixer = require('gulp-autoprefixer');
-var browserSync = require('browser-sync');
 var cheerio = require('gulp-cheerio');
 var concat = require('gulp-concat');
-var del = require('del');
-var glob = require('glob');
-var gulp = require('gulp');
 var gulpFilter = require('gulp-filter');
-var gulpHighlight = require('./tasks/gulp-highlight');
-var gulpif = require('gulp-if');
-var gulpSort = require('./tasks/gulp-sort');
 var headerfooter = require('gulp-headerfooter');
-var highlight = require('highlight.js');
-var markdown = require('gulp-markdown');
-var marked = require('marked');
 var minifyCss = require('gulp-minify-css');
-var reload = browserSync.reload;
-var runSequence = require('run-sequence');
+var uglify = require('gulp-uglify');
+var gulpif = require('gulp-if');
+var markdown = require('gulp-markdown');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
+var angularTemplate = require('./tasks/gulp-angular-template');
+var gulpHighlight = require('./tasks/gulp-highlight');
+var gulpSort = require('./tasks/gulp-sort');
+
+var del = require('del');
+var glob = require('glob');
+var browserSync = require('browser-sync');
+var highlight = require('highlight.js');
+var marked = require('marked');
+var reload = browserSync.reload;
+var runSequence = require('run-sequence');
 var swig = require('swig');
-var uglify = require('gulp-uglify');
 
 var dest = process.env.OUTPUT || "_site";
 
