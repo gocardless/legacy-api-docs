@@ -63,7 +63,7 @@ var AUTOPREFIXER_BROWSERS = [
 ];
 
 // Gulp tasks
-gulp.task('default', ['make']);
+gulp.task('default', ['build']);
 
 gulp.task('images', function () {
   return gulp.src('source/images/**')
@@ -140,7 +140,7 @@ gulp.task('docs', function () {
 
   function parseDls(text) {
     return text.replace(
-      /(^|\n\n+)(\S.+)(\n\:(\s{4,}|\t))(\S.+)/,
+      /(^|\n\n+)(\S.+)(\n\:(\s{4,}|\t))(\S.+)/g,
       '\n\n' +
       '<dl>' +
       '<dt><p>$2</p></dt>' +
