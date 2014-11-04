@@ -33,7 +33,8 @@ var languages = require('./data/languages');
 
 // Docs directories
 var mdFilepaths = glob.sync('source/docs/**/*.md')
-var codeFilepaths = glob.sync('source/docs/**/z_code/*.*')
+var codeFilepaths = glob.sync('source/docs/**/z_code/example.*')
+var docsFilepaths = mdFilepaths.concat(codeFilepaths).sort();
 
 var scripts = [
   'source/javascripts/libs/angular.js',
@@ -183,7 +184,7 @@ gulp.task('docs', function () {
 
   renderer.html = parseDls;
 
-  var preppedStream = gulp.src(mdFilepaths.concat(codeFilepaths).sort())
+  var preppedStream = gulp.src(docsFilepaths)
     .pipe(mdFilter)
       .pipe(markdown({
         renderer: renderer
@@ -248,8 +249,8 @@ gulp.task('start', ['build'], function () {
     }
   });
 
-  gulp.watch(['source/docs/**', 'source/layouts/**'], ['docs', reload]);
-  gulp.watch(['source/images/**'], ['images', reload]);
-  gulp.watch(['source/stylesheets/**'], ['css', reload]);
-  gulp.watch(['source/javascripts/**'], ['javascript', reload]);
+  gulp.watch(docsFilepaths.concat('source/layouts/*.html'), ['docs', reload]);
+  gulp.watch(['source/images/**/*.jpg', 'source/images/**/*.png', 'source/images/**/*.gif'], ['images', reload]);
+  gulp.watch(['source/stylesheets/*.scss'], ['css', reload]);
+  gulp.watch(['source/javascripts/**/*.js', 'source/javascripts/**/*.html'], ['javascript', reload]);
 });
