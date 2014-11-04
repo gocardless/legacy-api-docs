@@ -250,7 +250,7 @@ gulp.task('start', ['build'], function () {
   });
 
   gulp.watch(docsFilepaths.concat('source/layouts/*.html'), ['docs', reload]);
-  gulp.watch(['source/images/**/*.jpg', 'source/images/**/*.png', 'source/images/**/*.gif'], ['images', reload]);
+  gulp.watch(['source/images/**/*.jpg', 'source/images/**/*.jpeg', 'source/images/**/*.png', 'source/images/**/*.gif'], ['images', reload]);
   gulp.watch(['source/stylesheets/**/*.scss'], ['css', reload]);
   gulp.watch(['source/javascripts/**/*.js', 'source/javascripts/**/*.html'], ['javascript', reload]);
 });
