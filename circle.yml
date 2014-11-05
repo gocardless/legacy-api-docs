@@ -1,0 +1,14 @@
+deployment:
+  # production:
+  #   branch: master
+  #   commands:
+  #     - cap production deploy
+
+  staging:
+    branch: dev
+    commands:
+      - cap staging deploy
+
+machine:
+  node:
+    version: 0.10.28
