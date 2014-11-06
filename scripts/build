@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -e errexit
+
+NODE_ENV=production OUTPUT=public node_modules/.bin/gulp build
