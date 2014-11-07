@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "bundle install",
     "test": "echo \"Warning: no test specified\" ",
-    "start": "gulp start"
+    "start": "ulimit -n 10240 && gulp start"
   },
   "repository": {
     "type": "git",
