@@ -21,11 +21,12 @@ set :s3_endpoint, 's3-eu-west-1.amazonaws.com'
 
 namespace :deploy do
   task :build do
-    system 'NODE_ENV=production OUTPUT=public gulp build'
+    system './scripts/build'
   end
 
   task :clean do
     system 'rm -rf public'
+    system "rm .last_published"
   end
 
   task :purge_cdn_cache do

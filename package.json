@@ -4,8 +4,9 @@
   "description": "GoCardless API Documentation",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "gulp start"
+    "postinstall": "bundle install",
+    "test": "echo \"Warning: no test specified\" ",
+    "start": "ulimit -n 10240 && gulp start"
   },
   "repository": {
     "type": "git",

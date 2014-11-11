@@ -1,0 +1,14 @@
+deployment:
+  production:
+    branch: master
+    commands:
+      - bundle exec cap production deploy
+
+  staging:
+    branch: dev
+    commands:
+      - bundle exec cap staging deploy
+
+machine:
+  node:
+    version: 0.10.28
