@@ -29,6 +29,10 @@ namespace :deploy do
     system "rm .last_published"
   end
 
+  task :redirects do
+    system "AWS_ACCESS_KEY_ID=$GC_AWS_ACCESS_KEY AWS_SECRET_ACCESS_KEY=$GC_AWS_SECRET ./scripts/s3-redirects.js --redirects ./config/redirects.json --bucket #{ fetch(:bucket) } --region eu-west-1"
+  end
+
   task :purge_cdn_cache do
     system "curl -X POST \
             -H 'Fastly-Key: #{ENV['GC_FASTLY_API_KEY']}' \
@@ -41,6 +45,7 @@ namespace :deploy do
       build
       update
       clean
+      redirects
       purge_cdn_cache
     end
   end
