@@ -3,8 +3,8 @@ build/
 log/
 public/
 tmp/
-.sass-cache/
 tags/
+.sass-cache/
 node_modules/
 vendor/
 _site/
@@ -13,3 +13,5 @@ _site/
 .DS_Store
 .rvmrc
 .autotest
+.last_published
+npm-debug.log
