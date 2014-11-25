@@ -16,6 +16,8 @@ module.exports = function () {
     }
 
     var content = file.contents.toString();
+    content = content.replace(/(^\n*|\n*$)/g, '');
+
     var suffix = path.extname(file.path).replace('.', '');
     var langs = {
       cs: 'csharp',
