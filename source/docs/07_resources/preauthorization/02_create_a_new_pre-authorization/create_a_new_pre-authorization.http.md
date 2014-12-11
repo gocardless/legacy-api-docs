@@ -88,7 +88,7 @@ The first interval will run from 15-31st March. The second interval willcommence
 
 #### Returns
 
-Returns a pre-authorization object
+Returns a link to a pre-authorisation mandate.
 
 ### Variable payments
 

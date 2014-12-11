@@ -6,4 +6,4 @@ $payment_details = array(
 );
 
 $subscription_url = GoCardless::new_subscription_url($payment_details);
-echo $subscription_url;
+echo htmlentities($subscription_url);

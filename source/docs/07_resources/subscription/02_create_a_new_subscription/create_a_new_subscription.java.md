@@ -39,4 +39,4 @@ A user pays a **fixed amount** to a merchant each fixed interval of time, until 
 
 #### Returns
 
-Returns a subscription object.
+Returns a link to a subscription mandate.
