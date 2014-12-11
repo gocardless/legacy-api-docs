@@ -24,3 +24,6 @@ Please note: the GoCardless developer docs are not relevant when installing thes
 #### Wordpress
 * [GoCardless Wordpress plugin](https://github.com/DHS/wp-gocardless) by [David Haywood-Smith](https://twitter.com/DHS)
 * [GoCardless for Wordpress](http://codecanyon.net/item/gocardless-for-wordpress-plugin/3207246?ref=outerbridge) by [Outerbridge](http://outerbridge.co.uk/2013/03/gocardless-wordpress-plugin/)
+
+#### ClientExec
+* [clientexec-gocardless](https://github.com/peterlaws/clientexec-gocardless) by [peterlaws](https://github.com/peterlaws/clientexec-gocardless)
