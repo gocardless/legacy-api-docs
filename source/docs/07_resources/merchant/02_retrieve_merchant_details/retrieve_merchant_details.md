@@ -7,6 +7,6 @@ Retrieve your merchant details (you can find your merchant id in the developer p
 `id`
 :    _required_ id of merchant to retrieve
 
-#### Returns
+#### Response
 
 Returns merchant details

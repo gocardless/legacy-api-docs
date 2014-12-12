@@ -33,6 +33,6 @@ A `POST` should be sent back to GoCardless with the following parameters:
 `resource_type`
 :     _required_ the resource type provided in the initial `GET` request
 
-#### Returns
+#### Return value
 
 Returns a pre-authorization object

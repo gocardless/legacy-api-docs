@@ -5,7 +5,7 @@
 `id`
 :    _required_ id of payout to retrieve
 
-#### Returns
+#### Response
 
 Returns a payout object
 

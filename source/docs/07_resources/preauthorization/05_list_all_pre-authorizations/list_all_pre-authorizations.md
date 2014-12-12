@@ -5,6 +5,6 @@
 `id`
 :    _required_ id of merchant
 
-#### Returns
+#### Response
 
 Returns an array of pre-authorization objects

@@ -77,7 +77,7 @@ If a pre-authorization is created with an `interval_length` greater than 1 then 
 
 The first interval will run from 15-31st March. The second interval willcommence on the 1st April and last two months. Subsequent intervals will last two months.
 
-#### Returns
+#### Return value
 
 Returns a link to a pre-authorisation mandate.
 
