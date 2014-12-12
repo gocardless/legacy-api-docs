@@ -23,6 +23,6 @@ Pre-authorizations that you've created with the API can only be charged this way
 `charge_customer_at`
 :    should be in the format `YYYY-MM-DD`. Attribute to choose when a payment will leave the customer's account.
 
-#### Returns
+#### Response
 
 Returns a bill object.

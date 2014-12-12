@@ -5,6 +5,6 @@
 `id`
 :    _required_ id of bill to retrieve
 
-#### Returns
+#### Response
 
 Returns a bill object

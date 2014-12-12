@@ -7,6 +7,6 @@ Updates status to `cancelled`. You will no longer be able to create bills under 
 `id`
 :    _required_ id of pre-authorization to cancel
 
-#### Returns
+#### Response
 
 Returns a pre-authorization object

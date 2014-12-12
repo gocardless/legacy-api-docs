@@ -42,6 +42,9 @@ If the user has an existing active pre-authorization, you may wish to [create a 
 `state`
 :    This allows you to pass a value of your choice through the payment process, receiving it in the redirect page. If present, it will be passed back as a parameter when the user is returned to the merchant's site at the end of an authorization process. If a merchant's site passes in `state="id_9SX5G36"`, it will receive back `state="id_9SX5G36"` when the user returns to the merchant's site. This state is not persisted in the GoCardless database.
 
+#### Return value
+
+Returns a link to a one-off payment mandate.
 
 #### Confirmation
 

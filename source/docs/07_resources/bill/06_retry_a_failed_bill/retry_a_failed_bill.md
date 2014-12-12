@@ -11,6 +11,6 @@ If a bill is retried, GoCardless will attempt to collect it again. You will rece
 `id`
 :    _required_ id of bill to retry
 
-#### Returns
+#### Response
 
 Returns a bill object
