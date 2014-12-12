@@ -5,7 +5,7 @@
 `id`
 :    _required_ id of pre-authorization to retrieve
 
-#### Returns
+#### Response
 
 Returns a pre-authorization object
 

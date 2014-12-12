@@ -37,6 +37,6 @@ A `POST` should be sent back to GoCardless. You will need to send a [Basic Authe
 `resource_type`
 :     _required_ the resource type provided in the initial `GET` request
 
-#### Returns
+#### Response
 
-Returns a pre-authorization object
+Returns a success message or an error message

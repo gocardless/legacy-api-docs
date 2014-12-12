@@ -14,4 +14,4 @@ $payment_details = array(
 );
 
 $pre_auth_url = GoCardless::new_pre_authorization_url($payment_details);
-echo $pre_auth_url;
+echo htmlentities($pre_auth_url);

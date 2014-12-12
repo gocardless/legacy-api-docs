@@ -19,10 +19,13 @@ GoCardless.AccountDetails = new AccountDetails {
 You should now be able to make requests to the GoCardless library.
 
 ### Checking that it works:
-To ensure you have initialized the library properly, you should try to load your merchant details using the following request:
+To ensure you have initialized the library properly, you can try to generate a subscription payment link like so:
 ```csharp
-var client = new ApiClient("your access token");
-client.GetMerchant("merchant id");
+var request = new SubscriptionRequest(MerchantID, Amount, IntervalLength, IntervalUnit);
+
+new ConnectClient().NewSubscriptionUrl(request);
 ```
 
-You can see all requests under the [resources section](#bill)
+Take a look at the [subscription section](#section) for more details on the parameters you can use.
+
+You can see all requests under the [resources section](#bill).

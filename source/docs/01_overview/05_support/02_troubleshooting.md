@@ -4,6 +4,7 @@
 - [The payment page says 400 error: "Signature is invalid"](#signature-invalid)
 - [The payment page says 400 error: "Merchant not found with the ID provided"](#merchant-invalid)
 - [The payment page says 400 error: "Redirect uri does not match the uri registered in the developer panel"](#redirect-invalid)
+- [The payment page says 400 error: "Timestamp has expired"](#timestamp-expired)
 - [The payment page begins https://sandbox.gocardless.com but I want to use the live environment](#switch-env)
 - [My payments are not getting confirmed](#confirm-failure)
 - [My testing bill webhook says amount = £20](#webhook-20)
@@ -38,6 +39,12 @@ The redirect URI in your code does not match the redirect URI in your GoCardless
 Please ensure that the port, scheme, host and domain of the two redirect URIs match. If you wish to vary the subdomains of your redirect URIs, check the 'enable subdomains' option in your developer settings.
 
 Please be sure you have the correct redirect URI in both your sandbox and live developer settings.
+
+
+### <a name="timestamp-expired"></a>The payment page says 400 error: "Timestamp has expired"
+The payment links that you generate are valid for 3 hours for security reasons - this message indicates that it has been longer than 3 hours since the link was generated.
+
+You should generate payment links as required - if you need to email a link to a customer that might not click it until after 3 hours, it should be to a page on your site that generates a payment link and forwards the customer as appropriate.
 
 
 ### <a name="switch-env"></a>The payment page begins https://sandbox.gocardless.com but I want to use the live environment

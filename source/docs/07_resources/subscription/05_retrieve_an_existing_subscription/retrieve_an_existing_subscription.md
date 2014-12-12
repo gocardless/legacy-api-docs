@@ -5,7 +5,7 @@
 `id`
 :    _required_ id of subscription to retrieve
 
-#### Returns
+#### Response
 
 Returns a subscription object.
 
