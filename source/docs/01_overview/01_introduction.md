@@ -16,5 +16,5 @@
 <strong>Note:</strong> This is the documentation for our Basic API. If you are
 already familar with Direct Debit and take over 500 payments a month you might
 also want to check out our
-<a href="https://developer.gocardless.com/pro">Enterprise API</a>.
+<a href="https://developer.gocardless.com/pro">Pro API</a>.
 </p>
