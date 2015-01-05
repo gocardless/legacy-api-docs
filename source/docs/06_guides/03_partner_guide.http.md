@@ -1,6 +1,6 @@
 # Partner guide
 
-<p class="intro">Our Partner API allows you to manage multiple merchant accounts. There's more information about <a href="https://help.gocardless.com/what-is-the-partner-programme/">how it works in our help section</a></p>
+<p class="intro">Our Partner API allows you to manage multiple merchant accounts.</p>
 
 ## Partner account setup
 
