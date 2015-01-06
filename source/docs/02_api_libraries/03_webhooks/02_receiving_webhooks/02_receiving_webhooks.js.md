@@ -11,11 +11,11 @@ We're going to be using Express for this tutorial. To set up the path for webhoo
 ```js
 // Assuming an Express server
 app.post('/gocardless_webhook', function(req, res) {
-  if (!gocardless.webhookValid(req.params)) return res.send(403);
+  if (!gocardless.webhookValid(req.body)) return res.send(403);
 
   // Do anything which you need to do, e.g. update your database
-  // Better to make this async as gocardless needs a 200 response
-  // within 5 seconds
+  // It's better to make this asynchronous as GoCardless needs a
+  // 200 response within 5 seconds
 
   res.send(200);
 });
