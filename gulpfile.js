@@ -87,6 +87,11 @@ gulp.task('font', function () {
     .pipe(gulp.dest(dest + '/fonts/'));
 });
 
+gulp.task('hyper-schema', function() {
+  return gulp.src('./source/hyper-schema.json')
+    .pipe(gulp.dest(dest))
+});
+
 gulp.task('javascript', function () {
   var htmlFilter = gulpFilter(['**/*.html']);
   return gulp.src(scripts)
@@ -231,7 +236,7 @@ gulp.task('clean', function(cb) {
 });
 
 gulp.task('build', ['clean'], function(cb) {
-  return runSequence(['docs', 'images', 'css', 'font', 'javascript'], cb);
+  return runSequence(['docs', 'images', 'hyper-schema', 'css', 'font', 'javascript'], cb);
 });
 
 gulp.task('start', ['build'], function () {
