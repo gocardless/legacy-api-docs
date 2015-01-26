@@ -1,0 +1,197 @@
+{
+  "$schema": "https://developer.gocardless.com/hyper-schema.json#",
+  "id": "https://developer.gocardless.com/hyper-schema.json#",
+  "title": "GoCardless JSON Hyper-Schema",
+  "allOf": [
+    {
+      "$ref": "http://json-schema.org/draft-04/hyper-schema#"
+    }
+  ],
+  "definitions": {
+    "identity": {
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "anyOf": {
+              "additionalProperties": {
+                "$ref": "#/definitions/ref"
+              },
+              "minProperties": 1
+            }
+          },
+          "required": ["anyOf"]
+        },
+        {
+          "properties": {},
+          "strictProperties": true
+        },
+        {
+          "$ref": "#/definitions/ref"
+        }
+      ]
+    },
+    "ref": {
+      "additionalProperties": false,
+      "properties": {
+        "$ref": {
+          "type": "string"
+        }
+      },
+      "required": ["$ref"]
+    },
+    "resource": {
+      "dependencies": {
+        "properties": {
+          "properties": {
+            "definitions": {
+              "additionalProperties": {
+                "$ref": "#/definitions/resourceDefinition"
+              },
+              "properties": {
+                "identity": {
+                  "$ref": "#/definitions/identity"
+                }
+              }
+            }
+          }
+        }
+      },
+      "properties": {
+        "links": {
+          "items": {
+            "$ref": "#/definitions/resourceLink"
+          }
+        },
+        "properties": {
+          "patternProperties": {
+            "^[a-z0-9][a-z0-9_]*[a-z0-9]$": {
+              "$ref": "#/definitions/resourceProperty"
+            }
+          },
+          "strictProperties": true
+        },
+        "strictProperties": {
+          "enum": [true],
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "definitions",
+        "description",
+        "links",
+        "title",
+        "type"
+      ]
+    },
+    "resourceDefinition": {
+      "anyOf": [
+        {
+          "required": ["example", "type"]
+        },
+        {
+          "required": ["type"],
+          "type": ["array"]
+        },
+        {
+          "required": ["type"],
+          "type": ["object"]
+        },
+        {
+          "required": ["enum"]
+        }
+      ],
+      "not": {
+        "required": ["links"]
+      },
+      "properties": {
+        "format": {
+          "enum": ["date-time", "date", "email", "hostname", "ipv4", "ipv6", "regex", "uri", "uuid"]
+        }
+      },
+      "required": ["description"]
+    },
+    "resourceLink": {
+      "properties": {
+        "href": {
+          "pattern": "^(/([a-z][a-z\\-_]*[a-z]|\\{\\(.*\\)\\}))+$"
+        },
+        "schema": {
+          "anyOf": [
+            {
+              "required": ["properties", "type"]
+            },
+            {
+              "required": ["patternProperties", "type"]
+            },
+            {
+              "properties": {
+                "anyOf": {
+                  "type": ["array"],
+                  "items": {
+                    "anyOf": [
+                      { "required": ["type", "properties"] },
+                      { "required": ["type", "patternProperties"] }
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      "required": ["description", "href", "method", "rel", "title"]
+    },
+    "resourceProperty": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/ref"
+        },
+        {
+          "properties": {
+            "properties": {
+              "additionalProperties": {
+                "$ref": "#/definitions/resourceProperty"
+              }
+            },
+            "strictProperties": {
+              "enum": [true],
+              "type": "boolean"
+            }
+          },
+          "required": ["description", "properties", "type"]
+        },
+        {
+          "properties": {
+            "items": {
+              "$ref": "#/definitions/ref"
+            }
+          },
+          "required": ["description", "items", "type"]
+        }
+      ]
+    }
+  },
+  "properties": {
+    "definitions": {
+      "additionalProperties": {
+        "$ref": "#/definitions/resource"
+      }
+    },
+    "properties": {
+      "additionalProperties": {
+        "$ref": "#/definitions/ref"
+      }
+    }
+  },
+  "required": [
+    "$schema",
+    "definitions",
+    "description",
+    "id",
+    "links",
+    "properties",
+    "title",
+    "type"
+  ]
+}
