@@ -8,3 +8,24 @@
   height: 1px;
   width: 100%;
 }
+
+.section-header__click-overlay {
+  position: absolute;
+  left: -0.7em;
+  opacity: 0;
+  font-family: "Source Code Pro", Consolas, Monaco, Menlo, "Courier New", monospace;
+  font-style: normal;
+  font-weight: 200;
+  color: $dark-gray;
+  width: 100%;
+
+  -webkit-transition: opacity 50ms ease-in-out 50ms;
+  -moz-transition: opacity 50ms ease-in-out 50ms;
+  -ms-transition: opacity 50ms ease-in-out 50ms;
+}
+
+.section-header:hover .section-header__click-overlay {
+  opacity: 1;
+  color: $dark-gray;
+  text-decoration: none;
+}

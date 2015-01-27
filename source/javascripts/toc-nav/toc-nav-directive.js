@@ -7,12 +7,25 @@ angular.module('gcTocNavDirective', [
     function tocNavDirective() {
 
       function createAnchor(id, node) {
-        var anchor = document.createElement('a');
+        var anchor = document.createElement('span');
         anchor.className = 'section-header__anchor';
         anchor.id = id;
-        angular.element(node)
-          .wrap('<div class="section-header">')
-          .parent().prepend(anchor);
+
+        var clickOverlay = document.createElement('a');
+        clickOverlay.className = 'section-header__click-overlay';
+        clickOverlay.innerHTML = '&infin;';
+        clickOverlay.href = "#" + id;
+
+        var titleSpan = document.createElement('span');
+        titleSpan.innerHTML = node.innerHTML;
+
+        node.innerHTML = '';
+        node.appendChild(clickOverlay);
+        node.appendChild(titleSpan);
+
+        angular.element(node).
+          wrap('<div class="section-header">').
+          parent().prepend(anchor);
       }
 
       function escapeSelector(selector) {
@@ -50,7 +63,7 @@ angular.module('gcTocNavDirective', [
         replace: true,
         templateUrl: 'toc-nav/toc-nav-template.html',
         link: function(scope) {
-          var headings = _.toArray(query(document, 'h0, h1, h2'));
+          var headings = _.toArray(query(document, 'h0, h1, h2, h3'));
 
           var pages = new Nav();
           var prevLevel = 0;
