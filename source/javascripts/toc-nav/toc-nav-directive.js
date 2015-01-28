@@ -63,7 +63,7 @@ angular.module('gcTocNavDirective', [
         replace: true,
         templateUrl: 'toc-nav/toc-nav-template.html',
         link: function(scope) {
-          var headings = _.toArray(query(document, 'h0, h1, h2, h3'));
+          var headings = _.toArray(query(document, 'h0, h1, h2'));
 
           var pages = new Nav();
           var prevLevel = 0;
