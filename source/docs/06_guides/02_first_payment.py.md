@@ -108,7 +108,7 @@ Now when the customer submits the form they'll be redirected to the GoCardless p
 
 You'll want your customer to be returned to your website once they've completed the payment. We'll walk through it below. Note, however, that this step isn't necessary when creating payments: by default we'll confirm the payment and show your customers a payment complete page.
 
-Set the 'Redirect URI' in your developer dashboard to <code>http://[your domain]/gocardless/confirm/</code>.
+Set the 'Redirect URI' in your developer dashboard to `http://[yourdomain]/gocardless/confirm/`.
 
 Next, we need to add our confirm URL to urls.py, and add a view for it:
 
