@@ -26,7 +26,7 @@ Now we're ready to configure the GoCardless client within your app. The best way
 // gocardless-init.php
 
 <?
-// Include the GoCardless PHP library 
+// Include the GoCardless PHP library
 include_once 'lib/GoCardless.php';
 
 // Uncomment this and change your keys over to go live - but make
@@ -49,7 +49,7 @@ else {
       'app_secret'    => 'INSERT_SANDBOX_APP_SECRET',
       'merchant_id'   => 'INSERT_SANDBOX_MERCHANT_ID',
       'access_token'  => 'INSERT_SANDBOX_MERCHANT_ACCESS_TOKEN'
-    );  
+    );
 }
 
 // Initialize GoCardless
@@ -91,7 +91,7 @@ When the customer clicks the link generated they'll be redirected to the GoCardl
 
 You'll want your customer to be returned to your website once they've completed the payment. We'll walk through it below. Note, however, that this step isn't necessary when creating payments: by default we'll confirm the payment and show your customers a payment complete page.
 
-Set the 'Redirect URI' in your developer dashboard to http://[your domain]/thankyou.php .
+Set the 'Redirect URI' in your developer dashboard to `http://[yourdomain]/thankyou.php`.
 
 Now in `thankyou.php`, add the following:
 

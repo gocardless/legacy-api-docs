@@ -82,7 +82,7 @@ When the customer submits the form they'll be redirected to the GoCardless payme
 
 You'll want your customer to be returned to your website once they've completed the payment. We'll walk through it below. Note, however, that this step isn't necessary when creating payments: by default we'll confirm the payment and show your customers a payment complete page.
 
-Set the 'Redirect URI' in your developer dashboard to http://[your domain]/gocardless/confirm .
+Set the 'Redirect URI' in your developer dashboard to `http://[yourdomain]/gocardless/confirm`.
 
 Next, add the confirm URL handler:
 
