@@ -2,7 +2,7 @@
 
 Your server should validate the HMAC digest by resigning the contents of the payload object, not including the container payload itself, and respond with status `HTTP/1.1 200 OK` within 5 seconds.
 
-For more information about generating a signature see [Signing Requests](#signing-requests) in the Connect Guide. The GoCardless [client libraries](official-libraries) each handle signing requests; if you are building an integration without a client library, check their source code for a reference implementation.
+For more information about generating a signature see [Signing Requests](#signing-requests) in the Connect Guide. The GoCardless [client libraries](#official-libraries) each handle signing requests; if you are building an integration without a client library, check their source code for a reference implementation.
 
 If the API server does not get a 200 OK response within 5 seconds, it will retry up to 10 times at ever-increasing time intervals. If you have time-consuming server-side processes that are triggered by a webhook please consider processing them asynchronously.
 
