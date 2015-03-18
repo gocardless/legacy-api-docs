@@ -18,3 +18,8 @@ already familar with Direct Debit and take over 500 payments a month you might
 also want to check out our
 <a href="https://developer.gocardless.com/pro">Pro API</a>.
 </p>
+
+<p class="well-notice u-margin-Vl">
+<strong>Would you like to beta test our new API?</strong> We're working on a new system - based on our
+<a href="https://developer.gocardless.com/pro">Pro API</a> - for developers that don't need all of the Pro features but still want to build powerful integrations with GoCardless. If you're interested in beta testing it with us, just email [help@gocardless.com](mailto:help@gocardless.com).
+</p>
