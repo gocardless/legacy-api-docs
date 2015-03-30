@@ -38,7 +38,9 @@ You may also include a `merchant` object which will be used to pre-populate fiel
 
 The resulting request will look like this:
 
-    https://gocardless.com/oauth/authorize?client_id=XXX&amp;redirect_uri=http%3A%2F%2Fexample.com%2F&amp;cb&amp;response_type=code&amp;scope=manage_merchant
+```
+https://gocardless.com/oauth/authorize/?client_id=your_app_identifier&redirect_uri=your_redirect_uri&response_type=code&scope=manage_merchant
+```
 
 The user will be shown a page confirming that they would like to link a merchant account to your app. They can also create their account at this stage.
 
@@ -46,9 +48,7 @@ The user will be shown a page confirming that they would like to link a merchant
 
 If the user approves the request, they will be redirected to the `redirect_uri` provided in the request with an authorization `code` passed in the URL:
 
-    {
-     "code": "",
-    }
+    your_redirect_uri?code=sR1zU66HugKXsVj4wChmoKOTKm8W%2BRxbolMCv%2
 
 The state variable will also be returned in the URL if it was provided in the original request.
 
@@ -69,6 +69,20 @@ This request should be authenticated by passing the app identifier and app secre
 
 `grant_type`
 :    this should be set to `authorization_code`
+
+Example access token request:
+
+```http
+POST https://gocardless.com/oauth/access_token HTTP/1.1
+
+{
+ "client_id": "your app identifier",
+ "code": "your authorization code",
+ "redirect_uri": "your redirect URI",
+ "grant_type": "authorization_code"
+}
+```
+
 
 If the request is successful then the response will look like this:
 
