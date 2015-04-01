@@ -76,10 +76,10 @@ Example access token request:
 POST https://gocardless.com/oauth/access_token HTTP/1.1
 
 {
- "client_id": "your app identifier",
- "code": "your authorization code",
- "redirect_uri": "your redirect URI",
- "grant_type": "authorization_code"
+  "client_id": "your app identifier",
+  "code": "your authorization code",
+  "redirect_uri": "your redirect URI",
+  "grant_type": "authorization_code"
 }
 ```
 
