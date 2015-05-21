@@ -1,13 +1,7 @@
 ## Contact us
 
-Need help with your integration? We offer two forms of support for developers: IRC and email.
+You can reach the API support team at [help@gocardless.com](mailto:help@gocardless.com) if you need any help with your integration.
 
-Please try to [catch exceptions](#exception-handling) before contacting support with any troubleshooting related issues.
+### If you're having problems
 
-### IRC
-[Join our developer](http://webchat.freenode.net/?channels=gocardless&uio=OT10cnVlJjExPTIzNiYxMj10cnVl51) chat at `#gocardless` on `irc.freenode.net`.
-
-### Email
-Alternatively, please email us at [help@gocardless.com](mailto:help@gocardless.com).
-
-We can provide the **most effective** support via these two channels as they allow us to see your code.
+Please try to [catch exceptions](#exception-handling) before contacting support with any troubleshooting issues. We can help you best if you let us know exactly what you're trying to do when something goes wrong, and include any exceptions or error messages you're seeing.
