@@ -6,7 +6,7 @@ This lightning fast, super simple tutorial will help you create your first bill 
 
 We'll walk though:
 
-* [Setting up GoCardless and installing the PHP library](#setting-up-gocardless)
+* [Setting up GoCardless and installing the Python library](#setting-up-gocardless)
 * [Creating a payment request](#creating-a-payment-request)
 * [Confirming the payment](#confirming-a-payment)
 
