@@ -50,20 +50,6 @@ Check out our [Node.js docs](/node) or view [source on Github](https://github.co
 
 ---
 
-### .NET
-
-Install with NuGet:
-
-	NuGet.exe install GoCardless
-
-If you're using NuGet from within Visual Studio, simply run:
-
-	Install-Package GoCardless
-
-Check out our [.NET docs](/dotnet) or view [source on Github](https://github.com/gocardless/gocardless-dotnet).
-
----
-
 ### Java
 
 Install with Maven:
