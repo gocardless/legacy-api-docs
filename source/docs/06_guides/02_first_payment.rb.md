@@ -62,7 +62,7 @@ end
      (you'll need to create this file) -->
 <h2>Signup up via GoCardless!</h2>
 
-<% form_tag "/gocardless/submit" %>
+<%= form_tag "/gocardless/submit" do %>
   <h3>Enter your email to subscribe</h3>
   <input type="text" name="email">
   <input type="submit">
