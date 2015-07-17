@@ -28,7 +28,7 @@ $sidebar-width--wide: 243px;
 
 .site-frame__nav {
   position: fixed;
-  top: $header-nav-height;
+  top: $header-nav-height + $deprecation-warning-height;
   bottom: 0;
   z-index: $nav-z-index;
   overflow-x: hidden;
@@ -50,7 +50,7 @@ $sidebar-width--wide: 243px;
 .site-frame__main {
   position: relative;
   display: block;
-  top: $header-nav-height;
+  top: $header-nav-height + $deprecation-warning-height;
   margin-left: $sidebar-width--narrow;
   z-index: $content-z-index;
   height: 100%;
