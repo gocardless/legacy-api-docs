@@ -1,12 +1,8 @@
 deployment:
-  production:
-    branch: master
-    commands:
-      - bundle exec cap production deploy
-
-  staging:
+  dev:
     branch: dev
     commands:
+      - bundle exec cap production deploy
       - bundle exec cap staging deploy
 
 machine:
