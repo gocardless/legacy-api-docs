@@ -76,7 +76,7 @@ Please submit a pull request to this page to add any missing libraries that shou
 * [gocardless-clj](https://github.com/karls/gocardless-clj) by [Karl Sutt](https://twitter.com/karlsutt)
 
 #### Perl
-* [GoCardless Perl client library](https://metacpan.org/release/Business-GoCardless) by [Lee Johnson](https://github.com/leejo/business-gocardless)
+* [GoCardless Perl client library](https://metacpan.org/release/Business-GoCardless) by [Lee Johnson](https://github.com/G3S/business-gocardless)
 
 #### CFML (ColdFusion/Railo)
 * [gocardless-cfml](https://github.com/cfsimplicity/gocardless-cfml) by [Julian Halliwell](https://github.com/cfsimplicity)
