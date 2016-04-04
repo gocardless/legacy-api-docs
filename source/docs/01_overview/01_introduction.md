@@ -4,10 +4,10 @@
 
 <img src="https://gc-misc.s3.amazonaws.com/images/api-docs-illo@2x.png" width="159" height="177">
 
-# Introduction
+# The Legacy GoCardless API
 
-<p class="intro">Start collecting payments with the GoCardless API today. No lengthy sign-up process. No fuss.</p>
-
-1. To start using our API, you'll need to [sign up for a merchant account](https://gocardless.com/merchants/new)
-2. Enable **developer mode** within your dashboard under the 'More...' tab
-3. Start using one of our [API libraries](/#official-libraries) for your chosen programming language
+<p class="well-notice u-margin-Vl">
+  <strong>This documentation is intended for developers who already have an integration with this API.</strong>
+  If you're starting a new integration you should use [our new API](https://developer.gocardless.com/pro) instead.
+  The legacy API will not receive updates, and does not offer as many features as the new one.
+</p>
