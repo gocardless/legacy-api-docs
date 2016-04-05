@@ -24,7 +24,7 @@ var reload = browserSync.reload;
 var runSequence = require('run-sequence');
 var swig = require('swig');
 
-var dest = process.env.OUTPUT || "_site";
+var dest = process.env.OUTPUT || "_site/legacy";
 
 var isProduction = process.env.NODE_ENV === 'production';
 
@@ -249,6 +249,7 @@ gulp.task('start', ['build'], function () {
     //       will present a certificate warning in the browser.
     // https: true,
     port: 9000,
+    startPath: '/legacy',
     server: {
       baseDir: '_site'
     }
