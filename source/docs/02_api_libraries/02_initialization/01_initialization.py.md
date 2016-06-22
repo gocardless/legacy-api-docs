@@ -4,6 +4,7 @@ After [installing the GoCardless Python library](#installation), you will need t
 
 ```python
 import gocardless
+gocardless.environment = 'sandbox'
 gocardless.set_details(app_id="DUMMY_APP",
         app_secret="INSERT_APP_SECRET_HERE",
         access_token="INSERT_MERCHANT_ACCESS_TOKEN",
