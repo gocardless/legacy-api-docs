@@ -9,6 +9,9 @@ gocardless.set_details(app_id="DUMMY_APP",
         access_token="INSERT_MERCHANT_ACCESS_TOKEN",
         merchant_id="INSERT_MERCHANT_ID")
 ```
+By default the library will attempt to use the GoCardless production environment, for testing purposes this is not what you want and you should set the gocardless.environment to "sandbox":
+
+`gocardless.environment = "sandbox"`
 
 You should now be able to make requests to the GoCardless library.
 
