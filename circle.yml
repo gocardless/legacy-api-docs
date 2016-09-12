@@ -1,9 +1,14 @@
 deployment:
-  dev:
-    branch: dev
+  master:
+    branch: [master]
     commands:
-      - bundle exec cap production deploy
-      - bundle exec cap staging deploy
+      - ./scripts/build
+      - S3_BUCKET=developer.gocardless.com s3_website push
+  branch_only:
+    branch: /.*/
+    commands:
+      - ./scripts/build
+      - s3_website push
 
 machine:
   node:
