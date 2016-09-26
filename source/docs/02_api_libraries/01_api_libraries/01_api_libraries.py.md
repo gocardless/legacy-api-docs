@@ -10,4 +10,4 @@ Install from pip:
 
 	pip install gocardless
 
-Check out our [Python docs](/python) or view [source on Github](https://github.com/gocardless/gocardless-legacy-python).
+Check out our [Python docs](/legacy/python) or view [source on Github](https://github.com/gocardless/gocardless-legacy-python).

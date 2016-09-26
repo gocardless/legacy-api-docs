@@ -14,4 +14,4 @@ Install with Maven:
 	  <version>2.0.0</version>
 	</dependency>
 
-Check out our [Java docs](/java) or view [source on Github](https://github.com/gocardless/gocardless-legacy-java).
+Check out our [Java docs](/legacy/java) or view [source on Github](https://github.com/gocardless/gocardless-legacy-java).
