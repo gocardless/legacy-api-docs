@@ -8,13 +8,13 @@ We strongly encourage use of our official libraries for accessing the GoCardless
 
 Install from source:
 
-	git clone git@github.com:gocardless/gocardless-php.git
+	git clone git@github.com:gocardless/gocardless-legacy-php.git
 
 or install from tarball:
 
-	curl -L https://github.com/gocardless/gocardless-php/tarball/master | tar xzv
+	curl -L https://github.com/gocardless/gocardless-legacy-php/tarball/master | tar xzv
 
-Check out our [PHP docs](/php) or view [source on Github](https://github.com/gocardless/gocardless-php).
+Check out our [PHP docs](/php) or view [source on Github](https://github.com/gocardless/gocardless-legacy-php).
 
 
 ### Community libraries

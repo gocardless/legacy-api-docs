@@ -8,13 +8,13 @@ We strongly encourage use of our official libraries for accessing the GoCardless
 
 Install from source:
 
-	git clone git@github.com:gocardless/gocardless-php.git
+	git clone git@github.com:gocardless/gocardless-legacy-php.git
 
 or install from tarball:
 
-	curl -L https://github.com/downloads/gocardless/gocardless-php/gocardless-php-v0.4.1.tgz | tar xzv
+	curl -L https://github.com/downloads/gocardless/gocardless-legacy-php/gocardless-php-v0.4.1.tgz | tar xzv
 
-Check out our [PHP docs](/php) or view [source on Github](https://github.com/gocardless/gocardless-php).
+Check out our [PHP docs](/php) or view [source on Github](https://github.com/gocardless/gocardless-legacy-php).
 
 ---
 
@@ -26,7 +26,7 @@ Added to your Gemfile:
 gem 'gocardless'
 ```
 
-Check out our [Ruby docs](/ruby) or view [source on Github](https://github.com/gocardless/gocardless-ruby).
+Check out our [Ruby docs](/ruby) or view [source on Github](https://github.com/gocardless/gocardless-legacy-ruby).
 
 ---
 
@@ -36,7 +36,7 @@ Install from pip:
 
 	 pip install gocardless
 
-Check out our [Python docs](/python) or view [source on Github](https://github.com/gocardless/gocardless-python).
+Check out our [Python docs](/python) or view [source on Github](https://github.com/gocardless/gocardless-legacy-python).
 
 ---
 
@@ -46,7 +46,7 @@ Install with npm:
 
     npm install --save gocardless
 
-Check out our [Node.js docs](/node) or view [source on Github](https://github.com/gocardless/gocardless-node).
+Check out our [Node.js docs](/node) or view [source on Github](https://github.com/gocardless/gocardless-legacy-node).
 
 ---
 
@@ -60,7 +60,7 @@ Install with Maven:
 	  <version>1.1.0</version>
 	</dependency>
 
-Check out our [Java docs](/java) or view [source on Github](https://github.com/gocardless/gocardless-java).
+Check out our [Java docs](/java) or view [source on Github](https://github.com/gocardless/gocardless-legacy-java).
 
 ---
 

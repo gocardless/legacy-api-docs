@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/gocardless/api-docs.git"
+    "url": "git://github.com/gocardless/legacy-api-docs.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/gocardless/api-docs/issues"
+    "url": "https://github.com/gocardless/legacy-api-docs/issues"
   },
-  "homepage": "https://github.com/gocardless/api-docs",
+  "homepage": "https://github.com/gocardless/legacy-api-docs",
   "dependencies": {
     "aws-sdk": "^2.0.25",
     "browser-sync": "^1.6.0",

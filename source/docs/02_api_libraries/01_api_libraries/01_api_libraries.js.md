@@ -10,4 +10,4 @@ Install with npm:
 
     npm install --save gocardless
 
-Check out our [Node.js docs](/node) or view [source on Github](https://github.com/gocardless/gocardless-node).
+Check out our [Node.js docs](/node) or view [source on Github](https://github.com/gocardless/gocardless-legacy-node).

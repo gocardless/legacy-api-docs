@@ -45,4 +45,4 @@ And that's it! You're now responding when GoCardless sends you a cancelled subsc
 
 ### Further reading
 
-You can take a look at this [example of a webhook logger](https://github.com/gocardless/gocardless-php/blob/master/examples/webhooks.php), included as part of the PHP library.
+You can take a look at this [example of a webhook logger](https://github.com/gocardless/gocardless-legacy-php/blob/master/examples/webhooks.php), included as part of the PHP library.

@@ -155,4 +155,4 @@ Finally we need to add a success template:
 
 That's it! Your app is now set up to take subscription payments! Take a moment to test it out (don't forget to log out of your GoCardless merchant account before testing). Your customers can now easily subscribe to pay you £10 every month, via direct debit.
 
-A sample project, which implements all the payment types, along with Webhooks [is available on Github](https://github.com/gocardless/sample-django-app.git).
+A sample project, which implements all the payment types, along with Webhooks [is available on Github](https://github.com/gocardless/sample-legacy-django-app.git).

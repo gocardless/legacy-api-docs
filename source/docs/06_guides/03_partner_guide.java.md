@@ -18,7 +18,7 @@ First, download and install the Java client library:
       <version>1.1.0</version>
     </dependency>
 
-Alternatively, view [source on Github](https://github.com/gocardless/gocardless-java).
+Alternatively, view [source on Github](https://github.com/gocardless/gocardless-legacy-java).
 
 ## Using the sandbox
 
@@ -67,8 +67,8 @@ The java client library takes care of most of this - only the `redirect_uri` mus
 /*
   The GoCardless Java library does not currently support all pre-population
   fields. See the following URLs for a list of supported fields:
-  https://github.com/gocardless/gocardless-java/blob/master/src/main/java/gocardless/partner/Merchant.java
-  https://github.com/gocardless/gocardless-java/blob/master/src/main/java/gocardless/partner/User.java
+  https://github.com/gocardless/gocardless-legacy-java/blob/master/src/main/java/gocardless/partner/Merchant.java
+  https://github.com/gocardless/gocardless-legacy-java/blob/master/src/main/java/gocardless/partner/User.java
 */
 
 GoCardless.partner.User user_details = new GoCardless.partner.User();

@@ -16,7 +16,7 @@ First, download and install the .NET client library:
 
     Install-Package GoCardless
 
-Alternatively, view [source on Github](https://github.com/gocardless/gocardless-dotnet).
+Alternatively, view [source on Github](https://github.com/gocardless/gocardless-legacy-dotnet).
 
 ## Using the sandbox
 
@@ -62,7 +62,7 @@ The .NET client library takes care of most of this - only the `redirect_uri` mus
 ```csharp
 /// The GoCardless .NET library does not currently support all pre-population
 /// fields. See the following URL for a list of supported fields:
-/// https://github.com/gocardless/gocardless-dotnet/blob/master/GoCardlessSdk/Partners/ManageMerchantRequest.cs
+/// https://github.com/gocardless/gocardless-legacy-dotnet/blob/master/GoCardlessSdk/Partners/ManageMerchantRequest.cs
 
 var user = new GoCardlessSdk.Partners.User {
   FirstName = "Tim",

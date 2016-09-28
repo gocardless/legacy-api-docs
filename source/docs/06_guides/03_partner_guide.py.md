@@ -14,7 +14,7 @@ First, download and install the Python client library:
 
      pip install gocardless
 
-Alternatively, view [source on Github](https://github.com/gocardless/gocardless-python).
+Alternatively, view [source on Github](https://github.com/gocardless/gocardless-legacy-python).
 
 ## Using the sandbox
 

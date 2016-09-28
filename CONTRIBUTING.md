@@ -5,7 +5,7 @@ We'd love for you to contribute to our docs! Here are the guidelines we'd like y
 ## Submitting a Pull Request
 Before you submit your pull request consider the following guidelines:
 
-* Search [GitHub](https://github.com/gocardless/api-docs/pulls) for an open or closed Pull Request
+* Search [GitHub](https://github.com/gocardless/legacy-api-docs/pulls) for an open or closed Pull Request
   that relates to your submission. You don't want to duplicate effort.
 * Make your changes in a new git branch
 

@@ -12,4 +12,4 @@ Added to your Gemfile:
 gem 'gocardless'
 ```
 
-Check out our [Ruby docs](/ruby) or view [source on Github](https://github.com/gocardless/gocardless-ruby).
+Check out our [Ruby docs](/ruby) or view [source on Github](https://github.com/gocardless/gocardless-legacy-ruby).

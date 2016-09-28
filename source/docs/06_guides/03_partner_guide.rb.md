@@ -4,7 +4,7 @@
 
 ## Example partner integration
 
-We have an example partner integration built in Sinatra that is [available on GitHub](https://github.com/gocardless/gocardless-partner-example-ruby). You will need to have a partner account to use this example integration.
+We have an example partner integration built in Sinatra that is [available on GitHub](https://github.com/gocardless/legacy-gocardless-partner-example-ruby). You will need to have a partner account to use this example integration.
 
 ## Partner account setup
 
@@ -20,7 +20,7 @@ First, download and install the Ruby client library:
 gem install gocardless
 ```
 
-Alternatively, view [source on Github](https://github.com/gocardless/gocardless-ruby).
+Alternatively, view [source on Github](https://github.com/gocardless/gocardless-legacy-ruby).
 
 ## Using the sandbox
 

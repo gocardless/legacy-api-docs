@@ -10,4 +10,4 @@
 
 If you're working with our API using .NET, you should [make HTTP requests to our API directly](https://developer.gocardless.com) instead.
 
-The source for this library will remain available [on Github](https://github.com/gocardless/gocardless-dotnet), so you can modify the code to suit your requirements if you still wish to use it.
+The source for this library will remain available [on Github](https://github.com/gocardless/gocardless-legacy-dotnet), so you can modify the code to suit your requirements if you still wish to use it.

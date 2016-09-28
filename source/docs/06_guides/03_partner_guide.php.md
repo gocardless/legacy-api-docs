@@ -18,7 +18,7 @@ First, download and install the PHP client library:
 
     curl -L https://github.com/downloads/gocardless/gocardless-php/gocardless-php-v0.4.1.tgz | tar xzv
 
-Alternatively, view [source on Github](https://github.com/gocardless/gocardless-php).
+Alternatively, view [source on Github](https://github.com/gocardless/gocardless-legacy-php).
 
 ## Using the sandbox
 
