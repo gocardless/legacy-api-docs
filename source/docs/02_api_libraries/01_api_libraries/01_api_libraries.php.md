@@ -14,7 +14,7 @@ or install from tarball:
 
 	curl -L https://github.com/gocardless/gocardless-legacy-php/tarball/master | tar xzv
 
-Check out our [PHP docs](/php) or view [source on Github](https://github.com/gocardless/gocardless-legacy-php).
+Check out our [PHP docs](/legacy/php) or view [source on Github](https://github.com/gocardless/gocardless-legacy-php).
 
 
 ### Community libraries

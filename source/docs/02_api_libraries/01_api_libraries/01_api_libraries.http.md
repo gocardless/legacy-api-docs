@@ -26,7 +26,7 @@ Added to your Gemfile:
 gem 'gocardless'
 ```
 
-Check out our [Ruby docs](/ruby) or view [source on Github](https://github.com/gocardless/gocardless-legacy-ruby).
+Check out our [Ruby docs](/legacy/ruby) or view [source on Github](https://github.com/gocardless/gocardless-legacy-ruby).
 
 ---
 
@@ -36,7 +36,7 @@ Install from pip:
 
 	 pip install gocardless
 
-Check out our [Python docs](/python) or view [source on Github](https://github.com/gocardless/gocardless-legacy-python).
+Check out our [Python docs](/legacy/python) or view [source on Github](https://github.com/gocardless/gocardless-legacy-python).
 
 ---
 
@@ -46,7 +46,7 @@ Install with npm:
 
     npm install --save gocardless
 
-Check out our [Node.js docs](/node) or view [source on Github](https://github.com/gocardless/gocardless-legacy-node).
+Check out our [Node.js docs](/legacy/node) or view [source on Github](https://github.com/gocardless/gocardless-legacy-node).
 
 ---
 
@@ -60,7 +60,7 @@ Install with Maven:
 	  <version>1.1.0</version>
 	</dependency>
 
-Check out our [Java docs](/java) or view [source on Github](https://github.com/gocardless/gocardless-legacy-java).
+Check out our [Java docs](/legacy/java) or view [source on Github](https://github.com/gocardless/gocardless-legacy-java).
 
 ---
 
