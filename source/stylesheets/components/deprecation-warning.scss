@@ -8,15 +8,17 @@
 }
 
 .version-deprecated__warning {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   position: fixed;
   right: 0;
   left: 0;
   z-index: 10000;
-  background: #F5A623;
+  background: #EE6850;
   color: #FFF;
-  font-size: 16px;
+  font-size: 18px;
   height: $deprecation-warning-height;
-  display: block;
 
   a {
     font-weight: 700;
