@@ -7,6 +7,8 @@
   top: -95px;
   height: 1px;
   width: 100%;
+  padding-top: $deprecation-warning-height;
+  margin-top: -$deprecation-warning-height;
 }
 
 .section-header__click-overlay {
