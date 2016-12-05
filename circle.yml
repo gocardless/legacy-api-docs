@@ -3,7 +3,7 @@ deployment:
     branch: [master]
     commands:
       - ./scripts/build
-      - S3_BUCKET=developer.gocardless.com s3_website push
+      - GC_AWS_BUCKET=developer.gocardless.com s3_website push
   branch_only:
     branch: /.*/
     commands:
